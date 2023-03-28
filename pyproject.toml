@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "neetcode"
+version = "0.1.0"
+description = ""
+authors = ["Zhenyu Lin <zhenyu.lyn@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.9"
+
+[tool.poetry.dev-dependencies]
+black = "^19.10b0"
+pytest = "*"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
