@@ -8,13 +8,14 @@ def lengthOfLongestSubstring(s: str) -> int:
     """find the longest substring without repeating characters
 
     1) Hashmap:
-    we can use a Hashmap to record the index of last seen `char` iterating `s`
-    and use `i` to denote the index where all chars have only appeared once
+    we can use a Hashmap to record the index of 'c' last seen iterating 's'
+    and use 'i' to denote the index where no char in s[i:j+1] has been seen
 
-    `i` will be updated every time we find a `seen[c]` no less than i
-    so that we can ensure no char in `s[i: j+1]` has been seen before
+    'i' will be updated every time we find a 'seen[c]' no less than i
 
-    time complexity: O(N), memory complexity: O(1)
+    * this will make 'i > max[seen[c] for c in s[i:j+1] if c in seen]'
+
+    time complexity: O(N), space complexity: O(1)
     """
 
     res, i, seen = 0, 0, {}
