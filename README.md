@@ -1,12 +1,12 @@
 ## Neetcode
 
-a repo to showcase most concise solutions to selected leetcode problems in Python 3
-
-the problems have been categorised based on the input data types with the typical algorithms listed below
-
+> neat solutions to selected leetcode problems in Python3 summarised by data types
 
 ### Array | String
-* Hashmap
+- **Hashmap** - *for index related conditions*
+
+    * [Two Elements Sum to Target](https://github.com/zhenyulin/py-neetcode/blob/master/src/array/two_sum.py)
+    * [Substring without Repeating Characters](https://github.com/zhenyulin/py-neetcode/blob/master/src/string/longest_substring_without_repeating_characters.py)
 
 ### LinkedList
 * Simple Forward
