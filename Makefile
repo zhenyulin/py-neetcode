@@ -20,11 +20,11 @@ shell:
 test:
 	@poetry run pytest src/ -vv -s
 
+test-watch:
+	@watchman-make -p 'src/**/*.py' -r 'poetry run pytest src/ -vv -s --picked'
+
 test-coverage:
 	@poetry run pytest src/ -vv -s --cov=src --cov-report=term-missing
 
-test-watch:
-	@watchman-make -p 'src/**/*.py' -r 'make test'
-
 test-coverage-watch:
-	@watchman-make -p 'src/**/*.py' -r 'make test-coverage'
+	@poetry run pytest src/ -vv -s --cov=src --cov-report=term-missing --picked

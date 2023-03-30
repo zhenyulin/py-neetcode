@@ -129,6 +129,17 @@ tomli = {version = ">=1.0.0", markers = "python_version < \"3.11\""}
 testing = ["argcomplete", "hypothesis (>=3.56)", "mock", "nose", "pygments (>=2.7.2)", "requests", "xmlschema"]
 
 [[package]]
+name = "pytest-picked"
+version = "0.4.6"
+description = "Run the tests related to the changed files"
+category = "dev"
+optional = false
+python-versions = ">=3.5"
+
+[package.dependencies]
+pytest = ">=3.5.0"
+
+[[package]]
 name = "regex"
 version = "2023.3.23"
 description = "Alternative regular expression module, to replace re."
@@ -163,7 +174,7 @@ python-versions = ">=3.6"
 [metadata]
 lock-version = "1.1"
 python-versions = "^3.9"
-content-hash = "40bf5be85e15b05a8e039cb6a9404117017e8bd2052fb8493c94d1217e1e4e7a"
+content-hash = "b5427c6eaa723e400dc09b4925747b7ea02a4e15f15f7d62ecc3d3ecbc95abe3"
 
 [metadata.files]
 appdirs = [
@@ -209,6 +220,10 @@ pluggy = [
 pytest = [
     {file = "pytest-7.2.2-py3-none-any.whl", hash = "sha256:130328f552dcfac0b1cec75c12e3f005619dc5f874f0a06e8ff7263f0ee6225e"},
     {file = "pytest-7.2.2.tar.gz", hash = "sha256:c99ab0c73aceb050f68929bc93af19ab6db0558791c6a0715723abe9d0ade9d4"},
+]
+pytest-picked = [
+    {file = "pytest-picked-0.4.6.tar.gz", hash = "sha256:e1ec7aee5d2cd3a91f676fd0afd7620a26c0ccc21e604152bbc5137f430e6c00"},
+    {file = "pytest_picked-0.4.6-py3-none-any.whl", hash = "sha256:8bc744222a39ecc84cbcb87251fb69810ee576a80f84cc77fc47222818b3fa7c"},
 ]
 regex = [
     {file = "regex-2023.3.23-cp310-cp310-macosx_10_9_x86_64.whl", hash = "sha256:845a5e2d84389c4ddada1a9b95c055320070f18bb76512608374aca00d22eca8"},
