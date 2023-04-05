@@ -1,4 +1,4 @@
-from src.array.longest_consecutive_sequence import longestConsecutiveSequence
+from src.array.subarray_longest_consecutive import longestConsecutiveSequence
 
 
 def testLongestConsecutiveSequence():

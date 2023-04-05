@@ -17,7 +17,7 @@ def longestConsecutiveSequence(nums: list[int]) -> int:
     res, nums = 0, set(nums)
 
     for n in nums:
-        # don't check if it has been checked as "n'+length"
+        # don't check if it has been checked as an intermediate point
         if n - 1 not in nums:
             length = 1
             while n + length in nums:
