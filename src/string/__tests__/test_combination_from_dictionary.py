@@ -1,4 +1,4 @@
-from src.array.letter_combinations_of_a_phone_number import letterCombinations
+from src.string.combination_from_dictionary import letterCombinations
 
 
 def testLetterCombinations():

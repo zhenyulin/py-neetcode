@@ -1,4 +1,4 @@
-from src.array.container_with_most_water import maxArea
+from src.array.window_max_area import maxArea
 
 
 def testMaxArea():
