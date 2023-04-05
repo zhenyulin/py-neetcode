@@ -1,4 +1,4 @@
-from src.string.longest_substring_without_repeating_characters import (
+from src.string.substring_longest_without_repeating_characters import (
     lengthOfLongestSubstring,
 )
 

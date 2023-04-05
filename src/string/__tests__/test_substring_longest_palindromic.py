@@ -1,4 +1,4 @@
-from src.string.longest_palindromic_substring import longestPalindrome
+from src.string.substring_longest_palindromic import longestPalindrome
 
 
 def testLongestPalindrom():
