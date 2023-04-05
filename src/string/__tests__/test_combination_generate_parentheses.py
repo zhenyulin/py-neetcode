@@ -1,4 +1,4 @@
-from src.string.combination_parentheses import generateParentheses
+from src.string.combination_generate_parentheses import generateParentheses
 
 
 def testGenerateParentheses():

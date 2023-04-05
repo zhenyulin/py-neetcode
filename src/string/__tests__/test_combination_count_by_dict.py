@@ -1,4 +1,4 @@
-from src.string.ways_of_combination_by_dict import waysOfDecoding
+from src.string.combination_count_by_dict import waysOfDecoding
 
 
 def testWaysOfDecoding():

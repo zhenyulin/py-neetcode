@@ -1,4 +1,4 @@
-from src.string.combination_from_dictionary import letterCombinations
+from src.string.combination_generate_from_dictionary import letterCombinations
 
 
 def testLetterCombinations():

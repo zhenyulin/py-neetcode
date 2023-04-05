@@ -1,4 +1,4 @@
-from src.array.fewest_elements_sum import fewestElementsSum
+from src.array.combination_fewest_elements_sum import fewestElementsSum
 
 
 def testFewestElementsSum():
