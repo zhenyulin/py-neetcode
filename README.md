@@ -4,7 +4,7 @@
 
 ### String
 
-`len, count, index, last, match`
+`len, count, index, last, match, longest, shortest` `substring, subsequence`
 
 - **Greedy** - *rolling update with condition* `O(N) time`
 
@@ -20,7 +20,9 @@
     - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
     - [Combination Match by Dict](./src/string/combination_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
 
-- **2D Dynamic Programming** - *multiple relations and multiple strings* `O(N^2) time O(N^2) space`
+- **2D Dynamic Programming** - *multiple relations and multiple strings* `O(M*N) time, O(1) space`
+
+    - [Two Strings Subsequence Longest Common](./src/string/two_strings_subsequence_longest_common.py)
 
 - **Backtracking or DFS** - *conditional combinations or search* `O(N*O^L) time`
 
@@ -28,7 +30,7 @@
 
 ### 1D Array
 
-`min, max, vals, match, count, length, area, sum, product, consecutive, increasing`
+`min, max, vals, match, count, length, area, sum, product, consecutive, increasing` `subarray, subsequence`
 
 - **Math Calculation** - `O(1) time`
 
