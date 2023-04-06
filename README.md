@@ -85,6 +85,8 @@
 
 - **BFS**
 
+    - [Search Rightest Nodes](./src/tree/search_rightest_nodes.py)
+
 - **DFS**
 
 - **Recursive**
