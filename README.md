@@ -6,13 +6,13 @@
 
 - **Greedy** - *rolling update with condition*
 
-    * [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) *'palindromic'*
+    * [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
 
-    - **Hashmap** - *index related condition*
+    - **Hashmap** - *index/count related condition*
     - **Sliding Window** - *substring with condition*
 
-        * [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) *{char: index (last seen)}*
-        * [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) *{char: count}*
+        * [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: index (last seen)}`
+        * [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
 
 - **Backtracking or DFS** - *conditional combinations or search*
 
@@ -20,30 +20,34 @@
 
 - **Dynamic Programming** - *multiple relations to between n-x and n*
 
-    - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) *if match: += dp[n-1] or dp[n-2]*
-    - [Combination Match by Dict](./src/string/combination_match_by_dict.py.) *dp[i] if any(dp[n-len(w)] and s[i-len(w):i] == w)*
+    - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
+    - [Combination Match by Dict](./src/string/combination_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
 
 ### 1D Array
 
 - **Greedy** - *rolling update on condition*
 
-    - [Subarray Max Product](./src/array/subarray_max_product.py) *rolling vals, min, max*
-    - [Subarray Min Size Sum](./src/array/subarray_min_size_sum.py) *rolling res, sliding window*
-    * [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) *consecutive, set*
+    - [Subarray Max Product](./src/array/subarray_max_product.py) `rolling vals, min, max`
+    - [Subarray Min Size Sum](./src/array/subarray_min_size_sum.py) `rolling res, sliding window`
+    * [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
 
 - **Two Way Iteration** - *forward and backward*
 
-    - [Except Self Product](./src/array/except_self_product.py) *decouple prefix/suffix product*
-    - **Greedy**
-        - [Window with Max Area](./src/array/window_max_area.py) *shrinking width with max min*
+    - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
+    - **Greedy** - *rolling update with condition*
+        - [Window with Max Area](./src/array/window_max_area.py) `shrinking width updating min height`
 
-- **Hashmap** - *index related condition*
+- **Hashmap** - *index/count related condition*
 
-    * [Elements Indexes Sum](./src/array/elements_index_sum.py) *{match: index}*
+    * [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
+
+    - **Prefix/Suffix Array** - `sum[i:j] = sum[:j] - sum[:i]`
+
+        * [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}`
 
 - **Binary Search** - *search in sorted sequence with target condition*
     
-    * [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) *target is converged boundary*
+    * [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
     * [Rotated Sorted Array Search](./src/array/rotated_sorted_array_search.py)
 
 - **Backtracking, Recursion, DFS** - conditional combinations
@@ -52,10 +56,8 @@
 
 - **Dynamic Programming** - *multiple relations to between n-x and n*
 
-    - [Combination Fewest Elements Sum](./src/array/combination_fewest_elements_sum.py) *dp[a] = min(dp[a], 1 + dp[a - c])*
-    - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) *dp[j] = max(dp[i]+1 if nums[i] < nums[j])*
-
-- **Prefix/Suffix Array** - *sum of subarray*
+    - [Combination Fewest Elements Sum](./src/array/combination_fewest_elements_sum.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
+    - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
 
 - **Heap or Stack**
 
