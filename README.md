@@ -6,6 +6,13 @@
 
 `len, count, index, last, match, longest, shortest` `substring, subsequence`
 
+
+> substring(longest, min, max) -> greedy, sliding window
+(index, count, last) -> Hashmap
+subsequence, combination(count, match, min, max) -> dynamic programming
+combination(generate) -> backtracking
+two subsequences -> 2d dynamic programming
+
 - **Greedy** - *rolling update with condition* `O(N) time`
 
     - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
@@ -15,22 +22,29 @@
         * [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: index (last seen)}`
         * [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
 
-- **1D Dynamic Programming** - *multiple relations to between n-x and n* `O(N) time, O(N) space`
+- **1D Dynamic Programming** - *multiple relations to between n-x and n, combination count* `O(N) time, O(N) space`
 
     - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
-    - [Combination Match by Dict](./src/string/combination_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
+    - [Combination Count Match by Dict](./src/string/combination_count_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
+
+- **Backtracking or DFS** - *conditional generation or search* `O(N*O^L) time`
+
+    - [Combination Generate Parentheses](./src/string/combination_generate_parentheses.py)
 
 - **2D Dynamic Programming** - *multiple relations and multiple strings* `O(M*N) time, O(1) space`
 
     - [Two Strings Subsequence Longest Common](./src/string/two_strings_subsequence_longest_common.py)
 
-- **Backtracking or DFS** - *conditional combinations or search* `O(N*O^L) time`
-
-    - [Combination Generate Parentheses](./src/string/combination_generate_parentheses.py)
-
 ### 1D Array
 
 `min, max, vals, match, count, length, area, sum, product, consecutive, increasing` `subarray, subsequence`
+
+> sorted search -> binary search
+k, kth -> heap
+subarray(longest, min, max, area, sum) -> greedy, sliding window
+(index, count, last) -> Hashmap
+subsequence or combination(fewest, sum to, longest) -> dynamic programming
+combination(generate) -> backtracking
 
 - **Math Calculation** - `O(1) time`
 
@@ -43,6 +57,14 @@
 
     - [Find K Elements Closest to Origin](./src/array/find_k_elements_closest_to_origin.py)
     - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
+
+- **Hashmap** - *index/count related condition* `O(N) space`
+
+    - [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
+
+- **Two Way Iteration** - *forward and backward*
+
+    - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
 
 - **Greedy** - *rolling update on condition* `O(N) time`
 
@@ -57,27 +79,25 @@
 
         - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}`
 
-- **Hashmap** - *index/count related condition* `O(N) space`
-
-    - [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
-
-- **Two Way Iteration** - *forward and backward*
-
-    - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
-
 - **1D Dynamic Programming** - *multiple relations to between n-x and n* `O(N) time, O(N) space`
 
-    - [Combination Fewest Elements Sum](./src/array/combination_fewest_elements_sum.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
+    - [Combination Fewest Elements Sum to](./src/array/combination_fewest_elements_sum_to.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
     - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
 
 - **Backtracking, Recursion, DFS** - conditional combinations `O(N*O^L) time`
 
-    - [Combination Generate to Sum](./src/array/combination_generate_to_sum.py)
+    - [Combination Generate Sum to](./src/array/combination_generate_sum_to.py)
+
+- **2D Dynamic Programming** - **
 
 
 ### 2D Array
 
 `path, length, target`
+
+> shortest length -> BFS
+longest length, target -> DFS
+sorted search -> binary search
 
 - **BFS** - *shortest path* `O(M*N) time, O(M*N) space`
 

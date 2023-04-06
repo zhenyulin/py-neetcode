@@ -1,4 +1,4 @@
-from src.array.combination_generate_to_sum import combinationSum
+from src.array.combination_generate_sum_to import combinationSum
 
 
 def testCombinationSum():
