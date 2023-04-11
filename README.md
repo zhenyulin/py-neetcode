@@ -108,13 +108,14 @@
 
 - **BFS** - *shortest path* `O(M*N) time, O(M*N) space`
 
-    > shortest length -> BFS
+    > shortest path -> BFS
 
     - [Search Length Shortest Path](./src/array_2d/search_length_shortest_path.py)
+    - [Search Update Shortest Distance](./src/array_2d/search_update_shortest_distance.py.py)
 
 - **DFS** - *known target* `O(M*N*O^L) time, O(O^L) space`
 
-    > longest length, target -> DFS
+    > longest path, target -> DFS
 
     - [Search Word](./src/array_2d/search_word.py)
 
