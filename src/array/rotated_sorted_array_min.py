@@ -16,15 +16,15 @@ def findMin(nums: list[int]) -> int:
     time complexity: O(LogN), space complexity: O(1)
     """
 
-    l, r = 0, len(nums) - 1
+    left, right = 0, len(nums) - 1
 
-    while l < r:
-        m = (l + r) // 2
+    while left < right:
+        m = (left + right) // 2
 
         # target condition is middle point being smaller than the right
-        if nums[m] < nums[r]:
-            r = m
+        if nums[m] < nums[right]:
+            right = m
         else:
-            l = m + 1
+            left = m + 1
 
-    return nums[l]
+    return nums[left]

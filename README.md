@@ -43,12 +43,13 @@
 
 - **Math Calculation** - `O(1) time`
 
-- **Binary Search** - *search in sorted sequence with target condition* `O(LogN) time`
+- **Binary Search** - *search until match or left-right condition* `O(LogN) time`
 
-    > sorted search -> binary search
+    > sorted search, search peak -> binary search
     
-    - [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
     - [Rotated Sorted Array Search](./src/array/rotated_sorted_array_search.py)
+    - [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
+    - [Search Element Peak](./src/array/search_element_peak.py) `left on uphill, right on downhill`
 
 - **Greedy** - *rolling update on condition* `O(N) time`
 
@@ -96,15 +97,15 @@
 
 ### 2D Array
 
-- **Search with Memory**
-
-    - [Validate Soduku](./src/array_2d/validate_soduku.py)
-
 - **Binary Search** `O(LogM*LogN) time`
 
     > sorted search -> binary search
 
     - [Sorted Matrix Search](./src/array_2d/sorted_matrix_search.py)
+
+- **Search with Memory** `O(M*N) time, O(1) space`
+
+    - [Validate Soduku](./src/array_2d/validate_soduku.py)
 
 - **BFS** - *shortest path* `O(M*N) time, O(M*N) space`
 
@@ -124,6 +125,9 @@
     > target, longest path -> DFS
 
     - [Search Word](./src/array_2d/search_word.py)
+
+
+### Bit Manipulation
 
 
 ### Tree
@@ -147,5 +151,3 @@
 ### Graph
 
 - **Topological Sort**
-
-### Bit Manipulation
