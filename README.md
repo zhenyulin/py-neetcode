@@ -113,13 +113,17 @@
     - [Search Length Shortest Path](./src/array_2d/search_length_shortest_path.py)
     - [Search Update Shortest Distance](./src/array_2d/search_update_shortest_distance.py.py)
 
+- **2D Dynamic Programming or cached DFS** `O(M*N) time, O(M*N) space`
+
+    > count longest path
+
+    - [Search Longest Path Increasing](./src/array_2d/search_longest_path_increasing.py)
+
 - **DFS** - *known target* `O(M*N*O^L) time, O(O^L) space`
 
-    > longest path, target -> DFS
+    > target, longest path -> DFS
 
     - [Search Word](./src/array_2d/search_word.py)
-
-- **2D Dynamic Programming**
 
 
 ### Tree
