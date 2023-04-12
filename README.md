@@ -139,7 +139,8 @@
 
 - **Bit Base Calculation**
 
-    - [Add Negative Binary](./src/add_nega_binary.py)
+    - [Add Negative Binary](./src/bit/add_nega_binary.py)
+    - [Convert to Negative Base](./src/bit/convert_to_neg_base.py)
 
 
 ### Tree
