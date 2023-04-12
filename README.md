@@ -130,7 +130,7 @@
 
 ### Bit Manipulation
 
-`n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n ^ 1 ~ n % 2`
+`n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n & 1 ~ n % 2`
 
 - **Bit Iteration** `O(1) time O(1) space`
 
@@ -142,6 +142,9 @@
     - [Add Negative Binary](./src/bit/add_nega_binary.py)
     - [Convert to Negative Base](./src/bit/convert_to_neg_base.py)
 
+- **Bit Flip**
+
+    - [Min Operation to Zero](./src/bit/min_operation_to_zero.py)
 
 ### Tree
 
