@@ -130,9 +130,12 @@
 
 ### Bit Manipulation
 
-- **Basic Manipulation** `n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n ^ 1 ~ n % 2`
+`n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n ^ 1 ~ n % 2`
+
+- **Basic Iteration** `O(1) time O(1) space`
 
     - [Reverse Bits](./src/bit/reverse_bits.py)
+    - [Bitwise AND non zero](./src/bit/bitwise_and_non_zero.py)
 
 
 ### Tree
