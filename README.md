@@ -4,34 +4,34 @@
 
 ### String
 
-- **Greedy** - *rolling update with condition* `O(N) time`
-
+- **Greedy** `O(N) time` - *rolling update with condition*
+    
     > substring(shortest, longest, len, min, max) -> greedy, sliding window
 
     - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
 
-    - **Hashmap** - *index/count related condition* `O(N) space`, **Sliding Window** - *substring with condition*
+    - **Hashmap** `O(N) space` - *index/count related condition*
     
         > string(index, count, last, match) -> Hashmap
 
         - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: index (last seen)}`
         - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
 
-- **1D Dynamic Programming** - *multiple relations to between n-x and n, combination count* `O(N) time, O(1 or N) space`
+- **1D Dynamic Programming** `O(N) time, O(1 or N) space` - *multiple relations to between n-x and n*
 
     > subsequence, combination(count, match, min, max) -> dynamic programming
 
     - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
     - [Combination Count Match by Dict](./src/string/combination_count_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
     
-- **2D Dynamic Programming** - *multiple relations and multiple strings* `O(M*N) time, O(M or N or M*N) space`
+- **2D Dynamic Programming** `O(M*N) time, O(M or N or M*N) space` - *multiple relations and multiple strings* 
 
     > two subsequences, subsequence match -> 2d dynamic programming
 
     - [Two Strings Subsequence Longest Common](./src/string/two_strings_subsequence_longest_common.py)
     - [Subsequence Count Match Another String](./src/string/subsequence_count_match_target.py)
 
-- **Backtracking or DFS** - *conditional generation or search* `O(N*O^L) time`
+- **Backtracking or DFS** `O(N*O^L) time` - *conditional generation or search* 
 
     > combination(generate) -> backtracking
 
@@ -42,9 +42,9 @@
 ### 1D Array
 
 
-- **Math Calculation** - `O(1) time`
+- **Math Calculation** `O(1) time`
 
-- **Binary Search** - *search until match or left-right condition* `O(LogN) time`
+- **Binary Search** `O(LogN) time` - *search until match or left-right condition* 
 
     > sorted search, search peak -> binary search
     
@@ -52,7 +52,7 @@
     - [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
     - [Search Element Peak](./src/array/search_element_peak.py) `left on uphill, right on downhill`
 
-- **Greedy** - *rolling update on condition* `O(N) time`
+- **Greedy** `O(N) time` - *rolling update on condition* 
 
     > subarray(longest, min, max, area, sum) -> greedy, sliding window
 
@@ -60,19 +60,19 @@
     - [Subarray Min Size Sum](./src/array/subarray_min_size_sum.py) `rolling res, sliding window`
     - [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
     
-    - **Sliding Window** - *forward and backward* `O(1) space`
+    - **Sliding Window** `O(1) space` - *forward and backward* 
 
         - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
         - [Window with Max Area](./src/array/window_max_area.py) `shrinking width updating min height`
     
-    - **Hashmap** - *index/count related condition* `O(N) space`
+    - **Hashmap** `O(N) space` - *index/count related condition* 
     
         > array(index, count, last) -> Hashmap
 
         - [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
         - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}``sum[i:j] = sum[:j] - sum[:i]`
 
-    - **Heap or Stack** - *rank, sort* `O(N) time, O(N) space`
+    - **Heap or Stack** `O(N) time, O(N) space` - *rank, sort* 
     
         > k, kth -> heap
 
@@ -80,7 +80,7 @@
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
         
 
-- **1D Dynamic Programming** - *multiple relations to between n-x and n* `O(N) time, O(N) space`
+- **1D Dynamic Programming** `O(N) time, O(N) space` - *multiple relations to between n-x and n* 
 
     > subsequence or combination(fewest, sum to, longest) -> dynamic programming
 
@@ -89,7 +89,7 @@
 
 - **2D Dynamic Programming** - **
 
-- **Backtracking, Recursion, DFS** - conditional combinations `O(N*O^L) time`
+- **Backtracking, Recursion, DFS** `O(N*O^L) time` - conditional combinations 
 
     > combination(generate) -> backtracking
 
@@ -108,7 +108,7 @@
 
     - [Validate Soduku](./src/array_2d/validate_soduku.py)
 
-- **BFS** - *shortest path* `O(M*N) time, O(M*N) space`
+- **BFS** `O(M*N) time, O(M*N) space` - *shortest path* 
 
     > shortest path -> BFS
 
@@ -121,7 +121,7 @@
 
     - [Search Longest Path Increasing](./src/array_2d/search_longest_path_increasing.py)
 
-- **DFS** - *known target* `O(M*N*O^L) time, O(O^L) space`
+- **DFS** `O(M*N*O^L) time, O(O^L) space` - *known target* 
 
     > target, longest path -> DFS
 
