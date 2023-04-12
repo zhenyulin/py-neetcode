@@ -24,11 +24,12 @@
     - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
     - [Combination Count Match by Dict](./src/string/combination_count_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
     
-- **2D Dynamic Programming** - *multiple relations and multiple strings* `O(M*N) time, O(1 or M*N) space`
+- **2D Dynamic Programming** - *multiple relations and multiple strings* `O(M*N) time, O(M or N or M*N) space`
 
-    > two subsequences -> 2d dynamic programming
+    > two subsequences, subsequence match -> 2d dynamic programming
 
     - [Two Strings Subsequence Longest Common](./src/string/two_strings_subsequence_longest_common.py)
+    - [Subsequence Count Match Another String](./src/string/subsequence_count_match_target.py)
 
 - **Backtracking or DFS** - *conditional generation or search* `O(N*O^L) time`
 
