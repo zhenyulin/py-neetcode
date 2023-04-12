@@ -129,6 +129,10 @@
 
 ### Bit Manipulation
 
+- **Basic Manipulation** `n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n ^ 1 ~ n % 2`
+
+    - [Reverse Bits](./src/bit/reverse_bits.py)
+
 
 ### Tree
 
