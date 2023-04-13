@@ -10,12 +10,13 @@
 
     - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
 
-    - **Hashmap** `O(N) space` - *index/count related condition*
+    - **Hashmap** `O(C) space` - *index/count related condition*
     
         > string(index, count, last, match) -> Hashmap
 
-        - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: index (last seen)}`
         - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
+        - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: last}, seen[c] >= i`
+        - [Substring Count Equal Unique Chars Split](./src/string/substring_count_equal_unique_chars_split.py) `{char: first}, {char: last}`
 
 - **1D Dynamic Programming** `O(N) time, O(1 or N) space` - *multiple relations to between n-x and n*
 
