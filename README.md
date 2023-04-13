@@ -88,7 +88,11 @@
     - [Combination Fewest Elements Sum to](./src/array/combination_fewest_elements_sum_to.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
     - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
 
-- **2D Dynamic Programming** - **
+- **2D Dynamic Programming**
+
+    > subsequence(average)
+
+    - [Subsequence Search Equal Average](./src/array/subsequence_search_equal_average.py) `dp[i] |= {s+a for s in dp[i+1] if s+a <= HALF}`
 
 - **Backtracking, Recursion, DFS** `O(N*O^L) time` - conditional combinations 
 
