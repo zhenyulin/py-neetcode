@@ -28,7 +28,7 @@
 
     > two subsequences, subsequence match -> 2d dynamic programming
 
-    - [Two Strings Subsequence Longest Common](./src/string/two_strings_subsequence_longest_common.py)
+    - [Subsequence Count Longest Common of Two Strings](./src/string/subsequence_count_longest_common_two_strings.py.py)
     - [Subsequence Count Match Another String](./src/string/subsequence_count_match_target.py)
 
 - **Backtracking or DFS** `O(N*O^L) time` - *conditional generation or search* 

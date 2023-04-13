@@ -1,4 +1,6 @@
-from src.string.two_strings_subsequence_longest_common import longestCommonSubsequence
+from src.string.subsequence_count_longest_common_two_strings.py import (
+    longestCommonSubsequence,
+)
 
 
 def testLongestCommonSubsequence():
