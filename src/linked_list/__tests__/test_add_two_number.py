@@ -1,5 +1,6 @@
-from src.linked_list.add_two_number import addTwoNumber
 from src.linked_list.list_node import to_linked_list, to_list
+
+from src.linked_list.add_two_number import addTwoNumber
 
 
 def testAddTwoNumber():

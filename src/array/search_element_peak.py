@@ -25,9 +25,10 @@ def findPeakElement(nums: list[int]) -> int:
     while left < right:
         m = (left + right) // 2
 
-        # { target conditoin } - mid element larger than next
+        # { right conditoin } - mid element larger than next
         if nums[m] > nums[m + 1]:
             right = m  # m could be peak point already
+        # { left condition }
         else:
             left = m + 1
 
