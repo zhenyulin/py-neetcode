@@ -4,6 +4,12 @@
 
 ### String
 
+- **Math Calculation** `O(1) time`
+    
+    > count combination
+
+    - [Substring Count Equal One Split](./src/string/substring_count_equal_one_split.py)
+
 - **Greedy** `O(N) time` - *rolling update with condition*
     
     > substring(shortest, longest, len, min, max) -> greedy, sliding window
