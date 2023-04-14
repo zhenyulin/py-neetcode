@@ -71,6 +71,7 @@
 
         - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
         - [Window with Max Area](./src/array/window_max_area.py) `shrinking width updating min height`
+        - [Subarray Remove Shortest to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
     
     - **Hashmap** `O(N) space` - *index/count related condition* 
     
