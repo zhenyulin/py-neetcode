@@ -112,9 +112,10 @@
 
 - **Binary Search** `O(LogM*LogN) time`
 
-    > sorted search -> binary search
+    > sorted search, search peak -> binary search
 
     - [Sorted Matrix Search](./src/array_2d/sorted_matrix_search.py)
+    - [Search Element Peak](./src/array_2d/search_element_peak.py)
 
 - **Search with Memory** `O(M*N) time, O(1) space`
 
