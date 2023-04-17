@@ -61,7 +61,7 @@
 
 - **Greedy** `O(N) time` - *rolling update on condition* 
 
-    > subarray(longest, min, max, area, sum) -> greedy, sliding window
+    > subarray(max, min, longest, except self) -> greedy
 
     - [Subarray Max Product](./src/array/subarray_max_product.py) `rolling vals, min, max`
     - [Subarray Min Size Sum](./src/array/subarray_min_size_sum.py) `rolling res, sliding window`
@@ -69,6 +69,8 @@
     - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     
     - **Sliding Window** `O(1) space` - *forward and backward* 
+
+        > subarray(area, remove) -> sliding window
 
         - [Subarray Max Area](./src/array/subarray_max_area.py) `shrinking width updating min height`
         - [Subarray Remove Shortest to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
@@ -82,13 +84,13 @@
 
     - **Stack** `O(N) time, O(K) space`
 
-        > sliding window max -> stack
+        > stream sliding window max -> stack
 
     - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
 
     - **Heap** `O(N) time, O(N) space` - *rank, sort* 
     
-        > k, kth -> heap, window max -> stack
+        > stream k, kth -> heap, window max -> stack
 
         - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
@@ -98,8 +100,12 @@
 
     > subsequence or combination(fewest, sum to, longest) -> dynamic programming
 
-    - [Combination Fewest Elements Sum to](./src/array/combination_fewest_elements_sum_to.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
+    - [Combination Count Sum To K](./src/array/combination_count_sum_to_k.py) `dp[i] += dp[i-coin]`
     - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
+
+    - **Cached DFS**
+
+        - [Combination Fewest Elements Sum to K](./src/array/combination_generate_sum_to_k.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
 
 - **2D Dynamic Programming**
 
@@ -107,7 +113,7 @@
 
     - [Subsequence Search Equal Average](./src/array/subsequence_search_equal_average.py) `dp[i] |= {s+a for s in dp[i+1] if s+a <= HALF}`
 
-- **Backtracking, Recursion, DFS** `O(N*O^L) time` - conditional combinations 
+- **Backtracking, DFS** `O(N*O^L) time` - conditional combinations 
 
     > combination(generate) -> backtracking
 
