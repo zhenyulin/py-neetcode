@@ -1,4 +1,4 @@
-from src.array.except_self_product import productExceptSelf
+from src.array.subarray_product_except_self import productExceptSelf
 
 
 def testProductExceptSelf():

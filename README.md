@@ -66,11 +66,11 @@
     - [Subarray Max Product](./src/array/subarray_max_product.py) `rolling vals, min, max`
     - [Subarray Min Size Sum](./src/array/subarray_min_size_sum.py) `rolling res, sliding window`
     - [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
+    - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     
     - **Sliding Window** `O(1) space` - *forward and backward* 
 
-        - [Except Self Product](./src/array/except_self_product.py) `async except-self product`
-        - [Window with Max Area](./src/array/window_max_area.py) `shrinking width updating min height`
+        - [Subarray Max Area](./src/array/subarray_max_area.py) `shrinking width updating min height`
         - [Subarray Remove Shortest to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
     
     - **Hashmap** `O(N) space` - *index/count related condition* 
@@ -80,9 +80,15 @@
         - [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
         - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}``sum[i:j] = sum[:j] - sum[:i]`
 
-    - **Heap or Stack** `O(N) time, O(N) space` - *rank, sort* 
+    - **Stack** `O(N) time, O(K) space`
+
+    > sliding window max -> stack
+
+    - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
+
+    - **Heap** `O(N) time, O(N) space` - *rank, sort* 
     
-        > k, kth -> heap
+        > k, kth -> heap, window max -> stack
 
         - [Find K Elements Closest to Origin](./src/array/find_k_elements_closest_to_origin.py)
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
