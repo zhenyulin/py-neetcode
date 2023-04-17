@@ -145,19 +145,22 @@
 
 `n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n & 1 ~ n % 2`
 
-- **Bit Iteration** `O(1) time O(1) space`
+- **Bit Manipulation**
+
+    > bit iteration, operation, calculation
 
     - [Reverse Bits](./src/bit/reverse_bits.py)
     - [Bitwise AND non zero](./src/bit/bitwise_and_non_zero.py)
+    - [Min Operation to Zero](./src/bit/min_operation_to_zero.py)
+    - [Divide by Deduction](./src/bit/divide_by_deduction.py)
 
-- **Bit Base Calculation**
+- **As an Array**
+
+    > bit base(conversion, calculation)
 
     - [Add Negative Binary](./src/bit/add_nega_binary.py)
     - [Convert to Negative Base](./src/bit/convert_to_neg_base.py)
 
-- **Bit Flip**
-
-    - [Min Operation to Zero](./src/bit/min_operation_to_zero.py)
 
 ### Tree
 
