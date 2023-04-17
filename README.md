@@ -145,14 +145,14 @@
 
 `n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n & 1 ~ n % 2`
 
-- **Bit Manipulation**
+- **Bit Iteration, Shift** `O(1) time`
 
-    > bit iteration, operation, calculation
+    > range(32) or range(31, -1, -1)
 
     - [Reverse Bits](./src/bit/reverse_bits.py)
     - [Bitwise AND non zero](./src/bit/bitwise_and_non_zero.py)
-    - [Min Operation to Zero](./src/bit/min_operation_to_zero.py)
     - [Divide by Deduction](./src/bit/divide_by_deduction.py)
+    - [Min Operation to Zero](./src/bit/min_operation_to_zero.py)
 
 - **As an Array**
 

@@ -8,31 +8,22 @@ def divide(dividend: int, divisor: int) -> int:
     """
     we can use deduction for division without multiplication, division and mod
 
-    1) Bit Shift, Greedy
+    1) Bit Shift
 
     to speed up the process, we can amplify the divisor by bit shift (<< 1 ~ * 2)
+    and since the dividend is capped within a byte, we can try from 31 shifts to 0
 
-    time complexity: O(LogN), space complexity: O(1)
-
-    * N = dividend // divisor
+    time complexity: O(1), space complexity: O(1)
     """
 
-    a, b = abs(dividend), abs(divisor)
+    a, b, res, CAP = abs(dividend), abs(divisor), 0, 2**31
 
-    res = 0
+    for power in range(31, -1, -1):
+        if (b << power) <= a:
+            res += 1 << power
+            a -= b << power
 
-    while a >= b:
-
-        _b, k = b, 1
-
-        while a >= _b:
-
-            a -= _b
-            res += k
-
-            _b, k = _b << 1, k << 1
-
-    if (dividend > 0) ^ (divisor > 0):
+    if (dividend > 0) != (divisor > 0):
         res *= -1
 
-    return min(max(-(2**31), res), 2**31 - 1)
+    return min(max(-CAP, res), CAP - 1)

@@ -8,6 +8,26 @@ def minOperation(n: int) -> int:
     """
     to flip the bits to turn the number to zero
 
+    TLDR: the operation is recursive, reversable passing through unique states
+    turning any 1001010 sequence into 0, we can start from the lowest bit
+    at each leading 1 of length k, we need 2**k-1 operations to turn 10.. -> 00..
+    turning a higher bit leading 1 will pass the state of lower bit leading 1
+    so we can deduct the operations needed to reverse 00.. -> 10..
+    """
+
+    res, full = 0, 2
+
+    while n != 0:
+        if n & 1:
+            res = full - 1 - res
+        n = n >> 1
+        full = full << 1
+
+    return res
+
+    """
+    detailed explanation
+
     Interpretation of Rules:
 
     - recursive:
@@ -68,13 +88,3 @@ def minOperation(n: int) -> int:
     which is 100.. <-> 000.. (2**i - 1) saving the operations 100{000..} <-> 100{binary} (f(binary))
     = (2**i - 1) - f(last_binary)
     """
-
-    res, full = 0, 2
-
-    while n != 0:
-        if n & 1:
-            res = full - 1 - res
-        n //= 2
-        full *= 2
-
-    return res

@@ -1,4 +1,4 @@
-from src.array_2d.search_update_shortest_distance.py import updateEmptyRooms
+from src.array_2d.search_update_shortest_distance import updateEmptyRooms
 
 
 def testUpdateEmptyRooms():

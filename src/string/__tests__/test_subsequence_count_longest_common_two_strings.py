@@ -1,4 +1,4 @@
-from src.string.subsequence_count_longest_common_two_strings.py import (
+from src.string.subsequence_count_longest_common_two_strings import (
     longestCommonSubsequence,
 )
 
