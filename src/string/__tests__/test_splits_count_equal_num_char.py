@@ -1,4 +1,4 @@
-from src.string.substring_count_equal_one_split import numWays
+from src.string.splits_count_equal_num_char import numWays
 
 
 def testNumWays():

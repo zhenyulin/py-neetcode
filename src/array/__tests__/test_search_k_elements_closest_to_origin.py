@@ -1,4 +1,4 @@
-from src.array.find_k_elements_closest_to_origin import kClosest
+from src.array.search_k_elements_closest_to_origin import kClosest
 
 
 def testKClosest():

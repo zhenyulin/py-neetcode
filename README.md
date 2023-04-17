@@ -8,7 +8,7 @@
     
     > count combination
 
-    - [Substring Count Equal One Split](./src/string/substring_count_equal_one_split.py)
+    - [Splits Count Equal Num Char](./src/string/splits_count_equal_num_char.py)
 
 - **Greedy** `O(N) time` - *rolling update with condition*
     
@@ -22,14 +22,14 @@
 
         - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
         - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: last}, seen[c] >= i`
-        - [Substring Count Equal Unique Chars Split](./src/string/substring_count_equal_unique_chars_split.py) `{char: first}, {char: last}`
+        - [Splits Count Equal Unique Chars](./src/string/splits_count_equal_unique_chars.py) `{char: first}, {char: last}`
 
 - **1D Dynamic Programming** `O(N) time, O(1 or N) space` - *multiple relations to between n-x and n*
 
     > subsequence, combination(count, match, min, max) -> dynamic programming
 
-    - [Combination Count by Dict](./src/string/combination_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
-    - [Combination Count Match by Dict](./src/string/combination_count_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
+    - [Splits Count by Dict](./src/string/splits_count_by_dict.py.) `if match_condition: dp[n] += dp[n-1] or dp[n-2]`
+    - [Splits Count Match by Dict](./src/string/splits_count_match_by_dict.py.) `dp[i] = True if any(dp[n-len(w)] and s[i-len(w):i] == w)`
     
 - **2D Dynamic Programming** `O(M*N) time, O(M or N or M*N) space` - *multiple relations and multiple strings* 
 
@@ -77,12 +77,12 @@
     
         > array(index, count, last) -> Hashmap
 
-        - [Elements Indexes Sum](./src/array/elements_index_sum.py) `{match_condition: index}`
+        - [Search Indexes Sum to K](./src/array/search_indexes_sum_to_k.py) `{match_condition: index}`
         - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}``sum[i:j] = sum[:j] - sum[:i]`
 
     - **Stack** `O(N) time, O(K) space`
 
-    > sliding window max -> stack
+        > sliding window max -> stack
 
     - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
 
@@ -90,7 +90,7 @@
     
         > k, kth -> heap, window max -> stack
 
-        - [Find K Elements Closest to Origin](./src/array/find_k_elements_closest_to_origin.py)
+        - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
         
 

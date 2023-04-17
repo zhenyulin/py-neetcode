@@ -1,4 +1,4 @@
-from src.string.combination_count_match_by_dict import wordBreak
+from src.string.splits_count_match_by_dict import wordBreak
 
 
 def testWordBreak():

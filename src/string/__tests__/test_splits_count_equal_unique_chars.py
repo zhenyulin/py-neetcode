@@ -1,4 +1,4 @@
-from src.string.substring_count_equal_unique_chars_split import numSplit
+from src.string.splits_count_equal_unique_chars import numSplit
 
 
 def testNumSplit():
