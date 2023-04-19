@@ -40,9 +40,10 @@
 
 - **Backtracking or DFS** `O(N*O^L) time` - *conditional generation or search* 
 
-    > combination(generate) -> backtracking
+    > combination(generate) -> backtracking, combination(dictionary) -> DFS
 
     - [Combination Generate Parentheses](./src/string/combination_generate_parentheses.py)
+    - [Combination Dictionary Search Match Sum](./src/string/combination_dictionary_search_match_sum.py)
 
 
 
@@ -117,7 +118,7 @@
 
     > combination(generate) -> backtracking
 
-    - [Combination Generate Sum to](./src/array/combination_generate_sum_to.py)
+    - [Combination Generate Sum to K](./src/array/combination_generate_sum_to_k.py)
 
 
 ### 2D Array
@@ -155,7 +156,11 @@
 
 ### Bit Manipulation
 
-`n << 1 ~ n * 2` `n >> 1 ~ n // 2` `n & 1 ~ n % 2`
+```python
+n << 1 # n * 2 
+n >> 1 # n // 2 
+n & 1 # n % 2
+```
 
 - **Bit Iteration, Shift** `O(1) time`
 
