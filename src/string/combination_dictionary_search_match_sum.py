@@ -21,11 +21,12 @@ def isSolvable(words: list[str], result: str) -> bool:
 
     # to assign values to 'result' chars lazily, 'result' is appended to 'words'
     # so carry value would be deducted instead of added at the last index
-    words.append(result)
+    _words = [*words, result]
     digits, values = [False] * 10, {}
 
     # to assign value to individual char lazily, we will do DFS word by word from lower digit
-    def dfs(w, i, val):
+    # since we need conditional resursion, we will search (w, i) together so that DFS returns bool
+    def dfs(w: int, i: int, val: int) -> bool:
         """search possible value map at 'i' digit at word 'w' with 'val' value"""
 
         # { target condition }
@@ -34,20 +35,20 @@ def isSolvable(words: list[str], result: str) -> bool:
             return val == 0
 
         # finished all words, search next digit
-        if w == len(words):
+        if w == len(_words):
             carry, current = divmod(val, 10)
             return current == 0 and dfs(0, i + 1, carry)
 
         # skip if the current word isn't long enough
-        if i >= len(words[w]):
+        if i >= len(_words[w]):
             return dfs(w + 1, i, val)
 
-        c = words[w][~i]
+        c = _words[w][~i]
         if c not in values:
             # assign the next valid value continue search
             for n, used in enumerate(digits):
-                # no leading zero - not (i == len(words[w]) - 1 and i != 0 and digit == 0)
-                if not used and (n or i == 0 or i < len(words[w]) - 1):
+                # no leading zero - not (i == len(_words[w]) - 1 and i != 0 and digit == 0)
+                if not used and (n or i == 0 or i < len(_words[w]) - 1):
                     values[c], digits[n] = n, True
                     if dfs(w, i, val):
                         return True
@@ -57,11 +58,11 @@ def isSolvable(words: list[str], result: str) -> bool:
         else:
             # in case of leading 0
             # assign 0 to non-leading char can create leading 0 elsewhere
-            if i and i == len(words[w]) - 1 and values[c] == 0:
+            if i and i == len(_words[w]) - 1 and values[c] == 0:
                 return False
             # if the current word is result, deduct the digit
             return dfs(
-                w + 1, i, val + (values[c] if w < len(words) - 1 else -values[c])
+                w + 1, i, val + (values[c] if w < len(_words) - 1 else -values[c])
             )
 
     return dfs(0, 0, 0) is True
