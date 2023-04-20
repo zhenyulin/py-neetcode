@@ -17,24 +17,26 @@ def combinationSum(candidates: list[int], target: int) -> list[list[int]]:
     would generate unique combos only
 
     time complexity: O(N^x), space complexity: O(1)
+
+    * x is the average number of elements in the combination
     """
     # optional, sort the candidates can speed up the process
 
-    res = []
+    res, combo = [], []
 
-    def dfs(total, combo, i):
+    def dfs(total, i):
         # { the target condition}
         if total == target:
             # remember to create a copy as list is only a pointer
-            res.append(combo.copy())
+            res.append([*combo])
 
         # { the search condition}
         if i < len(candidates) and total < target:
             combo.append(candidates[i])
-            dfs(total + candidates[i], combo, i)
+            dfs(total + candidates[i], i)  # try from i again
             combo.pop()
-            dfs(total, combo, i + 1)
+            dfs(total, i + 1)  # search the next i
 
-    dfs(0, [], 0)
+    dfs(0, 0)
 
     return res
