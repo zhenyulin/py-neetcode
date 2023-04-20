@@ -1,4 +1,4 @@
-from src.array.search_min_diff_after_operations import smallestRange
+from src.array.search_min_max_diff_with_operation import smallestRange
 
 
 def testSmallestRange():
