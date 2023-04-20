@@ -25,6 +25,7 @@ def subarraySum(nums: list[int], k: int) -> int:
     for n in [0] + nums:
 
         current += n
+        # current - target == k
         res += counter.get(current - k, 0)
         counter[current] += 1
 
