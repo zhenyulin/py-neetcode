@@ -1,4 +1,4 @@
-from src.array.search_indexes_sum_to_k import twoSum
+from src.array.search_two_indexes_sum_to_k import twoSum
 
 
 def test_two_sum():
