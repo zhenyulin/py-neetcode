@@ -15,6 +15,7 @@
     > substring(shortest, longest, len, min, max) -> greedy, sliding window
 
     - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
+    - [Search Min Max Diff After Operation](./src/array/search_min_max_diff_with_operation.py) `all possible cases, sort pair iterate`
 
     - **Hashmap** `O(C) space` - *index/count related condition*
     
