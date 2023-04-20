@@ -1,4 +1,4 @@
-from src.array.subarray_remove_shortest_to_sort import findShortestSubarrayToRemove
+from src.array.subarray_shortest_remove_to_sort import findShortestSubarrayToRemove
 
 
 def testFindShortestSubarrayToRemove():

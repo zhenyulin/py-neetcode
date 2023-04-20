@@ -73,10 +73,11 @@
     
     - **Sliding Window** `O(1) space` - *forward and backward* 
 
-        > subarray(area, remove) -> sliding window
+        > subarray(area, remove, longest, shortest) -> sliding window
 
         - [Subarray Max Area](./src/array/subarray_max_area.py) `shrinking width updating min height`
-        - [Subarray Remove Shortest to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
+        - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
+        - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
     
     - **Hashmap** `O(N) space` - *index/count related condition* 
     
