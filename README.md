@@ -71,6 +71,7 @@
     - [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
     - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
+    - [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
     
     - **Sliding Window** `O(1) space` - *forward and backward* 
 
