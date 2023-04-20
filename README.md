@@ -16,6 +16,7 @@
 
     - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
     - [Search Min Max Diff After Operation](./src/array/search_min_max_diff_with_operation.py) `all possible cases, sort pair iterate`
+    - [Subarray Addition Multiple](./src/array/subarray_addition_multiple.py) `lazy rolling addition`
 
     - **Hashmap** `O(C) space` - *index/count related condition*
     
