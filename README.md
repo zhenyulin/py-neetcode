@@ -2,6 +2,13 @@
 
 > neat Python3 algorithms explained and summarised for selected problems extending [neetcode](https://neetcode.io/practice)
 
+### Int
+
+- **Greedy**
+
+    - [Get Prime Factors](./src/int/get_prime_factors.py)
+
+
 ### String
 
 - **Math Calculation** `O(1) time`
@@ -71,7 +78,6 @@
     - [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
     - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
-    - [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
     
     - **Sliding Window** `O(1) space` - *forward and backward* 
 
@@ -102,6 +108,10 @@
 
         - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
+
+    - **Combinations** `O(N^2) time`
+
+        - [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
         
 
 - **1D Dynamic Programming** `O(N) time, O(N) space` - *multiple relations to between n-x and n* 
