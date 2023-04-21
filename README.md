@@ -69,6 +69,10 @@
     - [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
     - [Search Element Peak](./src/array/search_element_peak.py) `left on uphill, right on downhill`
 
+    - **Greedy**
+
+        - [Subsequence Fixed Size Max Min Gap](./src/array/subsequence_fixed_size_max_min_gap.py) `binary search on possible gap`
+
 - **Greedy** `O(N) time` - *rolling update on condition* 
 
     > subarray(max, min, longest, except self) -> greedy
