@@ -173,11 +173,7 @@
 
 ### Bit Manipulation
 
-```python
-n << 1 # n * 2 
-n >> 1 # n // 2 
-n & 1 # n % 2
-```
+`n << 1 # n * 2` `n >> 1 # n // 2` `n & 1 # n % 2`
 
 - **Bit Iteration, Shift** `O(1) time`
 
@@ -218,3 +214,10 @@ n & 1 # n % 2
 ### Graph
 
 - **Topological Sort**
+
+
+### Geometry
+
+- **Triangle**
+
+    - [Check Point in Triangle](./src/geometry/check_point_in_triangle.py)
