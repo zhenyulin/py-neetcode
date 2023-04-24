@@ -63,20 +63,20 @@ def largestGroup(queries: list[list[int]]) -> list[int]:
     *M is the number of groups, can be considered as constant
     """
 
-    res, graph, sizes = [0], {}, defaultdict(lambda: 1)
+    res, anchors, sizes = [0], {}, defaultdict(lambda: 1)
 
     # nodes are only pointed to its root at connect time
     # so may be out-dated to only anchors not roots with later queries
     # that's why it is called disjoint set
     def root(x):
-        while x in graph:
-            x = graph[x]
+        while x in anchors:
+            x = anchors[x]
         return x
 
     def root_union(x, y):
         root_x, root_y = root(x), root(y)
         if root_x != root_y:
-            graph[root_y] = root_x
+            anchors[root_y] = root_x
             sizes[root_x] += sizes[root_y]
 
     for a, b in queries:

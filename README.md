@@ -220,11 +220,11 @@
 ### Graph
 
 - **Topological Sort**
-- **DSU** `O(Q) time`
+- **DSU** `O(Q) time` `{node: anchor/root}`
 
     - [Stream Largest Group](./src/graph/stream_largest_group.py)
-    
-- **DFS** `O(N^2) time`
+
+- **DFS** `O(N^2) time` `{node: [connection]}`
 
     - [Count Groups](./src/graph/count_groups.py)
 
