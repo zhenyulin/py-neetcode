@@ -220,6 +220,9 @@
 ### Graph
 
 - **Topological Sort**
+- **DFS** `O(N^2) time`
+
+    - [Count Unique Groups](./src/graph/count_unique_groups.py)
 
 
 ### Geometry
