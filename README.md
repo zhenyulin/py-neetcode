@@ -220,11 +220,10 @@
 ### Graph
 
 - **Topological Sort**
-- **Greedy** `O(N*M) time`
+- **DSU** `O(Q) time`
 
-    - **group sets** `O(N) space`
-
-        - [Stream Largest Group](./src/graph/stream_largest_group.py)
+    - [Stream Largest Group](./src/graph/stream_largest_group.py)
+    
 - **DFS** `O(N^2) time`
 
     - [Count Groups](./src/graph/count_groups.py)
