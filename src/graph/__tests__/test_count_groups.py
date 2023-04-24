@@ -1,4 +1,4 @@
-from src.graph.count_unique_groups import countGroups
+from src.graph.count_groups import countGroups
 
 
 def testCountGroups():

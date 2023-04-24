@@ -12,8 +12,8 @@ def countGroups(connections: list[list[int]]) -> int:
 
     1) DFS
 
-    time complexity: O(N^2), space complexity: O(N)
-    M is the average connections in the graph
+    time complexity: O(N^2), space complexity: O(N+2*M)
+    * M is the average connections in the graph
     """
 
     if not connections:
