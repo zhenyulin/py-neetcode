@@ -87,7 +87,8 @@
 
         > subarray(area, remove, longest, shortest) -> sliding window
 
-        - [Subarray Max Area](./src/array/subarray_max_area.py) `shrinking width updating min height`
+        - [Subarray Max Containable Area](./src/array/subarray_max_area_containable.py) `shrinking width updating min height`
+        - [Subarray Total Patch Containable](./src/array/subarray_total_patch_containable.py) `update the bar on the smaller side`
         - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
         - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
         - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)

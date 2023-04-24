@@ -1,4 +1,4 @@
-from src.array.subarray_max_area import maxArea
+from src.array.subarray_max_area_containable import maxArea
 
 
 def testMaxArea():
