@@ -57,7 +57,7 @@ def largestGroup(queries: list[list[int]]) -> list[int]:
     upon taking a new connection, we can update the graph, search its root
     and update the group size recorded as dict with group represented by root
 
-    time complexity: O(Q*alpha(N)), space complexity: O(N)
+    time complexity: O(Q), space complexity: O(N)
 
     *Q is the number of queries, N is the number of nodes
     *M is the number of groups, can be considered as constant

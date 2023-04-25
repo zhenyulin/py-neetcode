@@ -12,7 +12,7 @@ def kClosest(points: list[list[int]], k: int) -> list[Tuple[int, int]]:
 
     1) Heap
 
-    time complexity: O(N), space complexity: O(N)
+    time complexity: O(K*LogN), space complexity: O(N)
     """
 
     distances = []

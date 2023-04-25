@@ -4,7 +4,7 @@
 #
 
 
-from heapq import heappop, heappush
+from heapq import heappop, heappush, heappushpop
 
 
 class MedianFinder:
@@ -13,7 +13,7 @@ class MedianFinder:
     1) Min Max Heaps
     keep the length difference of min, max heaps to be less than 1
 
-    time complexity: O(1), space complexity: O(N)
+    time complexity: O(LogN), space complexity: O(N)
     """
 
     def __init__(self):
@@ -23,8 +23,7 @@ class MedianFinder:
     def addNum(self, num: int) -> None:
         # prefer using the min heap so that less negative sign is needed
         # replace the smallest on the right, and move it to the left
-        heappush(self.right, num)
-        heappush(self.left, -heappop(self.right))
+        heappush(self.left, -heappushpop(self.right, num))
 
         # left heap is growing but not right, make len(left) <= len(right)
         if len(self.left) > len(self.right):

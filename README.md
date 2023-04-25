@@ -107,12 +107,13 @@
 
     - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
 
-    - **Heap** `O(N) time, O(N) space` - *rank, sort* 
+    - **Heap** `O(K*LogN or N*LogK) time, O(N) space` - *rank, sort* 
     
-        > stream k, kth -> heap, window max -> stack
+        > stream k, kth, median -> heap, window max -> stack
 
         - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
         - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
+        - [Stream Sliding Window Median](./src/array/stream_sliding_window_median.py) *min max heaps, lazy removal*
 
     - **Combinations** `O(N^2) time`
 
