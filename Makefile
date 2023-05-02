@@ -10,9 +10,9 @@ install:
 	@poetry install
 
 cleanup:
-	@rm .coverage
-	@rm -rf **/__pycache__
 	@poetry env remove python
+	@rm -f .coverage
+	@rm -rf **/__pycache__
 
 shell:
 	@poetry shell
