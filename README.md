@@ -240,4 +240,5 @@
 
 ### Data Structure Implementations
 
+- [HashMap](./src/structure/hashmap.py)
 - [Set](./src/structure/set.py)
