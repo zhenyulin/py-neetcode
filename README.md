@@ -242,3 +242,4 @@
 
 - [HashMap](./src/structure/hashmap.py)
 - [Set](./src/structure/set.py)
+- [Deque](./src/structure/deque.py)
