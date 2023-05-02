@@ -236,3 +236,8 @@
 - **Triangle**
 
     - [Check Point in Triangle](./src/geometry/check_point_in_triangle.py)
+
+
+### Data Structure Implementations
+
+- [Set](./src/structure/set.py)
