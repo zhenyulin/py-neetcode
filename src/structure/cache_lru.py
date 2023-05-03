@@ -1,6 +1,6 @@
 from typing import Self
 
-Input = int | float | str | tuple
+from .hashmap import Input
 
 
 class Node:

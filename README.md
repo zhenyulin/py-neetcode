@@ -245,3 +245,5 @@
 - [Deque](./src/structure/deque.py)
 - [Heap](./src/structure/heap.py)
 - [LRU Cache](./src/structure/cache_lru.py)
+- [MRU Cache](./src/structure/cache_mru.py)
+- [LFU Cache](./src/structure/cache_lfu.py)
