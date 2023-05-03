@@ -30,6 +30,15 @@ class TestDeque:
         assert q.pop() == 2
         assert q.pop() == 1
 
+    def testRemove(self):
+        q = Deque()
+        q.append(2)
+        q.append(3)
+        q.append(4)
+        q.remove(3)
+        assert q.pop() == 4
+        assert q.pop() == 2
+
     def testError(self):
         q = Deque()
 
