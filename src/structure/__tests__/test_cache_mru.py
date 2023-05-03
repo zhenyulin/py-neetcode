@@ -1,8 +1,8 @@
-from src.structure.cache_lru import LRUCache
+from src.structure.cache_mru import MRUCache
 
 
-def testLRUCache():
-    cache = LRUCache(2)
+def testMRUCache():
+    cache = MRUCache(2)
     assert cache.capacity == 2
     assert cache.head.next == cache.tail
     assert cache.tail.prev == cache.head
@@ -13,5 +13,5 @@ def testLRUCache():
     assert cache.head._get_kv_list() == [(1, "a"), (2, "b")]
 
     cache.put(3, "c")
-    assert cache.get(2) is None
-    assert cache.head._get_kv_list() == [(3, "c"), (1, "a")]
+    assert cache.get(1) is None
+    assert cache.head._get_kv_list() == [(3, "c"), (2, "b")]

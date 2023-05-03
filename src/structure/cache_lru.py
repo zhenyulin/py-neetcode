@@ -1,12 +1,24 @@
+from typing import Self
+
 Input = int | float | str | tuple
 
 
 class Node:
-    def __init__(self, key=None, val=None, prev=None, next=None):
+    def __init__(
+        self, key: Input = None, val: any = None, prev: Self = None, next: Self = None
+    ) -> None:
         self.key = key
         self.val = val
         self.prev = prev
         self.next = next
+
+    def _get_kv_list(self) -> list[tuple[Input, any]]:
+        res, node = [], self
+        while node:
+            if node.key:
+                res.append((node.key, node.val))
+            node = node.next
+        return res
 
 
 class LRUCache:
@@ -31,7 +43,11 @@ class LRUCache:
         self.head.next.prev, self.head.next = node, node
 
     def _pop(self) -> Node:
-        """time complexity: O(1)"""
+        """
+        pop the LRU at tail
+
+        time complexity: O(1)
+        """
         node = self.tail.prev
         node.prev.next = self.tail
         self.tail.prev = node.prev
