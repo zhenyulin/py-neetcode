@@ -30,7 +30,7 @@ class LRUCache:
         node.prev, node.next = self.head, self.head.next
         self.head.next.prev, self.head.next = node, node
 
-    def _pop(self) -> None:
+    def _pop(self) -> Node:
         """time complexity: O(1)"""
         node = self.tail.prev
         node.prev.next = self.tail
@@ -38,7 +38,11 @@ class LRUCache:
         return node
 
     def get(self, key: Input) -> any:
-        """time complexity: O(1)"""
+        """
+        get the value and update the recency by moving the node to head
+
+        time complexity: O(1)
+        """
         if key in self.cache:
             node = self.cache[key]
             self._to_head(node)
@@ -47,7 +51,11 @@ class LRUCache:
             return None
 
     def put(self, key: Input, value: any) -> None:
-        """time complexity: O(1)"""
+        """
+        update to the head side, pop the LRU at tail
+
+        time complexity: O(1)
+        """
         if key in self.cache:
             node = self.cache[key]
             self._to_head(node)

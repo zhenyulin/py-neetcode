@@ -1,4 +1,4 @@
-from src.structure.cache import LRUCache
+from src.structure.cache_lru import LRUCache
 
 
 def testLRUCache():

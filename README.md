@@ -244,4 +244,4 @@
 - [Set](./src/structure/set.py)
 - [Deque](./src/structure/deque.py)
 - [Heap](./src/structure/heap.py)
-- [Cache](./src/structure/cache.py)
+- [LRU Cache](./src/structure/cache_lru.py)
