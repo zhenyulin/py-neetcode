@@ -14,6 +14,7 @@ def rightSideView(root: TreeNode) -> list[int]:
     1) BFS
 
     time complexity: O(N), space complexity: O(N)
+    * N is the number of Nodes
     """
 
     queue, res = deque([root] if root else []), []

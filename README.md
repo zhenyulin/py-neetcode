@@ -201,15 +201,15 @@
 
 ### Tree
 
-- **BFS**
+- **Recursion** `O(N) time, O(N) space`
+
+    - [Binary Search Tree Validate](./src/tree/bst_validate.py)
+
+- **BFS** `O(N) time, O(N) space`
 
     - [Search Rightest Nodes](./src/tree/search_rightest_nodes.py)
 
 - **DFS**
-
-- **Recursive**
-
-    - [Binary Search Tree Validate](./src/tree/bst_validate.py)
 
 
 ### Linked List

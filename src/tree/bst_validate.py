@@ -12,6 +12,9 @@ def validateBST(root: Optional[TreeNode]) -> bool:
     as the min(low) on the right and max(high) on the left
 
     1) Recursion
+
+    time complexity: O(N), space complexity: O(N)
+    * N is the number of Nodes
     """
 
     def check(node, low, high):
