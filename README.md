@@ -209,6 +209,8 @@
 
 - **Recursive**
 
+    - [Binary Search Tree Validate](./src/tree/bst_validate.py)
+
 
 ### Linked List
 
