@@ -216,6 +216,7 @@
 
 - **Simple Forward** `O(N) time, O(1) space`
 
+    - [Reverse](./src/linked_list/reverse.py)
     - [Add Two Numbers](./src/linked_list/add_two_numbers.py)
 
 - **Fast Slow Pointers** `O(N) time, O(1) space`

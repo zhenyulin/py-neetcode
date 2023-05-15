@@ -1,9 +1,10 @@
 #
 # problem: https://leetcode.com/problems/add-two-numbers/
 #
-from .list_node import ListNode
+from .list_node import ListNode, use_list_in_test
 
 
+@use_list_in_test
 def addTwoNumber(l1: ListNode, l2: ListNode) -> ListNode:
     """add two number with digits stored in reverse order as LinkedList
 

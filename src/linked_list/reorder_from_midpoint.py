@@ -2,9 +2,10 @@
 # 143. Reorder List
 # https://leetcode.com/problems/reorder-list/
 #
-from .list_node import ListNode
+from .list_node import ListNode, use_list_in_test
 
 
+@use_list_in_test
 def reorderList(head: ListNode) -> ListNode:
     """to reorder a list merging from both ends
 

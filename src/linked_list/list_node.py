@@ -1,3 +1,4 @@
+from os import getenv
 from typing import Optional
 
 
@@ -25,3 +26,11 @@ def to_list(node: Optional[ListNode]) -> list:
         node = node.next
 
     return res
+
+
+def use_list_in_test(func):
+    return (
+        lambda *args: to_list(func(*[to_linked_list(arg) for arg in args]))
+        if getenv("TEST_ENV") == "TRUE"
+        else func
+    )
