@@ -214,9 +214,13 @@
 
 ### Linked List
 
-- **Two Pointers** `O(N) time, O(1) space`
+- **Simple Forward** `O(N) time, O(1) space`
 
-    - [Reorder List Two Sides](./src/linked_list/reorder_list_two_sides.py)
+    - [Add Two Numbers](./src/linked_list/add_two_numbers.py)
+
+- **Fast Slow Pointers** `O(N) time, O(1) space`
+
+    - [Reorder from Mid Point](./src/linked_list/reorder_from_midpoint.py)
     - Cycle Detection
     - Overlapping Point
 

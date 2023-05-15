@@ -1,6 +1,6 @@
 from src.linked_list.list_node import to_linked_list, to_list
 
-from src.linked_list.reorder_list_two_sides import reorderList
+from src.linked_list.reorder_from_midpoint import reorderList
 
 
 def testReorderList():
