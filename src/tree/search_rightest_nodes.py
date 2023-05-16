@@ -3,9 +3,10 @@
 # https://leetcode.com/problems/binary-tree-right-side-view/
 #
 from collections import deque
-from .tree_node import TreeNode
+from .tree_node import TreeNode, use_list_in_test
 
 
+@use_list_in_test()
 def rightSideView(root: TreeNode) -> list[int]:
     """to have all the rightest nodes
 
