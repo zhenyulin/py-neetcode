@@ -11,10 +11,7 @@ class TreeNode:
 
 
 def tree_to_list(root: Optional[TreeNode]) -> list:
-    if not root:
-        return None
-
-    res, queue = [], deque([root])
+    res, queue = [], deque([root] if root else [])
 
     while queue:
         node = queue.popleft()
@@ -29,7 +26,7 @@ def tree_to_list(root: Optional[TreeNode]) -> list:
     return res
 
 
-def list_to_tree(vals: list) -> Optional[TreeNode]:
+def list_to_tree(vals: list[any]) -> Optional[TreeNode]:
     if not vals:
         return None
 
@@ -64,7 +61,11 @@ def use_list_in_test(
 
         def decorated(*args, **kwargs):
             output = (
-                func(*[list_to_tree(arg) for arg in args], **kwargs)
+                func(
+                    # avoid applying the input convertor during recursion
+                    *[list_to_tree(arg) if type(arg) is list else arg for arg in args],
+                    **kwargs
+                )
                 if at_input
                 else func(*args, **kwargs)
             )

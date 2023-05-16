@@ -203,6 +203,7 @@
 
 - **Recursion** `O(N) time, O(N) space`
 
+    - [Invert](./src/tree/invert.py)
     - [Binary Search Tree Validate](./src/tree/bst_validate.py)
 
 - **BFS** `O(N) time, O(N) space`
