@@ -11,12 +11,37 @@ class HashMap:
         """
         self.capacity = capacity
         self.map = [[] for _ in range(self.capacity)]
+        self.length = 0
 
-    def _get_index(self, key: Input) -> int:
+    def __len__(self):
         """time complexity: O(1)"""
-        return hash(key) % self.capacity
+        return self.length
 
-    def put(self, key: Input, value: any) -> None:
+    def __contains__(self, key: Input) -> bool:
+        """time complexity: O(1)"""
+        index = self._get_index(key)
+        for k, _ in self.map[index]:
+            if k == key:
+                return True
+        return False
+
+    def __iter__(self):
+        """time complexity: O(1)"""
+        for chain in self.map:
+            for key, _ in chain:
+                yield key
+
+    def __getitem__(self, key: Input) -> any:
+        """time complexity: O(N)
+        average time complexity: O(1) if there isn't many hash value collisions
+        """
+        index = self._get_index(key)
+        for k, v in self.map[index]:
+            if k == key:
+                return v
+        raise KeyError(f"{key} not found")
+
+    def __setitem__(self, key: Input, value: any = None) -> None:
         """time complexity: O(N)
         average time complexity: O(1) if there isn't many hash value collisions
 
@@ -32,18 +57,9 @@ class HashMap:
                 pair[1] = value
                 return
         self.map[index].append([key, value])
+        self.length += 1
 
-    def get(self, key: Input, default=None) -> any:
-        """time complexity: O(N)
-        average time complexity: O(1) if there isn't many hash value collisions
-        """
-        index = self._get_index(key)
-        for k, v in self.map[index]:
-            if k == key:
-                return v
-        return default
-
-    def remove(self, key: Input) -> None:
+    def __delitem__(self, key: Input) -> None:
         """time complexity: O(N)
         average time complexity: O(1) if there isn't many hash value collisions
         """
@@ -51,16 +67,18 @@ class HashMap:
         for i, (k, _) in enumerate(self.map[index]):
             if k == key:
                 del self.map[index][i]
+                self.length -= 1
                 return
         raise KeyError(f"{key} not found")
 
-    def contains(self, key: Input) -> bool:
+    contains = __contains__
+    get = __getitem__
+    put = __setitem__
+    remove = __delitem__
+
+    def _get_index(self, key: Input) -> int:
         """time complexity: O(1)"""
-        index = self._get_index(key)
-        for k, _ in self.map[index]:
-            if k == key:
-                return True
-        return False
+        return hash(key) % self.capacity
 
     def keys(self) -> list[Input]:
         """time complexity: O(N)"""
