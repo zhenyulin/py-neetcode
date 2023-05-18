@@ -2,14 +2,15 @@ from pytest import raises
 from src.structure.set import Set
 
 
+#
 class TestSet:
     def testInitWithRightInput(self):
         s = Set([1, 2, 3, "d", 1.2, (1, 2)])
-        assert 1 in s.items
-        assert "d" in s.items
-        assert 1.2 in s.items
-        assert (1, 2) in s.items
-        assert 4 not in s.items
+        assert 1 in s
+        assert "d" in s
+        assert 1.2 in s
+        assert (1, 2) in s
+        assert 4 not in s
 
     def testINitWithWrongInput(self):
         with raises(TypeError):

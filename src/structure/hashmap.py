@@ -1,3 +1,5 @@
+from typing import Iterator
+
 Input = int | float | str | tuple
 
 
@@ -13,7 +15,7 @@ class HashMap:
         self.map = [[] for _ in range(self.capacity)]
         self.length = 0
 
-    def __len__(self):
+    def __len__(self) -> int:
         """time complexity: O(1)"""
         return self.length
 
@@ -25,7 +27,7 @@ class HashMap:
                 return True
         return False
 
-    def __iter__(self):
+    def __iter__(self) -> Iterator:
         """time complexity: O(1)"""
         for chain in self.map:
             for key, _ in chain:
