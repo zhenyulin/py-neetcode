@@ -1,12 +1,26 @@
+#
+# https://wiki.python.org/moin/TimeComplexity
+# https://docs.python.org/3/library/heapq.html
+#
+# heap [] is ordered as binary tree where parent is smaller than children
+# so it wouldn't be list ordered from time to time
+# binary_search_push would be O(N) due to list.insert()
+#
+from typing import Iterator
+
+
 class Heap:
     def __init__(self) -> None:
         self.heap = []
 
-    def __len__(self):
+    def __len__(self) -> int:
         return len(self.heap)
 
     def __str__(self):
         return str(self.heap)
+
+    def __iter__(self) -> Iterator:
+        return iter(self.heap)
 
     def _parent(self, i: int) -> int:
         """
@@ -33,6 +47,7 @@ class Heap:
         while i > 0 and self.heap[i] < self.heap[parent]:
             self._swap(i, parent)
             i = parent
+            parent = self._parent(i)
 
     def _move_down(self, i) -> None:
         """

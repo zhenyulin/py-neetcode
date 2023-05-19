@@ -8,7 +8,10 @@ def testHeap():
     heap.push(3)
     heap.push(1)
     heap.push(2)
-    assert heap.peek() == 1
+    heap.push(0)
+    assert list(heap) == [0, 1, 2, 3]
+    assert heap.peek() == 0
+    assert heap.pop() == 0
     assert heap.pop() == 1
     assert heap.pop() == 2
     assert heap.pop() == 3
