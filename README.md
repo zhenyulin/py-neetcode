@@ -103,9 +103,10 @@
 
     - **Stack** `O(N) time, O(K) space`
 
-        > stream sliding window max -> stack
+        > stream sliding window max, rectangle area -> stack
 
     - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
+    - [Subarray Max Area Rectangle](./src/array/subarray_max_area_rectangle.py) `[(left, height)]`
 
     - **Heap** `O(K*LogN or N*LogK) time, O(N) space` - *rank, sort* 
     
@@ -210,7 +211,7 @@
 
     - [Search Rightest Nodes](./src/tree/search_rightest_nodes.py)
 
-- **DFS or Backtracking** `O(N) time, O(N) space`e4662611d0489a3da324c9546b724ca95f40171a
+- **DFS or Backtracking** `O(N) time, O(N) space`
 
     - [Path Sum Max](./src/tree/path_sum_max.py)
 
