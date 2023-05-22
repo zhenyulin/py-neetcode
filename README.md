@@ -210,7 +210,7 @@
 
     - [Search Rightest Nodes](./src/tree/search_rightest_nodes.py)
 
-- **DFS or Backtracking** `O(N) time, O(N) space`
+- **DFS or Backtracking** `O(N) time, O(N) space`e4662611d0489a3da324c9546b724ca95f40171a
 
     - [Path Sum Max](./src/tree/path_sum_max.py)
 
@@ -257,3 +257,4 @@
 - [LRU Cache](./src/structure/cache_lru.py)
 - [MRU Cache](./src/structure/cache_mru.py)
 - [LFU Cache](./src/structure/cache_lfu.py)
+- [Pirority Cache](./src/structure/cache_priority.py)

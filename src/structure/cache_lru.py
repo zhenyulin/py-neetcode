@@ -1,11 +1,14 @@
 from typing import Self
-
 from .hashmap import Input
 
 
 class Node:
     def __init__(
-        self, key: Input = None, val: any = None, prev: Self = None, next: Self = None
+        self,
+        key: Input = None,
+        val: any = None,
+        prev: Self = None,
+        next: Self = None,
     ) -> None:
         self.key = key
         self.val = val
@@ -22,15 +25,18 @@ class Node:
 
 
 class LRUCache:
-    def __init__(self, capacity: int) -> None:
-        """
-        use a dict as cache, and pointed to a linked list for recency
+    """
+    1) dict & linked list
+    use a dict as cache, and pointed to a linked list for recency
 
-        time complexity: O(1)
-        """
+    get: O(1), put: O(1)
+    """
+
+    def __init__(self, capacity: int) -> None:
         self.capacity = capacity
         self.cache = {}
 
+        # create empty head and tail node so there's no need for null check
         self.head = Node()
         self.tail = Node()
         self.head.next = self.tail
