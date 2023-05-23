@@ -226,8 +226,7 @@
 - **Fast Slow Pointers** `O(N) time, O(1) space`
 
     - [Reorder from Mid Point](./src/linked_list/reorder_from_midpoint.py)
-    - Cycle Detection
-    - Overlapping Point
+    - [Cycle Detection](./src/linked_list/detect_cycle.py)
 
 ### Graph
 
