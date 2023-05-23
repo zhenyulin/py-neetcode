@@ -1,4 +1,4 @@
-from src.array_2d.search_word import exist
+from src.array_2d.search_sequence import exist
 
 
 def testExist():

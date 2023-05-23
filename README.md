@@ -163,8 +163,8 @@
 
     > shortest path -> BFS
 
-    - [Search Shortest Path](./src/array_2d/search_length_shortest_path.py)
-    - [Update Shortest Distance](./src/array_2d/search_update_shortest_distance.py.py)
+    - [Search Shortest Path](./src/array_2d/search_shortest_path.py)
+    - [Update Shortest Distance](./src/array_2d/update_shortest_distance.py.py)
 
 - **2D Dynamic Programming or cached DFS** `O(M*N) time, O(M*N) space`
 
@@ -172,11 +172,12 @@
 
     - [Search Longest Path Increasing](./src/array_2d/search_longest_path_increasing.py)
 
-- **DFS** `O(M*N*O^L) time, O(O^L) space` - *known target* 
+- **DFS** `O(M*N or M*N*O^L) time, O(O^L) space` - *known target* 
 
-    > target, longest path -> DFS
+    > longest path, target sequence -> DFS
 
-    - [Search Word](./src/array_2d/search_word.py)
+    - [Search Longest Path](./src/array_2d/search_longest_path.py)
+    - [Search Sequence](./src/array_2d/search_sequence.py)
 
 
 ### Bit Manipulation
