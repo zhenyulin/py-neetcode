@@ -233,8 +233,11 @@
 
 ### Graph
 
-- **Topological Sort**
-- **DSU** `O(Q) time` `{node: anchor/root}`
+- **Topological Sort** `O(C) time, O(max(C, N) space` `{up: [downs]}, [up_counts]`
+
+    - [Detect Cycle](./src/graph/detect_cycle.py)
+
+- **DSU(Root Union)** `O(C) time, O(N) space` `{node: root}`
 
     - [Stream Largest Group](./src/graph/stream_largest_group.py)
 
