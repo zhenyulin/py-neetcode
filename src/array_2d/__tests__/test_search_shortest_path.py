@@ -1,4 +1,4 @@
-from src.array_2d.search_length_shortest_path import shortestPath
+from src.array_2d.search_shortest_path import shortestPath
 
 
 def testShortestPath():

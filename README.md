@@ -163,8 +163,8 @@
 
     > shortest path -> BFS
 
-    - [Search Length Shortest Path](./src/array_2d/search_length_shortest_path.py)
-    - [Search Update Shortest Distance](./src/array_2d/search_update_shortest_distance.py.py)
+    - [Search Shortest Path](./src/array_2d/search_length_shortest_path.py)
+    - [Update Shortest Distance](./src/array_2d/search_update_shortest_distance.py.py)
 
 - **2D Dynamic Programming or cached DFS** `O(M*N) time, O(M*N) space`
 
