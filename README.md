@@ -233,13 +233,14 @@
 
 ### Graph
 
-- **Topological Sort** `O(C) time, O(max(C, N) space` `{up: [downs]}, [up_counts]`
-
-    - [Detect Cycle](./src/graph/detect_cycle.py)
-
 - **DSU(Root Union)** `O(C) time, O(N) space` `{node: root}`
 
     - [Stream Largest Group](./src/graph/stream_largest_group.py)
+
+- **Topological Sort** `O(C) time, O(C+N) space` `{up: [downs]}, [up_counts]`
+
+    - [Detect Cycle](./src/graph/detect_cycle.py)
+    - [Search Sequence in Path Order](./src/graph/search_sequence_in_path_order.py)
 
 - **DFS** `O(N^2) time` `{node: [connection]}`
 

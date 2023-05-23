@@ -16,15 +16,14 @@ def canFinish(numCourses: int, prerequisites: list[list[int]]) -> bool:
 
     graph: {up: [downs]}
 
-    time complexity: O(C), space complexity: O(max(C, N))
+    time complexity: O(C), space complexity: O(C+N)
     * C is the number of connections, length of prerequisites
     * N is the number of nodes (courses)
     """
 
-    downs = defaultdict(list)
-    up_counts = [0] * numCourses
+    downs, up_counts = defaultdict(list), [0] * numCourses
 
-    for p, c in prerequisites:
+    for c, p in prerequisites:
         downs[p].append(c)
         up_counts[c] += 1
 
