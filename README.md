@@ -161,10 +161,11 @@
 
 - **BFS** `O(M*N) time, O(M*N) space` - *shortest path* 
 
-    > shortest path -> BFS
+    > shortest path, shortest distance, edge areas -> BFS
 
     - [Search Shortest Path](./src/array_2d/search_shortest_path.py)
-    - [Update Shortest Distance](./src/array_2d/update_by_shortest_distance.py.py)
+    - [Update Shortest Distance](./src/array_2d/update_by_shortest_distance.py)
+    - [Update by Area Surrounded](./src/array_ed/update_by_area_surrounded.py)
 
 - **2D Dynamic Programming or cached DFS** `O(M*N) time, O(M*N) space`
 
@@ -174,10 +175,11 @@
 
 - **DFS** `O(M*N or M*N*O^L) time, O(O^L) space` - *known target* 
 
-    > longest path, target sequence -> DFS
+    > longest path, target sequence, edge areas -> DFS
 
     - [Search Longest Path](./src/array_2d/search_longest_path.py)
     - [Search Sequence](./src/array_2d/search_sequence.py)
+    - [Update by Area Surrounded](./src/array_ed/update_by_area_surrounded.py)
 
 
 ### Bit Manipulation
