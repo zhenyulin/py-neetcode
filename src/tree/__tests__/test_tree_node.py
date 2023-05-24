@@ -2,7 +2,7 @@ from src.tree.tree_node import TreeNode, tree_to_list, list_to_tree
 
 
 def testTreeToList():
-    assert tree_to_list(None) is None
+    assert tree_to_list(None) == []
 
     tree = TreeNode(None)
 
@@ -19,7 +19,6 @@ def testTreeToList():
 
 
 def testListToTree():
-
     assert list_to_tree([]) is None
 
     tree = list_to_tree([None])
