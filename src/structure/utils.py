@@ -13,8 +13,8 @@ def binary_search_index(
     while i < j:
         m = (i + j) // 2
         # { on the left, move the left closer }
-        if (key(sequence[m]) <= value) ^ (
-            not ascending
+        if (not ascending) ^ (
+            key(sequence[m]) <= value
         ):  # use <= if prefer to append to the right
             i = m + 1  # use + 1 to try meet the left condition
         else:
