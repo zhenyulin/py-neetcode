@@ -28,7 +28,7 @@ class MessageQueue:
 
     message can be scheduled
 
-    1) deque stack
+    1) stack
     stack: [(scheduled_at, processing_at, text)]
 
     enqueue: O(N) time, dequeue: O(K) time
@@ -90,9 +90,12 @@ class MessageQueue:
             self._send(text)
 
     """
-    2) heap
+    2) heap & stack
 
     heap: [(processing_at, scheduled_at, message)]
+    stack: window [scheduled_at]
+
+    it would be late for the user to know the message can be aborted or delayed
 
     enqueue: O(logN) time, dequeue: O(K*logN) time
     """

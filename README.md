@@ -265,3 +265,5 @@
 - [MRU Cache](./src/structure/cache_mru.py)
 - [LFU Cache](./src/structure/cache_lfu.py)
 - [Pirority Cache](./src/structure/cache_priority.py)
+- [Message Queue Scheduled](./src/structure/message_queue_scheduled.py)
+- [Rate Limiter](./src/structure/rate_limiter.py)
