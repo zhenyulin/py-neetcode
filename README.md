@@ -164,6 +164,7 @@
     > shortest path, shortest distance, edge areas -> BFS
 
     - [Search Shortest Path](./src/array_2d/search_shortest_path.py)
+    - [Search Shortest Spread](./src/array_2d/search_shortest_spread.py)
     - [Update Shortest Distance](./src/array_2d/update_by_shortest_distance.py)
     - [Update by Area Surrounded](./src/array_ed/update_by_area_surrounded.py)
 
