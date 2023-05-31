@@ -236,16 +236,22 @@
 
 - **DSU(Root Union)** `O(C) time, O(N) space` `{node: root}`
 
+    > undirected set
+
     - [Undirected Stream Largest Set](./src/graph/undirected_stream_largest_set.py.py)
 
 - **Topological Sort** `O(C) time, O(C+N) space` `{up: [downs]}, [up_counts]`
 
-    - [Detect Cycle](./src/graph/detect_cycle.py)
-    - [Search Sequence in Path Order](./src/graph/search_sequence_in_path_order.py)
+    > directed cycle, pathes
+
+    - [Directed Detect Cycle](./src/graph/directed_detect_cycle.py)
+    - [Directed Search Pathes All Nodes](./src/graph/directed_search_pathes_all_nodes.py)
 
 - **DFS** `O(N^2) time` `{node: [connection]}`
 
-    - [Count Groups](./src/graph/count_groups.py)
+    > matrix count groups
+
+    - [(Undirected) Matrix Count Groups](./src/graph/matrix_count_groups.py)
 
 
 

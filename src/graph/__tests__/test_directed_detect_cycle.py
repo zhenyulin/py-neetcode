@@ -1,4 +1,4 @@
-from src.graph.detect_cycle import canFinish
+from src.graph.directed_detect_cycle import canFinish
 
 
 def testCanFinish():

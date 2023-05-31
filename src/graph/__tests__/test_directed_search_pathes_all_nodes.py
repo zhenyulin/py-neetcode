@@ -1,4 +1,4 @@
-from src.graph.search_sequence_in_path_order import findPathes
+from src.graph.directed_search_pathes_all_nodes import findPathes
 
 
 def testFindPathes():
