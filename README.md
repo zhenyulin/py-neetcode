@@ -13,7 +13,7 @@
 - [LRU Cache](./src/structure/cache_lru.py)
 - [MRU Cache](./src/structure/cache_mru.py)
 - [LFU Cache](./src/structure/cache_lfu.py)
-- [Pirority Cache](./src/structure/cache_priority.py)
+- [Priority Cache](./src/structure/cache_priority.py)
 - [Message Queue Scheduled](./src/structure/message_queue_scheduled.py)
 - [Rate Limiter](./src/structure/rate_limiter.py)
 
@@ -43,13 +43,13 @@
     - [Search Min Max Diff After Operation](./src/array/search_min_max_diff_with_operation.py) `all possible cases, sort pair iterate`
     - [Subarray Addition Multiple](./src/array/subarray_addition_multiple.py) `lazy rolling addition`
 
-    - Hashmap `O(C) space` - *index/count related condition*
-    
-        > string(index, count, last, match) -> Hashmap
+- Greedy & Hashmap `O(C) space` - *index/count related condition*
 
-        - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
-        - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: last}, seen[c] >= i`
-        - [Splits Count Equal Unique Chars](./src/string/splits_count_equal_unique_chars.py) `{char: first}, {char: last}`
+    > string(index, count, last, match) -> Hashmap
+
+    - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
+    - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: last}, seen[c] >= i`
+    - [Splits Count Equal Unique Chars](./src/string/splits_count_equal_unique_chars.py) `{char: first}, {char: last}`
 
 - 1D Dynamic Programming `O(N) time, O(1 or N) space` - *multiple relations to between n-x and n*
 
@@ -87,9 +87,9 @@
     - [Rotated Sorted Array Min](./src/array/rotated_sorted_array_min.py) `target is converged boundary`
     - [Search Element Peak](./src/array/search_element_peak.py) `left on uphill, right on downhill`
 
-    - Greedy
+- Binary Search + Greedy
 
-        - [Subsequence Fixed Size Max Min Gap](./src/array/subsequence_fixed_size_max_min_gap.py) `binary search on possible gap`
+    - [Subsequence Fixed Size Max Min Gap](./src/array/subsequence_fixed_size_max_min_gap.py) `binary search on possible gap`
 
 - Greedy `O(N) time` - *rolling update on condition* 
 
@@ -101,42 +101,42 @@
     - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
     
-    - Sliding Window `O(1) space` - *forward and backward* 
+- Greedy + Sliding Window `O(1) space` - *forward and backward* 
 
-        > subarray(area, remove, longest, shortest) -> sliding window
+    > subarray(area, remove, longest, shortest) -> sliding window
 
-        - [Subarray Max Containable Area](./src/array/subarray_max_area_containable.py) `shrinking width updating min height`
-        - [Subarray Total Patch Containable](./src/array/subarray_total_patch_containable.py) `update the bar on the smaller side`
-        - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
-        - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
-        - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)
+    - [Subarray Max Containable Area](./src/array/subarray_max_area_containable.py) `shrinking width updating min height`
+    - [Subarray Total Patch Containable](./src/array/subarray_total_patch_containable.py) `update the bar on the smaller side`
+    - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
+    - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
+    - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)
     
-    - Hashmap `O(N) space` - *index/count related condition* 
-    
-        > array(index, count, last) -> Hashmap
+- Greedy & Hashmap `O(N) space` - *index/count related condition* 
 
-        - [Search Two Indexes Sum to K](./src/array/search_two_indexes_sum_to_k.py) `{match_condition: index}`
-        - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}``sum[i:j] = sum[:j] - sum[:i]`
-        - [Subarray Count Sum Divisible by K](.src/array/subarray_count_sum_divisible_by_k.py) `{sum%k: count}`
+    > array(index, count, last) -> Hashmap
 
-    - Stack `O(N) time, O(K) space`
+    - [Search Two Indexes Sum to K](./src/array/search_two_indexes_sum_to_k.py) `{match_condition: index}`
+    - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) `{sum: count}``sum[i:j] = sum[:j] - sum[:i]`
+    - [Subarray Count Sum Divisible by K](.src/array/subarray_count_sum_divisible_by_k.py) `{sum%k: count}`
 
-        > stream sliding window max, rectangle area -> stack
+- Greedy & Stack `O(N) time, O(K) space`
+
+    > stream sliding window max, rectangle area -> stack
 
     - [Stream Sliding Window Maxes](./src/array/stream_sliding_window_maxes.py) *[index of max until i]*
     - [Subarray Max Area Rectangle](./src/array/subarray_max_area_rectangle.py) `[(left, height)]`
 
-    - Heap `O(K*LogN or N*LogK) time, O(N) space` - *rank, sort* 
-    
-        > stream k, kth, median -> heap, window max -> stack
+- Greedy & Heap `O(K*LogN or N*LogK) time, O(N) space` - *rank, sort* 
 
-        - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
-        - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
-        - [Stream Sliding Window Median](./src/array/stream_sliding_window_median.py) *min max heaps, lazy removal*
+    > stream k, kth, median -> heap, window max -> stack
 
-    - Combinations `O(N^2) time`
+    - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
+    - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
+    - [Stream Sliding Window Median](./src/array/stream_sliding_window_median.py) *min max heaps, lazy removal*
 
-        - [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
+- Greedy & Combinations `O(N^2) time`
+
+    - [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
         
 
 - 1D Dynamic Programming `O(N) time, O(N or 1) space` - *multiple relations to between n-x and n* 
@@ -147,9 +147,9 @@
     - [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
     - [Two Arrays Min Path Cost](./src/array/two_arrays_min_path_cost.py) `from_red, from_blue dp`
 
-    - Cached DFS
+- 1D Dynamic Programming + Cached DFS
 
-        - [Combination Fewest Elements Sum to K](./src/array/combination_generate_sum_to_k.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
+    - [Combination Fewest Elements Sum to K](./src/array/combination_generate_sum_to_k.py) `dp[a] = min(dp[a], 1 + dp[a - c])`
 
 - 2D Dynamic Programming
 
@@ -174,7 +174,7 @@
     - [Sorted Matrix Search](./src/array_2d/sorted_matrix_search.py)
     - [Search Element Peak](./src/array_2d/search_element_peak.py)
 
-- Search with Memory `O(M*N) time, O(1) space`
+- Greedy & Set `O(M*N) time, O(1) space`
 
     - [Validate Soduku](./src/array_2d/validate_soduku.py)
 
