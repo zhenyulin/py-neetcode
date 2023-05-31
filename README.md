@@ -1,6 +1,6 @@
 ### Neetcode
 
-> neat Python3 algorithms explained and summarised for selected problems extending [neetcode](https://neetcode.io/practice)
+> algorithm cheetsheet in Python3 summarised by data types
 
 ##
 
