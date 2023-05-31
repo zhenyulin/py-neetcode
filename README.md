@@ -236,7 +236,7 @@
 
 - **DSU(Root Union)** `O(C) time, O(N) space` `{node: root}`
 
-    - [Stream Largest Group](./src/graph/stream_largest_group.py)
+    - [Undirected Stream Largest Set](./src/graph/undirected_stream_largest_set.py.py)
 
 - **Topological Sort** `O(C) time, O(C+N) space` `{up: [downs]}, [up_counts]`
 

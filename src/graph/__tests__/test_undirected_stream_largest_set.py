@@ -1,4 +1,4 @@
-from src.graph.stream_largest_group import largestGroup
+from src.graph.undirected_stream_largest_set import largestGroup
 
 
 def testLargestGroup():
