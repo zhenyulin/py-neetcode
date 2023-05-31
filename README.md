@@ -1,15 +1,33 @@
-## Neetcode
+### Neetcode
 
 > neat Python3 algorithms explained and summarised for selected problems extending [neetcode](https://neetcode.io/practice)
 
-### Int
+##
+
+#### Data Structure Implementations
+
+- [HashMap](./src/structure/hashmap.py)
+- [Set](./src/structure/set.py)
+- [Deque](./src/structure/deque.py)
+- [Heap](./src/structure/heap.py)
+- [LRU Cache](./src/structure/cache_lru.py)
+- [MRU Cache](./src/structure/cache_mru.py)
+- [LFU Cache](./src/structure/cache_lfu.py)
+- [Pirority Cache](./src/structure/cache_priority.py)
+- [Message Queue Scheduled](./src/structure/message_queue_scheduled.py)
+- [Rate Limiter](./src/structure/rate_limiter.py)
+
+##
+
+#### Int
 
 - **Greedy**
 
     - [Get Prime Factors](./src/int/get_prime_factors.py)
 
+##
 
-### String
+#### String
 
 - **Math Calculation** `O(1) time`
     
@@ -54,9 +72,9 @@
     - [Combination Generate Parentheses](./src/string/combination_generate_parentheses.py)
     - [Combination Dictionary Search Match Sum](./src/string/combination_dictionary_search_match_sum.py)
 
+##
 
-
-### 1D Array
+#### 1D Array
 
 
 - **Math Calculation** `O(1) time`
@@ -145,8 +163,9 @@
 
     - [Combination Generate Sum to K](./src/array/combination_generate_sum_to_k.py)
 
+##
 
-### 2D Array
+#### 2D Array
 
 - **Binary Search** `O(LogM*LogN) time`
 
@@ -182,8 +201,9 @@
     - [Search Sequence](./src/array_2d/search_sequence.py)
     - [Update by Area Surrounded](./src/array_ed/update_by_area_surrounded.py)
 
+##
 
-### Bit Manipulation
+#### Bit Manipulation
 
 `n << 1 # n * 2` `n >> 1 # n // 2` `n & 1 # n % 2`
 
@@ -203,8 +223,9 @@
     - [Add Negative Binary](./src/bit/add_nega_binary.py)
     - [Convert to Negative Base](./src/bit/convert_to_neg_base.py)
 
+##
 
-### Tree
+#### Tree
 
 - **Recursion** `O(N) time, O(N) space`
 
@@ -219,8 +240,9 @@
 
     - [Path Sum Max](./src/tree/path_sum_max.py)
 
+##
 
-### Linked List
+#### Linked List
 
 - **Simple Forward** `O(N) time, O(1) space`
 
@@ -232,7 +254,9 @@
     - [Reorder from Mid Point](./src/linked_list/reorder_from_midpoint.py)
     - [Cycle Detection](./src/linked_list/detect_cycle.py)
 
-### Graph
+##
+
+#### Graph
 
 - **DSU(Root Union)** `O(C) time, O(N) space` `{node: root}`
 
@@ -254,24 +278,10 @@
 
     - [(Undirected) Matrix Count Groups](./src/graph/matrix_count_groups.py)
 
+##
 
-
-### Geometry
+#### Geometry
 
 - **Triangle**
 
     - [Check Point in Triangle](./src/geometry/check_point_in_triangle.py)
-
-
-### Data Structure Implementations
-
-- [HashMap](./src/structure/hashmap.py)
-- [Set](./src/structure/set.py)
-- [Deque](./src/structure/deque.py)
-- [Heap](./src/structure/heap.py)
-- [LRU Cache](./src/structure/cache_lru.py)
-- [MRU Cache](./src/structure/cache_mru.py)
-- [LFU Cache](./src/structure/cache_lfu.py)
-- [Pirority Cache](./src/structure/cache_priority.py)
-- [Message Queue Scheduled](./src/structure/message_queue_scheduled.py)
-- [Rate Limiter](./src/structure/rate_limiter.py)
