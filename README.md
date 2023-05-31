@@ -239,6 +239,7 @@
     > undirected set
 
     - [Undirected Stream Largest Set](./src/graph/undirected_stream_largest_set.py.py)
+    - [Undirected Remove Cycle](./src/graph/undirected_remove_cycle.py)
 
 - **Topological Sort** `O(C) time, O(C+N) space` `{up: [downs]}, [up_counts]`
 
