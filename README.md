@@ -110,6 +110,10 @@
     - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
     - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
     - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)
+
+- Greedy + Implicit BFS
+
+    - [Subsequence Min Jumps](./src/array/subsequence_min_jumps.py)
     
 - Greedy & Hashmap `O(N) space` - *index/count related condition* 
 
@@ -203,7 +207,7 @@
 
 ##
 
-#### Bit Manipulation
+#### Bit
 
 `n << 1 # n * 2` `n >> 1 # n // 2` `n & 1 # n % 2`
 
