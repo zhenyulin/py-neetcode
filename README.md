@@ -209,7 +209,7 @@
 
 #### Bit
 
-`n << 1 # n * 2` `n >> 1 # n // 2` `n & 1 # n % 2`
+`n << 1 <=> n * 2` `n >> 1 <=> n // 2` `n & 1 <=> n % 2`
 
 - Bit Iteration, Shift `O(1) time`
 
