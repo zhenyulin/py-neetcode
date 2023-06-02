@@ -111,9 +111,10 @@
     - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
     - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)
 
-- Greedy + Implicit BFS
+- Greedy + Two Pointer Window (Implicit BFS)
 
     - [Subsequence Min Jumps](./src/array/subsequence_min_jumps.py)
+    - [Circular Index Cover Cost](./src/array/circular_index_cover_cost.py)
     
 - Greedy & Hashmap `O(N) space` - *index/count related condition* 
 
