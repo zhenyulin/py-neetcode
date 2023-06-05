@@ -133,11 +133,12 @@
 
 - Greedy & Heap `O(K*LogN or N*LogK) time, O(N) space` - *rank, sort* 
 
-    > stream k, kth, median -> heap, window max -> stack
+    > stream k, kth, median, subgroups consecutive -> heap
 
     - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
     - [Stream Find Median](./src/array/stream_find_median.py) *min max heaps*
     - [Stream Sliding Window Median](./src/array/stream_sliding_window_median.py) *min max heaps, lazy removal*
+    - [Subgroups Fixed Size Check Consecutive](./src/array/subgroups_fixed_size_check_consecutive.py)
 
 - Greedy & Combinations `O(N^2) time`
 
