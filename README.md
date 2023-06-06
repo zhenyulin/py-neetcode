@@ -50,6 +50,7 @@
     - [Substring Longest with Char Replacement](./src/string/substring_longest_char_replacement.py) `{char: count}`
     - [Substring Longest without Repeating Characters](./src/string/substring_longest_without_repeating_characters.py) `{char: last}, seen[c] >= i`
     - [Splits Count Equal Unique Chars](./src/string/splits_count_equal_unique_chars.py) `{char: first}, {char: last}`
+    - [Splits Char Unique Part](./src/string/splits_char_unique_part.py) `{char: last}`
 
 - 1D Dynamic Programming `O(N) time, O(1 or N) space` - *multiple relations to between n-x and n*
 
