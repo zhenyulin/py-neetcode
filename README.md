@@ -103,7 +103,7 @@
     - [Subarray Addition Multiple](./src/array/subarray_addition_multiple.py) `lazy rolling addition`
     - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
     
-- Greedy + Sliding Window `O(1) space` - *forward and backward* 
+- Greedy + Sliding/Two-Pointer Window `O(1) space` - *forward and backward* 
 
     > subarray(area, remove, longest, shortest) -> sliding window
 
@@ -112,8 +112,9 @@
     - [Subarray Shortest Remove  to Sort](./src/array/subarray_remove_shortest_to_sort.py) `shortest window`
     - [Subarray Longest Sum Within K](./src/array/subarray_longest_sum_within_k.py)
     - [Triplets Count Increasing Sum Within K](./src/array/triplet_count_increasing_sum_within_k.py)
+    - [Sorted Array Two Indexes Sum to K](./src/array/sorted_array_two_indexes_sum_to_k.py)
 
-- Greedy + Two Pointer Window (Implicit BFS)
+- Greedy + Implicit BFS
 
     - [Subsequence Min Jumps](./src/array/subsequence_min_jumps.py)
     - [Circular Index Cover Cost](./src/array/circular_index_cover_cost.py)
