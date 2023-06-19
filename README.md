@@ -101,6 +101,7 @@
     - [Subarray Longest Consecutive](./src/array/subarray_longest_consecutive.py) `consecutive, set`
     - [Subarray Product Except Self](./src/array/subarray_product_except_self.py) `async except-self product`
     - [Subarray Addition Multiple](./src/array/subarray_addition_multiple.py) `lazy rolling addition`
+    - [Consecutive Int Missing](./src/array/consecutive_int_missing.py) `sum diff`
     - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
     
 - Greedy + Sliding/Two-Pointer Window `O(1) space` - *forward and backward* 
