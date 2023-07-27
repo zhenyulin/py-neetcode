@@ -7,12 +7,13 @@ authors = ["Zhenyu Lin <zhenyu.lyn@gmail.com>"]
 [tool.poetry.dependencies]
 python = "^3.9"
 
-[tool.poetry.dev-dependencies]
+[tool.poetry.group.dev.dependencies]
 black = "^19.10b0"
 pytest = "*"
 pytest-cov = "^4.0.0"
 pytest-env = "^0.8.1"
 pytest-picked = "^0.4.6"
+pytest-unordered = "^0.5.2"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
