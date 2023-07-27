@@ -2,16 +2,12 @@
 PYTHONPATH := $(PYTHONPATH):$(pwd)
 SHELL := /bin/bash -v
 
-## VARIABLES
-VIRTUAL_ENV_NAME := $(shell poetry env info -p | rev | cut -d'/' -f1 | rev)
-
 ## COMMANDS
 install:
 	@poetry install
 
 cleanup:
-	@poetry env remove python
-	@rm -f .coverage
+	@rm -rf .venv/
 	@rm -rf **/__pycache__
 
 shell:
@@ -20,11 +16,8 @@ shell:
 test:
 	@poetry run pytest src/ -vv -s
 
-test-watch:
-	@watchman-make -p 'src/**/*.py' -r 'poetry run pytest src/ -vv -s --picked'
-
 test-coverage:
 	@poetry run pytest src/ -vv -s --cov=src --cov-report=term-missing
 
-test-coverage-watch:
-	@poetry run pytest src/ -vv -s --cov=src --cov-report=term-missing --picked
+test-watch:
+	@watchexec -e py -- poetry run pytest src/ -vv -s --picked
