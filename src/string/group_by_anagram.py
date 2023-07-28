@@ -17,7 +17,7 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
     time complexity: O(M*N*K), space complexity: O(M*N + M*K)
 
-    NOTE: tuple equality check consumes O(K) time
+    NOTE: tuple equality consumes O(K) time, and its values are hashed separately
     N*K ~ N*logN would depend on the average length N
     """
 
