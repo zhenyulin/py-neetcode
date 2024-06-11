@@ -5,7 +5,7 @@
 
 
 def longestPalindrome(s: str) -> str:
-    """find the longest palindromic substring
+    """Find the longest palindromic substring.
 
     1) Greedy:
     iterate through 's', the minimum palindrome would be
@@ -22,7 +22,6 @@ def longestPalindrome(s: str) -> str:
     whether using 'dp[i]' to denote the longest palindromic substring in s[:i]
     or centred at s[i]
     """
-
     l, r, N = 0, 1, len(s)
 
     for i in range(N):

@@ -5,9 +5,7 @@
 
 
 def generateParentheses(n: int) -> list[str]:
-    """
-
-    1) Backtracking:
+    """1) Backtracking:
 
     we can set up counters for left, right parentheses
     explore adding "(" or ")" on the right condition recursingly
@@ -17,7 +15,6 @@ def generateParentheses(n: int) -> list[str]:
     time complexity: (3^2N), space complexity: (N^2)
     * N + (N-1) + ... + 1
     """
-
     res = []
 
     def add(left, right, s):

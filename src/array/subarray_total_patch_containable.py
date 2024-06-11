@@ -5,9 +5,8 @@
 
 
 def totalPatch(heights: list[int]) -> int:
-    """
-    this can be related to 11. Container With Most Water
-    (subarray max area containable)
+    """This can be related to 11. Container With Most Water
+    (subarray max area containable).
 
     1) Greedy, Sliding Window
     we moving two pointers from both ends, check the height against its bounded bar
@@ -28,7 +27,6 @@ def totalPatch(heights: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     i, j = 0, len(heights) - 1
     fill, left_bar, right_bar = 0, 0, 0
 

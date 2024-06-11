@@ -5,14 +5,12 @@
 
 
 def maxProduct(nums: list[int]) -> int:
-    """
-    For product, the absolute value won't decrease timing a new int except 0
+    """For product, the absolute value won't decrease timing a new int except 0.
 
     1) Greedy:
     record both the min, max for the max absolute values in both signs
     update max, min candidates at each step, rolling update res
     """
-
     res = _max = _min = nums[0]
 
     for n in nums[1:]:

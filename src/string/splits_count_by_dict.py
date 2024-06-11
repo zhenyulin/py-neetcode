@@ -5,8 +5,7 @@
 
 
 def waysOfDecoding(s: str) -> int:
-    """
-    n-2, n-1 are incrementally related to n, with two ways at each step
+    """n-2, n-1 are incrementally related to n, with two ways at each step.
 
     1) Dynamic Programming
 

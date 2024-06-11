@@ -1,6 +1,6 @@
 from unittest.mock import patch
 
-from src.structure.message_queue_scheduled import ScheduledMessage, MessageQueue
+from src.structure.message_queue_scheduled import MessageQueue, ScheduledMessage
 
 
 class TestMessageQueue:

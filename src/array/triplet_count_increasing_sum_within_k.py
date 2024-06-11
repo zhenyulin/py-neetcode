@@ -8,12 +8,10 @@
 
 
 def countTriplets(arr: list[int], t: int) -> int:
-    """
-    1) Iteration + Sliding Window
+    """1) Iteration + Sliding Window.
 
     time complexity: O(N^2), space complexity: O(1)
     """
-
     arr.sort()
 
     res = 0

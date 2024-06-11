@@ -6,7 +6,7 @@ from functools import cache
 
 
 def longestIncreasingPath(matrix: list[list[int]]) -> int:
-    """to find longest path increasing
+    """To find longest path increasing.
 
     1) cached DFS
 
@@ -16,7 +16,6 @@ def longestIncreasingPath(matrix: list[list[int]]) -> int:
 
     2) 2D Dynamic Programming
     """
-
     M, N = len(matrix), len(matrix[0])
 
     @cache

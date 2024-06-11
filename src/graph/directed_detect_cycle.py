@@ -6,8 +6,7 @@ from collections import defaultdict, deque
 
 
 def canFinish(numCourses: int, prerequisites: list[list[int]]) -> bool:
-    """
-    check if there's cycle in a directed graph
+    """Check if there's cycle in a directed graph.
 
     1) Topological Sort
 
@@ -20,7 +19,6 @@ def canFinish(numCourses: int, prerequisites: list[list[int]]) -> bool:
     * C is the number of connections, length of prerequisites
     * N is the number of nodes (courses)
     """
-
     downs, up_counts = defaultdict(list), [0] * numCourses
 
     for c, p in prerequisites:

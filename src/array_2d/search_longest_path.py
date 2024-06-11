@@ -5,14 +5,12 @@
 
 
 def longestPath(grid: list[list[int]]) -> int:
-    """
-    for longest path
+    """For longest path.
 
     1) DFS
 
     time complexity: O(M*N), space complexity: O(1)
     """
-
     res, M, N = 0, len(grid), len(grid[0])
 
     def dfs(i, j):

@@ -4,9 +4,8 @@
 #
 
 
-def canCompleteCircuit(gas: list[int], cost: list[int]) -> int:
-    """
-    1) Greedy
+def can_complete_circuit(gas: list[int], cost: list[int]) -> int:
+    """1) Greedy.
 
     Try a index and iterate until it is not working
     Record the tried starting index, and try next from the last end
@@ -23,7 +22,6 @@ def canCompleteCircuit(gas: list[int], cost: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     start, end = len(gas) - 1, 0
     total = gas[start] - cost[start]
 

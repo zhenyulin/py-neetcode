@@ -5,9 +5,8 @@
 
 
 def largestAreaRectangle(heights: list[int]) -> int:
-    """
-    to get the max rectangle area, we need an effective data structure
-    to record all viable previous heights to heights[i] to form a larger rectangle
+    """To get the max rectangle area, we need an effective data structure
+    to record all viable previous heights to heights[i] to form a larger rectangle.
 
     1) Sliding Window & Stack
 

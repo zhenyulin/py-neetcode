@@ -5,7 +5,7 @@
 
 
 def productExceptSelf(nums: list[int]) -> list[int]:
-    """accumulate product from the array except self
+    """Accumulate product from the array except self.
 
     1) Prefix/Suffix Arrays:
     ```python
@@ -33,7 +33,6 @@ def productExceptSelf(nums: list[int]) -> list[int]:
 
     time complexity: O(N), space complexity: O(N) (O(1) except the result array)
     """
-
     prefix, suffix, res = 1, 1, [1] * len(nums)
 
     for i in range(len(nums)):

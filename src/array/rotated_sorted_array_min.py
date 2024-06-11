@@ -5,9 +5,7 @@
 
 
 def findMin(nums: list[int]) -> int:
-    """
-
-    the array after rotation will have 2 incremental parts (or like original)
+    """The array after rotation will have 2 incremental parts (or like original).
 
     1) Binary Search
     in a sorted array, even rotated, by binary searching the smaller part
@@ -15,7 +13,6 @@ def findMin(nums: list[int]) -> int:
 
     time complexity: O(LogN), space complexity: O(1)
     """
-
     left, right = 0, len(nums) - 1
 
     while left < right:

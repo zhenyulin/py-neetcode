@@ -1,6 +1,6 @@
-from os import getenv
-from typing import Optional, Callable
 from collections import deque
+from os import getenv
+from typing import Callable, Optional
 
 
 class TreeNode:

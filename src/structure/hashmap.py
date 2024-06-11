@@ -16,9 +16,8 @@ Input = int | float | str | tuple
 
 class HashMap:
     def __init__(self, capacity: int = 10) -> None:
-        """
-        to minimise memory needed for the list on initialisation
-        a capacity is used to allocate bucket for hash keys
+        """To minimise memory needed for the list on initialisation
+        a capacity is used to allocate bucket for hash keys.
 
         time complexity: O(1)
         """
@@ -27,17 +26,16 @@ class HashMap:
         self.length = 0
 
     def _hash_key(self, key: Input) -> int:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         return hash(key) % self.capacity
 
     def __len__(self) -> int:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         return self.length
 
     def __contains__(self, key: Input) -> bool:
-        """
-        average time complexity: O(1), assuming collisions are uncommon
-        amortised time complexity: O(N), in case of collisions
+        """Average time complexity: O(1), assuming collisions are uncommon
+        amortised time complexity: O(N), in case of collisions.
         """
         index = self._hash_key(key)
         for k, _ in self.buckets[index]:
@@ -46,15 +44,14 @@ class HashMap:
         return False
 
     def __iter__(self) -> Iterator:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         for bucket in self.buckets:
             for key, _ in bucket:
                 yield key
 
     def __getitem__(self, key: Input) -> any:
-        """
-        average time complexity: O(1), assuming collisions are uncommon
-        amortised time complexity: O(N), in case of collisions
+        """Average time complexity: O(1), assuming collisions are uncommon
+        amortised time complexity: O(N), in case of collisions.
         """
         index = self._hash_key(key)
         for k, v in self.buckets[index]:
@@ -63,9 +60,8 @@ class HashMap:
         raise KeyError(f"{key} not found")
 
     def __setitem__(self, key: Input, value: any = None) -> None:
-        """
-        average time complexity: O(1), assuming collisions are uncommon
-        amortised time complexity: O(N), in case of collisions
+        """Average time complexity: O(1), assuming collisions are uncommon
+        amortised time complexity: O(N), in case of collisions.
         """
         index = self._hash_key(key)
         for entry in self.buckets[index]:
@@ -76,9 +72,8 @@ class HashMap:
         self.length += 1
 
     def __delitem__(self, key: Input) -> None:
-        """
-        average time complexity: O(1), assuming collisions are uncommon
-        amortised time complexity: O(N), in case of collisions
+        """Average time complexity: O(1), assuming collisions are uncommon
+        amortised time complexity: O(N), in case of collisions.
         """
         index = self._hash_key(key)
         for i, (k, _) in enumerate(self.buckets[index]):
@@ -94,7 +89,7 @@ class HashMap:
     remove = __delitem__
 
     def keys(self) -> list[Input]:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         keys = []
         for bucket in self.buckets:
             for k, _ in bucket:
@@ -102,7 +97,7 @@ class HashMap:
         return keys
 
     def values(self) -> list[any]:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         values = []
         for bucket in self.buckets:
             for _, v in bucket:
@@ -110,7 +105,7 @@ class HashMap:
         return values
 
     def items(self) -> list[tuple[Input, any]]:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         items = []
         for bucket in self.buckets:
             for pair in bucket:

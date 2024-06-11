@@ -5,15 +5,12 @@
 
 
 def two_sum(numbers: list[int], target: int) -> list[int]:
-    """
-
-    1) Two Pointers:
+    """1) Two Pointers:
 
     we can search from the two ends to the centre
 
     time complexity: O(N), space complexity: O(1)
     """
-
     i, j = 0, len(numbers) - 1
 
     while i < j:

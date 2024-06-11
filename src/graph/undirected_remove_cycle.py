@@ -5,8 +5,7 @@
 
 
 def removeCycle(edges: list[list[int]]) -> list[int]:
-    """
-    X) Topological Sort
+    """X) Topological Sort.
 
     not suitable for undirected
 
@@ -19,7 +18,6 @@ def removeCycle(edges: list[list[int]]) -> list[int]:
     time complexity: O(N), space complexity: O(N)
     * N is the number of connections, also nodes here
     """
-
     # prefer list over dict when 1-n is known to avoid collision
     # use +1 as index is from [1, n]
     parents = [0 for _ in range(len(edges) + 1)]

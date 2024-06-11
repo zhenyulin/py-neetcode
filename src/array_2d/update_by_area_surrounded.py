@@ -6,14 +6,12 @@ from collections import deque
 
 
 def update(board: list[list[str]]) -> list[list[str]]:
-    """
-    area surrounded, so only areas from the edges would be unsurrounded
+    """Area surrounded, so only areas from the edges would be unsurrounded.
 
     1) DFS
 
     time complexity: O(M*N), space complexity: O(M+N)
     """
-
     # M, N = len(board), len(board[0])
 
     # def dfs(i, j):

@@ -3,14 +3,14 @@
 # https://leetcode.com/problems/validate-binary-search-tree/
 #
 from typing import Optional
+
 from .tree_node import TreeNode, use_list_in_test
 
 
 @use_list_in_test()
 def validateBST(root: Optional[TreeNode]) -> bool:
-    """
-    for BST, we need to cascade down the node.val
-    as the min(low) on the right and max(high) on the left
+    """For BST, we need to cascade down the node.val
+    as the min(low) on the right and max(high) on the left.
 
     1) Recursion
 

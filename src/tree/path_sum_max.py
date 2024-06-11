@@ -7,8 +7,7 @@ from .tree_node import TreeNode, use_list_in_test
 
 @use_list_in_test()
 def maxPathSum(root: TreeNode) -> int:
-    """
-    a path can be expanded from any node
+    """A path can be expanded from any node.
 
     1) DFS & Backtracking
     search down at every node as the root of the path
@@ -17,7 +16,6 @@ def maxPathSum(root: TreeNode) -> int:
     time complexity: O(N), space complexity: O(N)
     * N is the number of nodes
     """
-
     res = -float("inf")
 
     def search(node: TreeNode) -> int:

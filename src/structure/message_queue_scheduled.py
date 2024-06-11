@@ -1,5 +1,4 @@
-"""
-[follow-ups]
+"""[follow-ups]
 collision handling:
 * if scheduled_at time is collision with the processing time of other messages
 try schedule the message at the nearest possible slot and return the actual scheduled time
@@ -7,8 +6,8 @@ try schedule the message at the nearest possible slot and return the actual sche
 """
 
 
-from time import time, sleep
 from datetime import datetime
+from time import sleep, time
 
 from .utils import binary_search_index
 
@@ -21,10 +20,9 @@ class ScheduledMessage:
 
 
 class MessageQueue:
-    """
-    a message queue with a single thread to process messages
+    """a message queue with a single thread to process messages
     with the receiver of whom has a sliding window rate limit
-    and latency of message being sent needs to be minimised
+    and latency of message being sent needs to be minimised.
 
     message can be scheduled
 
@@ -40,10 +38,9 @@ class MessageQueue:
         self.rate_limit = rate_limit
 
     def enqueue(self, m: ScheduledMessage) -> bool:
-        """
-        1) Binary Search, Window Check, Insert
+        """1) Binary Search, Window Check, Insert
         binary search the potential insert index of the new message
-        check whether before and after windows are within rate limit
+        check whether before and after windows are within rate limit.
 
         time complexity: O(N), space complexity: O(1)
         """
@@ -81,9 +78,7 @@ class MessageQueue:
         pass
 
     def dequeue(self):
-        """
-        time complexity: O(1)
-        """
+        """Time complexity: O(1)."""
         while self.queue and time() >= self.queue[-1][1]:
             scheduled_at, processing_at, text = self.queue.pop()
             self._process(scheduled_at - processing_at)

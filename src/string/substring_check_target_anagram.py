@@ -5,8 +5,7 @@
 
 
 def check_inclusion(t: str, s: str) -> bool:
-    """
-    check whether a substring is anagram with the target
+    """Check whether a substring is anagram with the target.
 
     1)* slide window of len(t) and list Counter to check anagram
 
@@ -20,7 +19,6 @@ def check_inclusion(t: str, s: str) -> bool:
 
     time complexity: O(S*T), space complexity: O(T)
     """
-
     if len(t) > len(s):
         return False
 

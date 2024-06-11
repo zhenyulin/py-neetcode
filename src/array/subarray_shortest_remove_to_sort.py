@@ -5,15 +5,12 @@
 
 
 def findShortestSubarrayToRemove(arr: list[int]) -> int:
-    """
-
-    1) Greedy Sliding Window:
+    """1) Greedy Sliding Window:
 
     we can firstly find the 'a', 'b' for [:a+1] and [b:] to be sorted
     if there's something to be removed, then a < b
     then find the smallest window '[i, j]'' covering '[a+1:b-1]' so that arr[i] <= arr[j]
     """
-
     N = len(arr)
 
     a = 0

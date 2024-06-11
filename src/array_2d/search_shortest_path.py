@@ -6,7 +6,7 @@ from collections import deque
 
 
 def shortestPath(grid: list[list[int]]) -> int:
-    """to find the length of shortest path from top left to bottom right
+    """To find the length of shortest path from top left to bottom right.
 
     there are various trajectories from each step, to count the smallest level
 
@@ -21,7 +21,6 @@ def shortestPath(grid: list[list[int]]) -> int:
 
     time complexity: O(N^2), space complexity: O(N^2)
     """
-
     if (grid[0][0], grid[-1][-1]) != (0, 0):
         return -1
 

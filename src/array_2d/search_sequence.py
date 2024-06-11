@@ -6,8 +6,7 @@
 
 
 def exist(board: list[list[str]], word: str) -> bool:
-    """
-    2D search, we can use
+    """2D search, we can use.
 
     1) DFS
     use a 'used' set to record the cells used

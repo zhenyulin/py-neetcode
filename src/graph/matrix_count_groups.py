@@ -6,16 +6,14 @@ from collections import defaultdict
 
 
 def countGroups(connections: list[list[int]]) -> int:
-    """
-    to count unique groups, we can use DFS
-    we can also form a graph to reduce repeated searching
+    """To count unique groups, we can use DFS
+    we can also form a graph to reduce repeated searching.
 
     1) DFS
 
     time complexity: O(N^2), space complexity: O(N+2*M)
     * M is the average connections in the graph
     """
-
     if not connections:
         return 0
 

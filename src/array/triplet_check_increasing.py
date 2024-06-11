@@ -5,14 +5,12 @@
 
 
 def increasingTriplet(nums: list[int]) -> bool:
-    """
-    1) Greedy
+    """1) Greedy.
 
     can be turned into a finding larger num during iteration with anchors
 
     time complexity: O(N), space complexity: O(1)
     """
-
     a = b = float("inf")
 
     for n in nums:

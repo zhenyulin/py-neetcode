@@ -5,8 +5,7 @@
 
 
 def validateParenthesis(s: str) -> bool:
-    """
-    1) Greedy
+    """1) Greedy.
 
     since stars also have their locations, once they are assigned
     left parenthesis, there needs to be a corresponding right parethesis
@@ -16,7 +15,6 @@ def validateParenthesis(s: str) -> bool:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     left_min, left_max = 0, 0
 
     for c in s:

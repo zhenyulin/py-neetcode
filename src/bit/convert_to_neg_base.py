@@ -5,8 +5,7 @@
 
 
 def negBase(n: int, base: int = -2) -> str:
-    """
-    negative base
+    """Negative base.
 
         n = base*carry + bit
 

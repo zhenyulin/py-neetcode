@@ -5,8 +5,7 @@
 
 
 def longestCommonSubsequence(text1: str, text2: str) -> int:
-    """
-    for subsequence, it is common to use dynamic programming, for 2 strings we can
+    """For subsequence, it is common to use dynamic programming, for 2 strings we can.
 
     1) 2D Dynamic Programming
 

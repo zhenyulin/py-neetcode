@@ -5,12 +5,10 @@
 
 
 def minSubArrayLen(target: int, nums: list[int]) -> int:
-    """
-    1) Greedy (left, right sliding window)
+    """1) Greedy (left, right sliding window).
 
     time complexity: O(N), space complexity: O(1)
     """
-
     i, j, s, res = 0, 0, 0, len(nums) + 1
 
     while j < len(nums):

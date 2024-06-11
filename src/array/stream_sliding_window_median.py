@@ -2,13 +2,12 @@
 # 480. Sliding Window Median
 # https://leetcode.com/problems/sliding-window-median/description/
 #
-from heapq import heappop, heappush, heappushpop
 from collections import defaultdict
+from heapq import heappop, heappush, heappushpop
 
 
 def slidingWindowMedian(nums: list[int], k: int) -> list[float]:
-    """
-    we can use min-max heaps for median value
+    """We can use min-max heaps for median value.
 
     see [295. Find Median from Data Stream]
     (./stream_find_median_element.py)

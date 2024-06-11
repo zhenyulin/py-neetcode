@@ -7,10 +7,9 @@ from heapq import heapify, heappop
 
 
 def canBeGrouped(hand: list[int], group_size: int) -> bool:
-    """
-    to check if it is consecutively groupable to the fixed size,
+    """To check if it is consecutively groupable to the fixed size,
     we can check from the smallest number for consecutive sequences
-    remove the found, and iterate forward
+    remove the found, and iterate forward.
 
     1) Greedy
 

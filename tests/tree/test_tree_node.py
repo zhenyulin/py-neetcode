@@ -1,4 +1,4 @@
-from src.tree.tree_node import TreeNode, tree_to_list, list_to_tree
+from src.tree.tree_node import TreeNode, list_to_tree, tree_to_list
 
 
 def testTreeToList():

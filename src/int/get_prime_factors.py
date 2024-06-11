@@ -5,7 +5,7 @@
 
 
 def primeFactors(n: int) -> list[int]:
-    """get the prime factors of a number
+    """Get the prime factors of a number.
 
     1) Greedy
 
@@ -16,7 +16,6 @@ def primeFactors(n: int) -> list[int]:
     as non prime factors such as 4, 6, would have been sufficiently divided
     in previous factor 2, 3, so later 'n % k == 0' wouldn't be true for them
     """
-
     res, k = [], 2
 
     while k ^ 2 <= n:

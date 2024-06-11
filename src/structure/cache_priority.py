@@ -1,16 +1,14 @@
-from typing import Optional
 
 from .hashmap import Input
 
 
 class PriorityCache:
-    """
-    a priority cache that can
+    """a priority cache that can
     - sort cache by priority
     - get value by key
     - add new key value, pop low priority one if full
     - update value by key
-    - update priority by key
+    - update priority by key.
 
     1) Dict & Sorted Linked List
 
@@ -40,16 +38,14 @@ class PriorityCache:
         self.priority = []
 
     def get(self, key: Input) -> any:
-        """
-        cache {key: value}
+        """Cache {key: value}.
 
         time complexity: O(1)
         """
         return self.cache[key]
 
     def pop(self) -> any:
-        """
-        pop the job of the highest priority
+        """Pop the job of the highest priority.
 
         time complexity: O(1)
         """
@@ -59,9 +55,7 @@ class PriorityCache:
         return val
 
     def add(self, key: Input, value: any, priority: int) -> None:
-        """
-        amortised time complexity: O(N)
-        """
+        """Amortised time complexity: O(N)."""
         if len(self.priority) == self.capacity:
             self.pop()
         self.priority.append((priority, key))
@@ -69,18 +63,14 @@ class PriorityCache:
         self.cache[key] = value
 
     def update_value(self, key: Input, value: any) -> None:
-        """
-        time complexity: O(1)
-        """
+        """Time complexity: O(1)."""
         if key not in self.cache:
             raise KeyError("key not found")
 
         self.cache[key] = value
 
     def update_priority(self, key: Input, priority: int) -> None:
-        """
-        amortised time complexity: O(N)
-        """
+        """Amortised time complexity: O(N)."""
         if key not in self.cache:
             raise KeyError("key not found")
 

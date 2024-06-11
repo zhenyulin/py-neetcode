@@ -24,8 +24,7 @@
 
 
 def maxMinGap(nums: list[int], m: int) -> int:
-    """
-    Given the array is sorted, we can probably leveraging BS
+    """Given the array is sorted, we can probably leveraging BS.
 
     1) Binary Search + Greedy
 

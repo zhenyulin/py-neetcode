@@ -5,7 +5,7 @@
 
 
 def numMatchSubsequences(s: str, t: str) -> int:
-    """to count the number of unique subsequences matching the target
+    """To count the number of unique subsequences matching the target.
 
     1) 2D Dynamic Programming
 
@@ -15,7 +15,6 @@ def numMatchSubsequences(s: str, t: str) -> int:
 
     time complexity: O(M*N), space complexity: O(M*N)
     """
-
     # dp = [[1] + [0] * len(t) for _ in range(len(s) + 1)]
 
     # for i, a in enumerate(s):

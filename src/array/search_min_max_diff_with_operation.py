@@ -5,8 +5,7 @@
 
 
 def smallestRange(nums: list[int], k: int) -> int:
-    """
-    we need to find the possible cloest new min and new max to reduce the gap
+    """We need to find the possible cloest new min and new max to reduce the gap.
 
     for any pair (a, b) with a <= b in the list,
     only (a+k, b-k) can possibly reduce the gap to |b-a-2k|
@@ -40,7 +39,6 @@ def smallestRange(nums: list[int], k: int) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     nums.sort()
 
     n, m = nums[0], nums[-1]

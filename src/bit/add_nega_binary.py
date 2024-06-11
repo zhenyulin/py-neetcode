@@ -5,9 +5,7 @@
 
 
 def addNegaBinary(arr1: list[int], arr2: list[int]) -> list[int]:
-    """
-
-    1) Calculation per Bit
+    """1) Calculation per Bit.
 
     in negative base, the values of bits alter between negative and positive
     so the carry will be negative to the next bit, so needs to be deducted not added

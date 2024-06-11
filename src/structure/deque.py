@@ -16,7 +16,7 @@ class Node:
 
 class Deque:
     def __init__(self, elements: Optional[list[any]] = []) -> None:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         self.head = None
         self.tail = None
         self.length = 0
@@ -25,18 +25,18 @@ class Deque:
             self.append(e)
 
     def __len__(self):
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         return self.length
 
     def __iter__(self):
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         node = self.head
         while node:
             yield node.val
             node = node.next
 
     def __getitem__(self, index: int) -> any:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         _index = index if index >= 0 else self.length + index
 
         if not 0 <= _index < self.length:
@@ -47,7 +47,7 @@ class Deque:
         return node.val
 
     def __setitem__(self, index: int, value: any) -> None:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         _index = index if index >= 0 else self.length + index
 
         if not 0 <= _index < self.length:
@@ -62,11 +62,11 @@ class Deque:
         return not self.is_empty()
 
     def is_empty(self):
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         return self.length == 0
 
     def append_left(self, val: any) -> None:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         node = Node(val)
         if self.is_empty():
             self.head = self.tail = node
@@ -77,7 +77,7 @@ class Deque:
         self.length += 1
 
     def append(self, val: any) -> None:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         node = Node(val)
         if self.is_empty():
             self.head = self.tail = node
@@ -88,7 +88,7 @@ class Deque:
         self.length += 1
 
     def pop_left(self):
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         if self.is_empty():
             raise IndexError("not able to pop from empty deque")
         val = self.head.val
@@ -101,7 +101,7 @@ class Deque:
         return val
 
     def pop(self):
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         if self.is_empty():
             raise IndexError("not able to pop from empty deque")
         val = self.tail.val
@@ -114,7 +114,7 @@ class Deque:
         return val
 
     def remove(self, val: any) -> bool:
-        """time complexity: O(N)"""
+        """Time complexity: O(N)."""
         node = self.head
         while node:
             if node.val == val:

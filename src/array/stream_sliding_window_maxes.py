@@ -6,8 +6,7 @@ from collections import deque
 
 
 def windowMaxes(nums: list[int], k: int) -> list[int]:
-    """
-    to record the maxes of window sliding
+    """To record the maxes of window sliding.
 
     we need to find an effciient data structure to record the max
     and rolling update it with shifting indexes
@@ -19,7 +18,6 @@ def windowMaxes(nums: list[int], k: int) -> list[int]:
 
     time complexity: O(N), space complexity: O(K)
     """
-
     stack, res = deque(), []
 
     for i, n in enumerate(nums):

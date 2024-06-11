@@ -5,9 +5,7 @@
 
 
 def isSolvable(words: list[str], result: str) -> bool:
-    """
-
-    1) DFS
+    """1) DFS.
 
     search the possible value map from last digit and on wards
     lazily assign value to char only until come across new char
@@ -15,7 +13,6 @@ def isSolvable(words: list[str], result: str) -> bool:
 
     time complexity: O(), space complexity: O()
     """
-
     if max(map(len, words)) > len(result):
         return False
 
@@ -27,8 +24,7 @@ def isSolvable(words: list[str], result: str) -> bool:
     # to assign value to individual char lazily, we will do DFS word by word from lower digit
     # since we need conditional resursion, we will search (w, i) together so that DFS returns bool
     def dfs(w: int, i: int, val: int) -> bool:
-        """search possible value map at 'i' digit at word 'w' with 'val' value"""
-
+        """Search possible value map at 'i' digit at word 'w' with 'val' value."""
         # { target condition }
         # finished search last digit in result
         if i == len(result):

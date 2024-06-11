@@ -7,12 +7,10 @@ from itertools import combinations
 
 
 def threeSum(nums: list[int]) -> list[list[int]]:
-    """
-    0) Iteraive Greedy (Two Sum)
+    """0) Iteraive Greedy (Two Sum).
 
     time complexity: O(N^2), space complexity: O(N)
     """
-
     # res = set()
 
     # for i, n in enumerate(nums[:-2]):

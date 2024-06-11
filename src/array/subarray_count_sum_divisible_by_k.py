@@ -6,13 +6,12 @@ from collections import defaultdict
 
 
 def subarrayDivByK(nums: list[int], k: int) -> int:
-    """to count all subarrays sum divisible by k
+    """To count all subarrays sum divisible by k.
 
     1) Hashmap Prefix Sum, {sum: count}
 
     time complexity: O(N), space complexity: O(N)
     """
-
     res, current, counter = 0, 0, defaultdict(int)
 
     for n in [0] + nums:

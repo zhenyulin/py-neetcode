@@ -6,9 +6,8 @@ from collections import defaultdict, deque
 
 
 def findPathes(numCourses: int, prerequisites: list[list[int]]) -> list[int]:
-    """
-    which means there are no cycles in the directed graph
-    so we can use the same process
+    """Which means there are no cycles in the directed graph
+    so we can use the same process.
 
     1) Topological Sort
 
@@ -16,7 +15,6 @@ def findPathes(numCourses: int, prerequisites: list[list[int]]) -> list[int]:
     * C is the number of connections, length of prerequisites
     * N is the number of nodes (courses)
     """
-
     downs, up_counts = defaultdict(list), [0] * numCourses
 
     for c, p in prerequisites:

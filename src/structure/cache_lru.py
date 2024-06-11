@@ -1,4 +1,5 @@
 from typing import Self
+
 from .hashmap import Input
 
 
@@ -25,9 +26,8 @@ class Node:
 
 
 class LRUCache:
-    """
-    1) dict & linked list
-    use a dict as cache, and pointed to a linked list for recency
+    """1) dict & linked list
+    use a dict as cache, and pointed to a linked list for recency.
 
     get: O(1), put: O(1)
     """
@@ -43,14 +43,13 @@ class LRUCache:
         self.tail.prev = self.head
 
     def _to_head(self, node: Node) -> None:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         node.prev.next, node.next.prev = node.next, node.prev
         node.prev, node.next = self.head, self.head.next
         self.head.next.prev, self.head.next = node, node
 
     def _pop(self) -> Node:
-        """
-        pop the LRU at tail
+        """Pop the LRU at tail.
 
         time complexity: O(1)
         """
@@ -60,8 +59,7 @@ class LRUCache:
         return node
 
     def get(self, key: Input) -> any:
-        """
-        get the value and update the recency by moving the node to head
+        """Get the value and update the recency by moving the node to head.
 
         time complexity: O(1)
         """
@@ -73,8 +71,7 @@ class LRUCache:
             return None
 
     def put(self, key: Input, value: any) -> None:
-        """
-        update to the head side, pop the LRU at tail
+        """Update to the head side, pop the LRU at tail.
 
         time complexity: O(1)
         """

@@ -5,8 +5,7 @@
 
 
 def findPeakGrid(grid: list[list[int]]) -> list[int]:
-    """
-    related to 1D peak element search
+    """Related to 1D peak element search.
 
     there are local peaks in every row or column
     it is basically to find a 2D peak from those local peaks
@@ -38,7 +37,6 @@ def findPeakGrid(grid: list[list[int]]) -> list[int]:
     time complexity: O(M*LogN), space complexity: O(1)
 
     """
-
     left, right = 0, len(grid[0]) - 1
 
     while left <= right:

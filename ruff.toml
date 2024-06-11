@@ -22,6 +22,7 @@ ignore = [
     "D107", # undocumented-public-init
     "D417", # undocumented-param
     "E501", # line-too-long
+    "N802", # invalid-function-name
 ]
 
 [lint.mccabe]

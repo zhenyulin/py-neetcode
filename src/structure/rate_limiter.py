@@ -3,8 +3,7 @@ from time import time
 
 
 class RateLimiter:
-    """
-    1) deque stack:
+    """1) deque stack:
 
     accept: O(1)
     """

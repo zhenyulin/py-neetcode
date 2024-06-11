@@ -5,8 +5,7 @@
 
 
 def subsequenceEqualAverage(arr: list[int]) -> bool:
-    """
-    subsequence search with condition
+    """Subsequence search with condition.
 
     1) Dynamic Programming
 
@@ -16,7 +15,6 @@ def subsequenceEqualAverage(arr: list[int]) -> bool:
 
     time complexity: O(N^N), space complexity: O(N^N) ~ C(N, N//2) ~ N^(N//2)
     """
-
     # arr.sort(reverse=True)
 
     # TOTAL, N = sum(arr), len(arr)

@@ -6,8 +6,7 @@ from collections import defaultdict
 
 
 def charReplacement(s: str, k: int) -> int:
-    """
-    this is equivalent to find the substring with 'k' different chars
+    """This is equivalent to find the substring with 'k' different chars.
 
     1) Hashmap:
     iterate through the string, use a Hashmap to count the chars

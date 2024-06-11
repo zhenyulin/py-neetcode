@@ -6,10 +6,9 @@ from collections import defaultdict
 
 
 def isValidSudoku(board: list[list[str]]) -> bool:
-    """
-    0) Brutal Force:
+    """0) Brutal Force:
     check each row, each column, each box separately
-    time complexity: O(9*9*3), space complexity: O(9)
+    time complexity: O(9*9*3), space complexity: O(9).
 
     1) Search with Memory:
     use a set to record each row, column and box iterating through the board

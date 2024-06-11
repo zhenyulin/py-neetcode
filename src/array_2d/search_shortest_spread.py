@@ -6,8 +6,7 @@ from collections import deque
 
 
 def shortestSpread(grid: list[list[int]]) -> int:
-    """
-    shortest ~ BFS
+    """Shortest ~ BFS.
 
     1) BFS
 

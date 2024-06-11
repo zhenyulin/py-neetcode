@@ -5,9 +5,8 @@
 
 
 def search(nums: list[int], target: int) -> int:
-    """
-    even after rotation, the array still has incrementality
-    with binary search, the scope would evetually be simply incremental
+    """Even after rotation, the array still has incrementality
+    with binary search, the scope would evetually be simply incremental.
 
     1) Binary Search
     find the sorted part of the array covering the target first
@@ -15,7 +14,6 @@ def search(nums: list[int], target: int) -> int:
 
     time complexity: O(LogN), space complexity: O(1)
     """
-
     l, r = 0, len(nums) - 1
 
     while l <= r:

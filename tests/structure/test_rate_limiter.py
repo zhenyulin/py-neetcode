@@ -1,5 +1,3 @@
-from unittest.mock import patch
-
 from src.structure.rate_limiter import RateLimiter
 
 

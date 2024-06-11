@@ -8,8 +8,7 @@ from .list_node import ListNode
 
 
 def hasCycle(head: Optional[ListNode]) -> bool:
-    """
-    1) Fast, Slow Pointers
+    """1) Fast, Slow Pointers.
 
     time complexity: O(N), space complexity: O(1)
     """

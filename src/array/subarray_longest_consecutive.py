@@ -5,7 +5,7 @@
 
 
 def longestConsecutiveSequence(nums: list[int]) -> int:
-    """return the length of the longest consecutive number sequence
+    """Return the length of the longest consecutive number sequence.
 
     1) Greedy:
 

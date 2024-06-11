@@ -4,9 +4,8 @@ from .hashmap import Input
 
 
 class LFUCache:
-    """
-    1) dict & count dict
-    use a dict as cache, and a dict to record the count
+    """1) dict & count dict
+    use a dict as cache, and a dict to record the count.
 
     get: O(1), put: O(N)
 
@@ -23,7 +22,7 @@ class LFUCache:
         self.count = defaultdict(int)
 
     def get(self, key: Input) -> any:
-        """time complexity: O(1)"""
+        """Time complexity: O(1)."""
         if key not in self.cache:
             return None
 
@@ -31,8 +30,7 @@ class LFUCache:
         return self.cache[key]
 
     def put(self, key: Input, value: any) -> None:
-        """time complexity: O(N)"""
-
+        """Time complexity: O(N)."""
         if key not in self.cache and len(self.cache) == self.capacity:
             expired_key = min(self.count, key=self.count.get)
             del self.cache[expired_key]

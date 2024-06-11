@@ -3,6 +3,7 @@
 # https://leetcode.com/problems/reverse-linked-list/
 #
 from typing import Optional
+
 from .list_node import ListNode, use_list_in_test
 
 

@@ -5,7 +5,7 @@
 
 
 def numWays(s: str) -> int:
-    """to count ways to split the string with equal amount of 1
+    """To count ways to split the string with equal amount of 1.
 
     we just need to record the indexes of N/3 and 2*N/3 for 1
 
@@ -13,7 +13,6 @@ def numWays(s: str) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     N, MOD_BASE = s.count("1"), 10**9 + 7
 
     if N == 0:

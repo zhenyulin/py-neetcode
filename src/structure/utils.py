@@ -4,9 +4,8 @@ from typing import Callable
 def binary_search_index(
     sequence: list, value: any, key: Callable = lambda x: x, ascending: bool = True
 ):
-    """
-    use binary search when the relationship between value and elements in the sequence is binary
-    and the elements have certain order based on the value
+    """Use binary search when the relationship between value and elements in the sequence is binary
+    and the elements have certain order based on the value.
     """
     i, j = 0, len(sequence)
 

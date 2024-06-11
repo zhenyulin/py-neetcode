@@ -5,8 +5,7 @@
 
 
 def partitionLengthes(s: str) -> list[int]:
-    """
-    1) Greedy, HashMap
+    """1) Greedy, HashMap.
 
     to make sure unique char only appear in one part
     we can record the index of the char last appeared
@@ -18,7 +17,6 @@ def partitionLengthes(s: str) -> list[int]:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     last = {s[i]: i for i in range(len(s))}  # last appearance
     res, i, length, limit = [], 0, 0, 0
 

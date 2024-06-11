@@ -5,7 +5,7 @@
 
 
 def findPeakElement(nums: list[int]) -> int:
-    """find the index to the any of the peaks
+    """Find the index to the any of the peaks.
 
     1) Binary Search
 
@@ -19,7 +19,6 @@ def findPeakElement(nums: list[int]) -> int:
 
     time complexity: O(LogN), space complexity: O(1)
     """
-
     left, right = 0, len(nums) - 1
 
     while left < right:

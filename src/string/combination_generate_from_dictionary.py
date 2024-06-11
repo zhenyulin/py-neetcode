@@ -16,14 +16,12 @@ LETTERS = {
 
 
 def letterCombinations(digits: str) -> list[str]:
-    """
-    1) iterate:
-    iterate through digits and results then concate string to results
+    """1) iterate:
+    iterate through digits and results then concate string to results.
 
     time complexity: O(4^N), space complexity: O(4^N)
     * 4^1 + 4^2 + ... + 4^N
     """
-
     res = list(LETTERS[digits[0]]) if digits else []
 
     for d in digits[1:]:

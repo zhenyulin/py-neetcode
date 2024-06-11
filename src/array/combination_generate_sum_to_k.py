@@ -5,8 +5,7 @@
 
 
 def combinationSum(candidates: list[int], target: int) -> list[list[int]]:
-    """
-    *unique combinations are capped at 150
+    """*unique combinations are capped at 150.
 
     to find unique combinations sum to the target, we can
 

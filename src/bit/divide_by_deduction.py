@@ -5,8 +5,7 @@
 
 
 def divide(dividend: int, divisor: int) -> int:
-    """
-    we can use deduction for division without multiplication, division and mod
+    """We can use deduction for division without multiplication, division and mod.
 
     1) Bit Shift
 
@@ -15,7 +14,6 @@ def divide(dividend: int, divisor: int) -> int:
 
     time complexity: O(1), space complexity: O(1)
     """
-
     a, b, res, CAP = abs(dividend), abs(divisor), 0, 2**31
 
     for power in range(31, -1, -1):

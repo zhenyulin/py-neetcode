@@ -8,7 +8,7 @@ from heapq import heappop, heappush, heappushpop
 
 
 class MedianFinder:
-    """to find median element from a data stream
+    """to find median element from a data stream.
 
     1) Min Max Heaps
     keep the length difference of min, max heaps to be less than 1

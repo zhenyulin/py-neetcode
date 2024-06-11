@@ -5,8 +5,7 @@
 
 
 def search(matrix: list[list[int]], target: int) -> bool:
-    """
-    since the matrix is sorted, we can
+    """Since the matrix is sorted, we can.
 
     1) Binary Search
     binary search to find the row covering target
@@ -14,7 +13,6 @@ def search(matrix: list[list[int]], target: int) -> bool:
 
     time complexity: O(Log(M*N)), space complexity: O(1)
     """
-
     ROWS, COLS = len(matrix), len(matrix[0])
 
     top, bot = 0, ROWS - 1

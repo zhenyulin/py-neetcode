@@ -5,7 +5,7 @@
 
 
 def maxArea(height: list[int]) -> int:
-    """find the max area that can be held by two heights from the input
+    """Find the max area that can be held by two heights from the input.
 
     0) Brutal Force:
     at each possible 'width', we want to use the possible max 'bar' (min height)
@@ -29,7 +29,6 @@ def maxArea(height: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     l, r, bar, res = 0, len(height) - 1, 0, 0
 
     while l < r:

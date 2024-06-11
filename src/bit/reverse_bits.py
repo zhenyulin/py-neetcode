@@ -5,7 +5,7 @@
 
 
 def reverseBits(n: int) -> int:
-    """to reverse bits
+    """To reverse bits.
 
     1) Bit Iteration
     for each bit, using `n & 1` to take only the last bit

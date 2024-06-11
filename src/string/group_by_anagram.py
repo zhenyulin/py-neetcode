@@ -3,12 +3,11 @@
 # https://leetcode.com/problems/group-anagrams/
 #
 
-from collections import Counter, defaultdict
+from collections import defaultdict
 
 
 def group_anagrams(strs: list[str]) -> list[list[str]]:
-    """
-    for M elements in strs with average length of N, K unique chars
+    """For M elements in strs with average length of N, K unique chars.
 
     to group anagrams, we can
 
@@ -20,7 +19,6 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
     NOTE: tuple equality consumes O(K) time, and its values are hashed separately
     N*K ~ N*logN would depend on the average length N
     """
-
     """
     def counter_to_tuple(counter: Counter, key_set: set) -> tuple:
         return tuple(counter[key] for key in key_set)

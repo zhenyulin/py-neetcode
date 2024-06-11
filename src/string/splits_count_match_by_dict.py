@@ -5,14 +5,12 @@
 
 
 def wordBreak(s: str, words: list[str]) -> bool:
-    """
-    whether s is breakable would be related to s[i-len(w)] is breakable
+    """Whether s is breakable would be related to s[i-len(w)] is breakable.
 
     1) Dynamic Programming
 
     time complexity: O(S*W), space complexity: O(S)
     """
-
     # dp[i] denotes if s[:i] is breakable
     dp = [True] + [False] * len(s)
 

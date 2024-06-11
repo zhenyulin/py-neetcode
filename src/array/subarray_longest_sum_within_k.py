@@ -7,8 +7,7 @@
 
 
 def longestSumWithinK(arr: list[int], k: int) -> int:
-    """
-    longest subarray on condition
+    """Longest subarray on condition.
 
     1) Sliding Window
 
@@ -17,7 +16,6 @@ def longestSumWithinK(arr: list[int], k: int) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     res, i, j, current = 0, 0, 0, arr[0]
 
     while i < len(arr) and j < len(arr) - 1:

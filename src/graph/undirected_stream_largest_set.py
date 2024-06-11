@@ -6,9 +6,7 @@ from collections import defaultdict
 
 
 def largestGroup(queries: list[list[int]]) -> list[int]:
-    """
-
-    1) DSU(Disjoint Set Union | Root Union)
+    """1) DSU(Disjoint Set Union | Root Union).
 
     we can use a graph to record the connections of nodes
     upon taking a new connection, we can update the graph, search its root
@@ -19,7 +17,6 @@ def largestGroup(queries: list[list[int]]) -> list[int]:
     *C is the number of queries(connections), N is the number of nodes
     *M is the number of groups, can be considered as constant
     """
-
     res, anchors, sizes = [0], {}, defaultdict(lambda: 1)
 
     # nodes are only pointed to its root at connect time

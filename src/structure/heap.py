@@ -23,9 +23,7 @@ class Heap:
         return iter(self.heap)
 
     def _parent(self, i: int) -> int:
-        """
-        represent a binary tree in list format
-        """
+        """Represent a binary tree in list format."""
         return (i - 1) // 2
 
     def _left(self, i: int) -> int:
@@ -38,8 +36,7 @@ class Heap:
         self.heap[i], self.heap[j] = self.heap[j], self.heap[i]
 
     def _move_up(self, i: int) -> None:
-        """
-        move the smaller up
+        """Move the smaller up.
 
         time complexity: O(logN)
         """
@@ -50,8 +47,7 @@ class Heap:
             parent = self._parent(i)
 
     def _move_down(self, i) -> None:
-        """
-        move the bigger down
+        """Move the bigger down.
 
         time complexity: O(logN)
         """
@@ -66,16 +62,12 @@ class Heap:
             self._move_down(min_index)
 
     def push(self, val) -> None:
-        """
-        time complexity: O(logN)
-        """
+        """Time complexity: O(logN)."""
         self.heap.append(val)
         self._move_up(len(self.heap) - 1)
 
     def pop(self) -> None:
-        """
-        time complexity: O(logN)
-        """
+        """Time complexity: O(logN)."""
         if not self.heap:
             raise IndexError("not able to pop from empty heap")
         self._swap(0, len(self.heap) - 1)
@@ -87,3 +79,5 @@ class Heap:
         if not self.heap:
             raise IndexError("heap is empty")
         return self.heap[0]
+
+    # TODO: heapify()

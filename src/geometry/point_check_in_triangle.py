@@ -6,9 +6,8 @@ Coordinates = tuple[int, int]
 
 
 def isInside(a: Coordinates, b: Coordinates, c: Coordinates, p: Coordinates) -> bool:
-    """
-    1) we can check whether the total areas of the three triangles formed from 'p'
-    equals the one of 'abc'
+    """1) we can check whether the total areas of the three triangles formed from 'p'
+    equals the one of 'abc'.
 
     time complexity: O(1), space complexity: O(1)
     """

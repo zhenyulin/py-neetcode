@@ -5,8 +5,7 @@
 
 
 def minJump(nums: list[int]) -> int:
-    """
-    1) Dynamic Programming
+    """1) Dynamic Programming.
 
     dp[r+1] = min(dp[i] + 1 if nums[l] >= r + 1 - l for i in range(l, r+1))
 
@@ -20,7 +19,6 @@ def minJump(nums: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     res, start, end = 0, 0, 0
 
     # last cell is to be reached

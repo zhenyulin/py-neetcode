@@ -5,8 +5,7 @@
 
 
 def numSplit(s: str) -> int:
-    """
-    to count unique chars on both end
+    """To count unique chars on both end.
 
     we can use a hashmap to record 'first' and 'last' appearance of a char
     then for each index i we know how many unique chars are before and after
@@ -19,7 +18,6 @@ def numSplit(s: str) -> int:
 
     time complexity: O(N), space complexity: O(C)
     """
-
     first, last = {}, {}
 
     for i, c in enumerate(s):

@@ -5,14 +5,12 @@
 
 
 def longestIncreasingSubsequence(nums: list[int]) -> int:
-    """
-    dp[j] is related to dp[i] if nums[j] > nums[i]
+    """dp[j] is related to dp[i] if nums[j] > nums[i].
 
     1) Dynamic Programming
 
     time complexity: O(N^2), space complexity: O(N)
     """
-
     dp = [1] * len(nums)
 
     for j in range(len(nums)):

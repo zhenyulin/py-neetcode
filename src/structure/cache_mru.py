@@ -1,10 +1,9 @@
-from .cache_lru import Node, LRUCache
+from .cache_lru import LRUCache, Node
 
 
 class MRUCache(LRUCache):
     def _pop(self) -> Node:
-        """
-        pop the MRU at head
+        """Pop the MRU at head.
 
         time complexity: O(1)
         """

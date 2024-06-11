@@ -20,15 +20,13 @@
 
 
 def minCost(red: list[int], blue: list[int], blue_cost: int) -> list[int]:
-    """
-    1) Dynamic Programming
+    """1) Dynamic Programming.
 
     at each dp[i], it can be from_red or from_blue
     so we need to record the mins to each from_red, from_blue too
 
     time complexity: O(N), space complexity: O(1)
     """
-
     res, from_red, from_blue = [0], 0, blue_cost
 
     for i in range(len(red)):

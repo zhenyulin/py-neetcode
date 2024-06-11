@@ -7,7 +7,7 @@ from .list_node import ListNode, use_list_in_test
 
 @use_list_in_test
 def reorderList(head: ListNode) -> ListNode:
-    """to reorder a list merging from both ends
+    """To reorder a list merging from both ends.
 
     1) Two Pointers
     we can find the mid point with fast, slow pointers,
@@ -15,7 +15,6 @@ def reorderList(head: ListNode) -> ListNode:
 
     time complexity: O(N), space complexity: O(1)
     """
-
     # find middle
     slow, fast = head, head.next
     while fast and fast.next:
