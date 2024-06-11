@@ -1,20 +1,20 @@
 [tool.poetry]
-name = "neetcode"
-version = "0.1.0"
-description = ""
-authors = ["Zhenyu Lin <zhenyu.lyn@gmail.com>"]
+package-mode = false # as a service (not package) repo, which clears up `--no-root` for `poetry install`
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = ">=3.10, <3.12" # python version used by poetry to be compatible with all dependencies
 
 [tool.poetry.group.dev.dependencies]
-black = "^19.10b0"
-pytest = "*"
-pytest-cov = "^4.0.0"
-pytest-env = "^0.8.1"
-pytest-picked = "^0.4.6"
-pytest-unordered = "^0.5.2"
+mypy = "^1.7.0"
+pre-commit = "^3.5.0"
+python-dotenv = { version = "^1.0.1", extras = ["cli"] }
+ruff = "^0.2.1"
 
-[build-system]
-requires = ["poetry-core>=1.0.0"]
-build-backend = "poetry.core.masonry.api"
+[tool.poetry.group.test.dependencies]
+pytest = "^7.4.3"
+pytest-benchmark = "^4.0.0"
+pytest-cov = "^4.1.0"
+pytest-env = "^1.1.1"
+pytest-only = "^2.0.0"
+pytest-picked = "^0.5.0"
+pytest-unordered = "^0.6.0"

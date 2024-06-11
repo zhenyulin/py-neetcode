@@ -1,0 +1,49 @@
+# docs: https://pre-commit.com/#usage
+
+default_install_hook_types: [pre-commit, pre-push]
+
+repos:
+  - repo: local
+    hooks:
+      # DOCS: https://pre-commit.com/#creating-new-hooks
+      #
+      # NOTE: 'language' configs the environment where the entry command would be running
+      #        e.g. set it to python only if you are calling a .py script directly
+      # NOTE: 'pass_filenames' defaults to true, related commit files would be pass to 'entry'
+      # NOTE: 'stages': https://pre-commit.com/#supported-git-hooks
+      # NOTE: 'types' and 'files' specify the types or files the hook would be tracking
+      - id: poetry
+        name: reconcile poetry lockfile
+        language: system
+        pass_filenames: false
+        files: poetry.lock
+        entry: poetry lock --no-update
+        stages: [pre-commit]
+        verbose: true
+
+      - id: ruff
+        name: lint and format staged python files
+        language: system
+        types: [python]
+        entry: poetry run ruff
+        args: ["--fix"]
+        stages: [pre-commit]
+        verbose: true
+
+      - id: mypy
+        name: static type check committed python files
+        language: system
+        types: [python]
+        entry: poetry run mypy
+        args: ["--install-types", "--non-interactive"]
+        stages: [pre-push]
+        verbose: true
+
+      - id: pytest
+        name: run all python unit tests
+        language: system
+        pass_filenames: false
+        types: [python]
+        entry: poetry run pytest tests/ -vv -s -m "not benchmark and not online"
+        stages: [pre-push]
+        verbose: true

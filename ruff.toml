@@ -1,0 +1,32 @@
+# Ruff default config: https://docs.astral.sh/ruff/configuration/
+# Ruff rules: https://docs.astral.sh/ruff/rules/#pydocstyle-d
+
+[lint]
+# by default ["E4", "E7", "E9", "F"] (some pycodestyle, flake) are enabled
+# TODO: more comprehensive configurations including pyupgrade, etc.
+select = [
+    "C901", # mccabe: complex-structure
+    "D",    # pydocstyle
+    "F",    # pyflake
+    "I",    # isort
+    "N",    # pep8-naming
+]
+
+ignore = [
+    "D100", # undocumented-public-module
+    "D101", # undocumented-public-class
+    "D102", # undocumented-public-method
+    "D103", # undocumented-public-function
+    "D104", # undocumented-public-package
+    "D105", # undocumented-magic-method
+    "D107", # undocumented-public-init
+    "D417", # undocumented-param
+    "E501", # line-too-long
+]
+
+[lint.mccabe]
+# Flag errors (`C901`) whenever the complexity level threshold.
+max-complexity = 10
+
+[lint.pydocstyle]
+convention = "google" # Accepts: "google", "numpy", or "pep257".

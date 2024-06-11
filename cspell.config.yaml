@@ -1,0 +1,16 @@
+version: "0.2"
+language: en-GB
+words:
+  - getsizeof
+  - iloc
+  - ipynb
+  - ipython
+  - jupyter
+  - justfile
+  - mypy
+  - pydantic
+  - pyenv
+  - pylance
+  - pytest
+  - venv
+  - watchexec

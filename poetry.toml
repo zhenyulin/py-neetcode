@@ -1,0 +1,4 @@
+[virtualenvs]
+create = true
+in-project = true
+prefer-active-python = true # ensure that local pyenv version is used by poetry
