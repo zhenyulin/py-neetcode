@@ -1,24 +1,58 @@
+// default settings: https://code.visualstudio.com/docs/getstarted/settings#_default-settings
 {
+    // default syntax highlighting for some files
+    "files.associations": {
+        ".coveragerc": "properties",
+        ".python-version": "properties"
+    },
+    // navigator settings
+    "files.exclude": {
+        // list of files to hide in the navigator
+        ".benchmarks": true,
+        ".coverage": true,
+        ".mypy_cache": true,
+        ".pytest_cache": true,
+        ".ruff_cache": true,
+        "**/__pycache__": true
+    },
+    // markdown specific settings
     "[markdown]": {
         "editor.defaultFormatter": "DavidAnson.vscode-markdownlint",
         "editor.formatOnSave": true
     },
-    "[python]": {
-        "editor.codeActionsOnSave": {
-            "source.fixAll": "explicit",
-            "source.organizeImports": "explicit"
-        },
-        "editor.defaultFormatter": "charliermarsh.ruff",
+    // json specific settings
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
         "editor.formatOnSave": true
     },
+    // json with comments specific settings
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    // python linter&formatter ruff settings
+    "ruff.nativeServer": true, // new rust language server from ruff@>=0.4.9
+    // python specific ruff settings
+    "[python]": {
+        // ruff extension settings: https://marketplace.visualstudio.com/items?itemName=charliermarsh.ruff
+        "editor.defaultFormatter": "charliermarsh.ruff",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.fixAll": "explicit", // fix lint errors on save
+            "source.organizeImports": "explicit" // organize imports on save
+        }
+    },
+    // python language server settings
+    "python.languageServer": "Pylance",
+    "python.analysis.autoImportCompletions": true,
+    "python.analysis.typeCheckingMode": "basic",
+    "mypy.runUsingActiveInterpreter": true,
+    // python testing settings
+    "python.testing.pytestEnabled": true,
+    "python.testing.unittestEnabled": false,
+    // yaml specific settings
     "[yaml]": {
         "editor.defaultFormatter": "redhat.vscode-yaml"
     },
-    "mypy.runUsingActiveInterpreter": true,
-    "python.analysis.autoImportCompletions": true,
-    "python.analysis.typeCheckingMode": "basic",
-    "python.languageServer": "Pylance",
-    "python.testing.pytestEnabled": true,
-    "python.testing.unittestEnabled": false,
     "redhat.telemetry.enabled": false
 }

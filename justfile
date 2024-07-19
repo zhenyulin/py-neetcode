@@ -17,6 +17,10 @@
 # justfile functions are preferred over shell functions for cross-platform compatibility
 # justfile function docs: https://just.systems/man/en/chapter_31.html
 
+## TIPS
+# - '-command' to ignore errors: https://just.systems/man/en/chapter_30.html
+# - use * for packing arguments, e.g. *FLAGS,*PARAMETERS *, $FLAGS to access
+
 # ----------------------------------------------------------------------------------- #
 
 #
@@ -28,12 +32,8 @@ set ignore-comments
 set shell := ["bash", "-uc"] # -u to throw errors for unset variables, -c so that string commands can be run
 set windows-shell := ["bash", "-uc"]
 
-# VARS
-PYTHONPATH := invocation_directory()
-PROJECT_NAME := file_stem(PYTHONPATH)
-
 #
-## COMMANDS - DEVELOPMENT
+## COMMANDS - Development
 #
 
 # list available commands
@@ -41,43 +41,77 @@ PROJECT_NAME := file_stem(PYTHONPATH)
 @default:
     just --list --unsorted
 
+### Install
+
 [macos]
-@_python:
+@_install_python:
     pyenv install -s # -s to skip if set python version is already installed
 
 [windows]
-@_python:
+@_install_python:
     VERSION_MATCH="^ *$(pyenv local)" # start with any number of spaces and minor version from .python-version
     PYTHON_VERSION=$(pyenv install --list | grep $VERSION_MATCH | tail -n 1 | xargs) # get the latest patch version
     pyenv install $PYTHON_VERSION -q
-    poetry env use $(pyenv which python) # force poetry to use pyenv python on Windows
 
-# install python, dependencies, pre-commit hooks
-[group('dev')]
-@install:
-    echo "using python $(pyenv version-name) ($(which python))"
-    just _python
-    just lockfile
-    poetry install
-    poetry run pre-commit install --install-hooks
-
-# remove .venv, tooling cache, test reports, __pycache__
-[group('dev')]
-[confirm("cleanup .venv and caches? (y/n)")]
-cleanup:
-    rm -rf .venv/
-    rm -rf .**cache**/ # cleanup tooling caches
-    rm -rf .coverage
-    rm -rf .benchmarks
-    rm -rf src/__pycache__ # cleanup pycache
-    rm -rf tests/__pycache__ # cleanup pycache
-    rm -rf src/**/__pycache__ # cleanup pycache
-    rm -rf tests/**/__pycache__ # cleanup pycache
+@_set_poetry_python:
+    poetry env use $(pyenv which python) # ensure poetry to use pyenv python (avoid anaconda conflicts)
+    poetry env info | grep -A 5 "Base" | grep -E "Python|Path"
 
 # resolve lockfile conflicts
 [group('dev')]
 lockfile:
     poetry lock --no-update
+
+# install python, dependencies, pre-commit hooks
+[group('dev')]
+@install:
+    just _install_python
+    just _set_poetry_python
+    just lockfile
+    poetry install
+    poetry run pre-commit install --install-hooks
+
+### Cleanup
+
+@_cleanup_tooling_cache:
+    rm -rf .mypy_cache
+    rm -rf .ruff_cache
+
+@_cleanup_test_report:
+    rm -rf .benchmarks/
+    rm -rf .coverage
+
+@_cleanup_pycache:
+    rm -rf src/__pycache__
+    rm -rf src/**/__pycache__
+    rm -rf tests/__pycache__
+    rm -rf tests/**/__pycache__
+
+# remove .venv, python & tooling cache, test reports
+[group('dev')]
+[confirm("cleanup .venv and build & tooling cache? (y/n)")]
+cleanup:
+    just _cleanup_tooling_cache
+    just _cleanup_test_report
+    just _cleanup_pycache
+    rm -rf .venv/
+
+### Check
+
+# run code quality checks
+[group('dev')]
+@check:
+    poetry run ruff check src tests --fix
+    poetry run mypy src
+
+# run code quality checks with file watcher
+[group('dev')]
+@check-watch:
+    watchexec -n -r -w src -w tests -w mypy.ini -w ruff.toml --clear -- just check
+
+#
+## COMMANDS - Test
+#
 
 # run test (exclude benchmark and online tests)
 [group('test')]
@@ -95,7 +129,7 @@ lockfile:
     poetry run pytest tests/ -vv -s --cov=src --cov-report=term-missing -m "not benchmark"
 
 
-# run test files changed since last commit with file watcher
+# run test files changed since last commit with file watcher, flags can be passed to pytest
 [group('test')]
 @test-watch *FLAGS:
     # watchexec config details

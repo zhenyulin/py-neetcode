@@ -1,18 +1,18 @@
 {
     "recommendations": [
-        "aaron-bond.better-comments", // comment highlight
-        "charliermarsh.ruff", // linter & formatter: python
-        "davidanson.vscode-markdownlint", // linter: markdown
-        "matangover.mypy", // type checker: python
-        "mgesbert.python-path", // python: import path auto completion
+        "aaron-bond.better-comments", // comment: syntax highlight
+        "charliermarsh.ruff", // python: linter & formatter
+        "davidanson.vscode-markdownlint", // markdown: linter
+        "esbenp.prettier-vscode", // json: formatter,
+        "matangover.mypy", // python: type checker
+        "mgesbert.python-path", // python: import path completion
         "ms-python.vscode-pylance", // python: language server
         "nefrob.vscode-just-syntax", // justfile: syntax highlight
         "njpwerner.autodocstring", // python: docstring helper
         "njqdev.vscode-python-typehint", // python: type hint completion
-        "redhat.vscode-yaml", // linter: yaml
         "shardulm94.trailing-spaces", // formatter: remove trailing spaces
         "streetsidesoftware.code-spell-checker", // spell checker
-        "tamasfe.even-better-toml", // syntax highlight: toml
+        "tamasfe.even-better-toml", // toml: syntax highlight,
         "z-placeholder.to-avoid-comment-line-shift"
     ]
 }

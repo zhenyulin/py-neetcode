@@ -1,14 +1,18 @@
 # cache
-**.ipynb_checkpoints**
 **pycache**
+**cache
 
 # sensitive
 **credential**
-**output**
-**data**
-**model**
-
-!**model*.py
+**.env**
 
 # test
+report/
+.benchmarks/
 .coverage
+
+# virtualenv
+.venv/
+
+# mac specific
+.DS_Store
