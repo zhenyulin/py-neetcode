@@ -1,16 +1,170 @@
 version: "0.2"
 language: en-GB
 words:
+  - appendleft
+  - arange
+  - argmax
+  - astype
+  - atran
+  - autoupdate
+  - azurecr
+  - azured
+  - bbox
+  - bitfields
+  - Bitmask
+  - blockxsize
+  - blockysize
+  - boto
+  - botocore
+  - caplog
+  - capsys
+  - cdist
+  - certifi
+  - chunksize
+  - cleanup
+  - cmap
+  - cobertura
+  - Cobertura
+  - colorbar
+  - coveragerc
+  - cython
+  - dask
+  - dataframe
+  - datetimez
+  - Deque
+  - Docstyle
+  - dotenv
+  - dropna
+  - dtype
+  - EDEM
+  - edgecolor
+  - einops
+  - elif
+  - emis
+  - emsd
+  - epsg
+  - EPSG
+  - errmsg
+  - errorfactory
+  - facecolor
+  - figsize
+  - fillna
+  - GDAL
+  - geopandas
+  - georeferenced
+  - geotiff
+  - getpid
   - getsizeof
+  - Hadoop
+  - Huadu
+  - idxmin
   - iloc
+  - imshow
+  - inplace
+  - ipykernel
   - ipynb
   - ipython
+  - isin
+  - isna
+  - Isort
+  - istio
+  - junitxml
   - jupyter
   - justfile
+  - kubeflow
+  - landclass
+  - landsat
+  - latlon
+  - LDCM
+  - levelname
+  - libexpat
+  - lineprecision
+  - linewidth
+  - lowres
+  - lwir
+  - maxx
+  - maxy
+  - mccabe
+  - mininterval
+  - miniters
+  - miniterval
+  - miny
   - mypy
+  - nanmax
+  - nanmin
+  - naturalearth
+  - nbstripout
+  - ncols
+  - ndarray
+  - ndvi
+  - ntid
+  - numpy
+  - nums
+  - opencv
+  - openssl
+  - orthorectified
+  - osops
+  - Perflint
+  - Postgresql
+  - postprocess
+  - psutil
+  - pycache
+  - pycodestyle
   - pydantic
+  - pydocstyle
   - pyenv
   - pylance
+  - Pylint
+  - pyproject
+  - pystac
   - pytest
+  - pythonpath
+  - PYTHONPATH
+  - pytorch
+  - radiometrically
+  - rasterio
+  - readall
+  - readline
+  - rechunking
+  - reexport
+  - referer
+  - rioxarray
+  - secretkey
+  - secretname
+  - setuptools
+  - shapefile
+  - shortwave
+  - skipif
+  - skipna
+  - Soduku
+  - softmax
+  - stac
+  - STAC
+  - stackstac
+  - stddev
+  - Subarray
+  - swarth
+  - swir
+  - teardown
+  - toolz
+  - torchserve
+  - torchvision
+  - tqdm
+  - tryceratops
+  - urad
+  - urllib
+  - USGS
   - venv
+  - viridis
+  - virtualenv
+  - virtualenvs
+  - VIRTUALENVS
   - watchexec
+  - winge
+  - winget
+  - xarray
+  - xlim
+  - ylim
+  - zarr
+  - zlevel
+  - ZSTD

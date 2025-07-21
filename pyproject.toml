@@ -1,20 +1,37 @@
-[tool.poetry]
-package-mode = false # as a service (not package) repo, which clears up `--no-root` for `poetry install`
+# uv dependencies syntax: https://docs.astral.sh/uv/concepts/projects/dependencies/#index
+# uv supports dependency sources of [index, git, url, path, workspace]
 
-[tool.poetry.dependencies]
-python = ">=3.10, <3.12" # python version used by poetry to be compatible with all dependencies
+[tool.uv]
+package = false
+default-groups = "all"
 
-[tool.poetry.group.dev.dependencies]
-mypy = "^1.7.0"
-pre-commit = "^3.5.0"
-python-dotenv = { version = "^1.0.1", extras = ["cli"] }
-ruff = "^0.2.1"
+[project]
+name = "py-neetcode"
+version = "0.1.0"
 
-[tool.poetry.group.test.dependencies]
-pytest = "^7.4.3"
-pytest-benchmark = "^4.0.0"
-pytest-cov = "^4.1.0"
-pytest-env = "^1.1.1"
-pytest-only = "^2.0.0"
-pytest-picked = "^0.5.0"
-pytest-unordered = "^0.6.0"
+requires-python = ">=3.12"
+dependencies = []
+
+[dependency-groups]
+
+test = [
+    "pytest-benchmark>=5.1.0",
+    "pytest-cov>=6.1.1",
+    "pytest-env>=1.1.5",
+    "pytest-only>=2.1.2",
+    "pytest-picked>=0.5.1",
+    "pytest>=8.3.5",
+    "setuptools>=80.7.1",
+]
+
+dev = [
+    "ipykernel>=6.29.4,<7.0.0",
+    "mypy>=1.9.0,<2.0.0",
+    "nbstripout>=0.7.1,<1.0.0",
+    "pre-commit>=3.5.0,<4.0.0",
+    "python-dotenv[cli]>=1.0.1,<2.0.0",
+    "ruff>=0.5.4,<1.0.0",
+    "ty>=0.0.1a5",
+]
+
+typing = ["types-requests>=2.32.0.20240712,<3.0.0"]

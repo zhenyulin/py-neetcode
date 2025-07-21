@@ -8,8 +8,8 @@ from .tree_node import TreeNode, use_list_in_test
 
 
 @use_list_in_test()
-def rightSideView(root: TreeNode) -> list[int]:
-    """To have all the rightest nodes.
+def right_side_view(root: TreeNode) -> list[int]:
+    """To have all the rightmost nodes.
 
     we can search level by level
 

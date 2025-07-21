@@ -1,33 +1,76 @@
 # Ruff default config: https://docs.astral.sh/ruff/configuration/
 # Ruff rules: https://docs.astral.sh/ruff/rules/#pydocstyle-d
 
+extend-include = ["*.ipynb"]
+
+target-version = "py312"
+
+line-length = 110 # a good balance of reading ergonomics and code density
+indent-width = 4
+
 [lint]
-# by default ["E4", "E7", "E9", "F"] (some pycodestyle, flake) are enabled
-# TODO: more comprehensive configurations including pyupgrade, etc.
 select = [
-    "C901", # mccabe: complex-structure
-    "D",    # pydocstyle
-    "F",    # pyflake
-    "I",    # isort
-    "N",    # pep8-naming
+    "A",   # flake8-builtins
+    "B",   # flake8-Bugbear
+    "C4",  # flake8-comprehensions
+    "C90", # mccabe Complexity
+    "D",   # pyDocstyle
+    "DTZ", # flake8-datetimez
+    "E",   # pycodestyle - Errors, a subset [E4, E7, E9] is enabled by default
+    "EM",  # flake8-errmsg
+    "F",   # pyFlakes (enabled by default)
+    "FA",  # flake8-future-annotations
+    "G",   # flake8-logging-format
+    "I",   # Isort
+    "LOG", # flake8-logging
+    "N",   # pep8-Naming
+    "PIE", # flake8-pie
+    "S",   # flake8-bandit
+    "T10", # flake8-debugger
+    "UP",  # pyUPgrade
+    "W",   # pycodestyle - Warnings
+    "YTT", # flake8-2020
+    # "T20", # flake8-print # TODO: enable after logger is ready
+    "ARG",  # flake8-unused-arguments
+    "C",    # Convention
+    "ERA",  # eradicate
+    "INT",  # flake8-gettext
+    "NPY",  # NumPy-specific rules
+    "PD",   # pandas-vet
+    "PERF", # Perflint
+    "PL",   # Pylint
+    "PT",   # flake8-pytest-style
+    "Q",    # flake8-Quotes
+    "RET",  # flake8-return
+    "RSE",  # flake8-raise
+    "RUF",  # Ruff-specific rules
+    "SIM",  # flake8-simplify
+    "TD",   # flake8-todo
+    "TID",  # flake8-tidy-imports
+    "TRY",  # tryceratops
 ]
 
 ignore = [
-    "D100", # undocumented-public-module
-    "D101", # undocumented-public-class
-    "D102", # undocumented-public-method
-    "D103", # undocumented-public-function
-    "D104", # undocumented-public-package
-    "D105", # undocumented-magic-method
-    "D107", # undocumented-public-init
-    "D417", # undocumented-param
-    "E501", # line-too-long
-    "N802", # invalid-function-name
+    "D100",  # undocumented-public-module
+    "D101",  # undocumented-public-class
+    "D107",  # undocumented-public-init
+    "G004",  # Logging statement uses f-string
+    "PD003", # pandas-use-of-dot-is-null [false alarm on xarray]
+    "PD011", # pandas-use-of-dot-values [false alarm on xarray]
+    "PT019", # pytest-fixture-param-without-value
+    "S607",  # start-process-with-partial-path
+    "TD002", # missing-todo-author
+    "TD003", # missing-todo-link
 ]
 
-[lint.mccabe]
-# Flag errors (`C901`) whenever the complexity level threshold.
-max-complexity = 10
+[lint.per-file-ignores]
+"tests/*" = ["D101", "PL", "S"]
+
+[lint.mccabe] # Rule C90
+max-complexity = 10 # max cyclomatic complexity threshold
 
 [lint.pydocstyle]
 convention = "google" # Accepts: "google", "numpy", or "pep257".
+
+[format]
+docstring-code-format = true
