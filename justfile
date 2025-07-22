@@ -211,6 +211,8 @@ cleanup *FLAGS:
         --cov-report=term-missing \
         --benchmark-columns=mean,median,max,stddev,rounds,iterations \
         --benchmark-sort=mean \
+        --benchmark-autosave \
+        --benchmark-compare
 
 #
 #   RECIPE GROUP - Docker

@@ -593,6 +593,7 @@ test = [
     { name = "pytest-env" },
     { name = "pytest-only" },
     { name = "pytest-picked" },
+    { name = "pytest-unordered" },
     { name = "setuptools" },
 ]
 typing = [
@@ -618,6 +619,7 @@ test = [
     { name = "pytest-env", specifier = ">=1.1.5" },
     { name = "pytest-only", specifier = ">=2.1.2" },
     { name = "pytest-picked", specifier = ">=0.5.1" },
+    { name = "pytest-unordered", specifier = ">=0.7.0" },
     { name = "setuptools", specifier = ">=80.7.1" },
 ]
 typing = [{ name = "types-requests", specifier = ">=2.32.0.20240712,<3.0.0" }]
@@ -717,6 +719,18 @@ dependencies = [
 sdist = { url = "https://files.pythonhosted.org/packages/ba/e4/51a54dd6638fd4a7c45bb20a737235fd92cbb4d24b5ff681d64ace5d02e9/pytest_picked-0.5.1.tar.gz", hash = "sha256:6634c4356a560a5dc3dba35471865e6eb06bbd356b56b69c540593e9d5620ded", size = 8401 }
 wheels = [
     { url = "https://files.pythonhosted.org/packages/c6/81/450c017746caab376c4b6700439de9f1cc7d8e1f22dec3c1eb235cd9ad3e/pytest_picked-0.5.1-py3-none-any.whl", hash = "sha256:af65c4763b51dc095ae4bc5073a962406902422ad9629c26d8b01122b677d998", size = 6608 },
+]
+
+[[package]]
+name = "pytest-unordered"
+version = "0.7.0"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pytest" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/bd/3e/6ec9ec74551804c9e005d5b3cbe1fd663f03ed3bd4bdb1ce764c3d334d8e/pytest_unordered-0.7.0.tar.gz", hash = "sha256:0f953a438db00a9f6f99a0f4727f2d75e72dd93319b3d548a97ec9db4903a44f", size = 7930 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/5c/95/ae2875e19472797e9672b65412858ab6639d8e55defd9859241e5ff80d02/pytest_unordered-0.7.0-py3-none-any.whl", hash = "sha256:486b26d24a2d3b879a275c3d16d14eda1bd9c32aafddbb17b98ac755daba7584", size = 6210 },
 ]
 
 [[package]]
