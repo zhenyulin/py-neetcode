@@ -211,7 +211,8 @@ cleanup *FLAGS:
         --cov-report=term-missing \
         --benchmark-columns=mean,median,max,stddev,rounds,iterations \
         --benchmark-sort=mean \
-        --benchmark-autosave \
+        --benchmark-max-time=1 \
+        --benchmark-save=run \
         --benchmark-compare
 
 #
