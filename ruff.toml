@@ -1,5 +1,6 @@
 # Ruff default config: https://docs.astral.sh/ruff/configuration/
 # Ruff rules: https://docs.astral.sh/ruff/rules/#pydocstyle-d
+src = ["src", "cython/cython_lib", "rust"]
 
 extend-include = ["*.ipynb"]
 
@@ -73,5 +74,10 @@ max-complexity = 10 # max cyclomatic complexity threshold
 [lint.pydocstyle]
 convention = "google" # Accepts: "google", "numpy", or "pep257".
 
+[lint.isort]
+known-first-party = ["cython_lib", "src", "rust"]
+
 [format]
 docstring-code-format = true
+
+
