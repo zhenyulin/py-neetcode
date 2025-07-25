@@ -40,10 +40,3 @@ dev = [
 ]
 
 typing = ["types-requests>=2.32.0.20240712,<3.0.0"]
-
-[build-system]
-requires = ["maturin>=1.4,<2.0"]
-build-backend = "maturin"
-
-[tool.maturin]
-module-name = "rust"
