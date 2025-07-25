@@ -68,6 +68,8 @@ LOCAL_TEST_SCOPE := "not complex and not benchmark and not online"
     just env
     uv lock --upgrade
     uv sync
+    uv pip install -e ./cython
+    uv pip install -e ./rust
     uv run pre-commit install --install-hooks # --install-hooks setup pre-commit cache
     uv run nbstripout --install --python .venv/bin/python
 
