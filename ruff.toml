@@ -67,6 +67,7 @@ ignore = [
 
 [lint.per-file-ignores]
 "tests/*" = ["D101", "PL", "S"]
+"cython/cy/string/**" = ["A005"]
 
 [lint.mccabe] # Rule C90
 max-complexity = 10 # max cyclomatic complexity threshold
