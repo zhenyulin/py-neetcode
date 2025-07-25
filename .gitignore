@@ -21,6 +21,7 @@ __pycache__/
 /build/
 /src/**/*.c
 /src/**/*.so
+/rust/target/
 
 # sensitive
 /*credential*

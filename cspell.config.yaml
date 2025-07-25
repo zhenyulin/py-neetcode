@@ -21,6 +21,7 @@ words:
   - capsys
   - cdef
   - cdist
+  - cdylib
   - certifi
   - chunksize
   - cimport
@@ -28,6 +29,7 @@ words:
   - cmap
   - cobertura
   - Cobertura
+  - codegen
   - colorbar
   - coveragerc
   - cpdef
@@ -61,6 +63,7 @@ words:
   - geopandas
   - georeferenced
   - geotiff
+  - getattr
   - getpid
   - getsizeof
   - Hadoop
@@ -93,6 +96,7 @@ words:
   - lowres
   - lwir
   - malloc
+  - manylinux
   - maxx
   - maxy
   - mccabe
@@ -127,8 +131,10 @@ words:
   - pydantic
   - pydocstyle
   - pyenv
+  - pyfunction
   - pylance
   - Pylint
+  - pymodule
   - pyproject
   - pystac
   - pytest

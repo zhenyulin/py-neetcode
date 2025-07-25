@@ -258,7 +258,7 @@ cleanup *FLAGS:
 # build rust script
 [group('rust')]
 @rust-build:
-    maturin develop --manifest-path=rust/Cargo.toml
+    maturin develop --release --manifest-path=rust/Cargo.toml
 
 #
 #   RECIPE GROUP - Template
