@@ -1,41 +1,42 @@
+# tests/string/test_group_by_anagram.py
+
+import pytest
 from pytest_unordered import unordered
 
-from rust.string import group_anagrams as group_anagrams_rs
+from rust.string import group_anagrams as group_anagrams_rust  # type: ignore
 from src.string.group_by_anagram import group_anagrams
-from src.string.group_by_anagram_c import group_anagrams_26lower
+from src.string.group_by_anagram_c import group_anagrams_26lower as group_anagrams_cython
+
+BASE = ["eat", "tea", "tan", "ate", "nat", "bat"]
+
+IMPLEMENTATIONS = {
+    "py": group_anagrams,
+    "cy": group_anagrams_cython,
+    "rs": group_anagrams_rust,
+}
 
 
-def test_group_anagrams(benchmark):
-    """Test cases for grouping anagrams."""
-    result = benchmark(group_anagrams, ["eat", "tea", "tan", "ate", "nat", "bat"])
-    expected = [
-        ["bat"],
-        ["nat", "tan"],
-        ["ate", "eat", "tea"],
+def expected_groups(multiplier: int):
+    """Expected results."""
+    return [
+        ["bat"] * multiplier,
+        ["nat", "tan"] * multiplier,
+        ["ate", "eat", "tea"] * multiplier,
     ]
-    for g in result:
-        assert unordered(g) in expected
 
 
-def test_group_anagrams_c(benchmark):
-    """Test cases for grouping anagrams."""
-    result = benchmark(group_anagrams_26lower, ["eat", "tea", "tan", "ate", "nat", "bat"])
-    expected = [
-        ["bat"],
-        ["nat", "tan"],
-        ["ate", "eat", "tea"],
-    ]
-    for g in result:
-        assert unordered(g) in expected
+def unordered_2d(list_of_lists):
+    """Mark both dimensions as order-insensitive."""
+    return unordered([unordered(g) for g in list_of_lists])
 
 
-def test_group_anagrams_rs(benchmark):
-    """Test cases for grouping anagrams."""
-    result = benchmark(group_anagrams_rs, ["eat", "tea", "tan", "ate", "nat", "bat"])
-    expected = [
-        ["bat"],
-        ["nat", "tan"],
-        ["ate", "eat", "tea"],
-    ]
-    for g in result:
-        assert unordered(g) in expected
+@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@pytest.mark.parametrize("multiplier", [100, 1000], ids=lambda m: f"{m}x")
+def test_group_anagrams_benchmark(benchmark, implementation, multiplier):
+    """Benchmark the group_anagrams implementations."""
+    benchmark.group = multiplier
+
+    data = BASE * multiplier
+    result = benchmark(implementation, data)
+
+    assert result == unordered_2d(expected_groups(multiplier))

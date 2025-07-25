@@ -1,6 +1,7 @@
 version: "0.2"
 language: en-GB
 words:
+  - ahash
   - appendleft
   - arange
   - argmax
@@ -67,6 +68,7 @@ words:
   - getpid
   - getsizeof
   - Hadoop
+  - hashbrown
   - hashkey
   - Huadu
   - idxmin
@@ -150,6 +152,7 @@ words:
   - referer
   - rioxarray
   - rpath
+  - RUSTFLAGS
   - secretkey
   - secretname
   - setdefault

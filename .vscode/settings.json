@@ -85,5 +85,20 @@
   "evenBetterToml.formatter.reorderInlineTables": true,
   "evenBetterToml.formatter.reorderArrays": true,
   "evenBetterToml.formatter.inlineTableExpand": true,
-  "evenBetterToml.formatter.arrayAutoExpand": true
+  "evenBetterToml.formatter.arrayAutoExpand": true,
+  // rust settings
+  "[rust]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": { "source.fixAll": "always" },
+    "editor.defaultFormatter": "rust-lang.rust-analyzer"
+  },
+  "rust-analyzer.check.command": "clippy",
+  "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
+  "rust-analyzer.diagnostics.styleLints.enable": true,
+  "rust-analyzer.diagnostics.useRustcErrorCode": true,
+  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.procMacro.enable": false,
+  "rust-analyzer.inlayHints.chainingHints.enable": true,
+  "rust-analyzer.inlayHints.genericParameterHints.const.enable": true,
+  "rust-analyzer.inlayHints.parameterHints.enable": false
 }
