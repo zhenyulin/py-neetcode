@@ -19,8 +19,10 @@ __pycache__/
 
 # build
 /build/
-/src/**/*.c
-/src/**/*.so
+/cython/build/
+/cython/**.egg-info/
+/cython/**/*.c
+/cython/**/*.so
 /rust/target/
 
 # sensitive

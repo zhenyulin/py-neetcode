@@ -1,11 +1,9 @@
-# tests/string/test_group_by_anagram.py
-
 import pytest
+from cython_lib.string.group_by_anagram import group_anagrams_26lower as group_anagrams_cython
 from pytest_unordered import unordered
 
 from rust.string import group_anagrams as group_anagrams_rust  # type: ignore
 from src.string.group_by_anagram import group_anagrams
-from src.string.group_by_anagram_c import group_anagrams_26lower as group_anagrams_cython
 
 BASE = ["eat", "tea", "tan", "ate", "nat", "bat"]
 

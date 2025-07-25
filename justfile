@@ -126,15 +126,6 @@ cleanup *FLAGS:
     rm -rf tests/__pycache__
     rm -rf tests/**/__pycache__
 
-@_cleanup_cython:
-    rm -rf src/**/*.c
-    rm -rf src/**/*.so
-    rm -rf src/**/*.pyd
-    rm -rf build/
-
-@_cleanup_rust:
-    rm -rf rust/target/
-
 #
 #   RECIPE GROUP - Code Quality
 #
@@ -244,12 +235,20 @@ cleanup *FLAGS:
 # build cython script
 [group('cython')]
 @cython-build:
-    uv run python setup.py build_ext --inplace
+    cd cython && uv pip install -e .
 
 # run cython-lint
 [group('cython')]
 @cython-check:
-    -uv run cython-lint src --max-line-length 110
+    -uv run cython-lint cython --max-line-length 110
+
+@_cleanup_cython:
+    rm -rf cython/*.egg-info
+    rm -rf cython/build
+    find cython -name '*.c'   -delete
+    find cython -name '*.so'  -delete
+    find cython -name '*.pyd' -delete
+    rm -rf build/
 
 #
 #   RECIPE GROUP - Rust
@@ -259,6 +258,9 @@ cleanup *FLAGS:
 [group('rust')]
 @rust-build:
     maturin develop --release --manifest-path=rust/Cargo.toml
+
+@_cleanup_rust:
+    rm -rf rust/target/
 
 #
 #   RECIPE GROUP - Template
