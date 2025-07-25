@@ -2,10 +2,9 @@ import sys
 from glob import glob
 from pathlib import Path
 
+from Cython.Build import cythonize
 from setuptools import Extension, setup
 from setuptools.command.build_ext import build_ext
-
-from Cython.Build import cythonize
 
 # ---- platform flags ----
 extra_compile_args = []
@@ -23,7 +22,7 @@ elif sys.platform == "win32":  # Windows
 
 # ---- config ----
 ROOT = Path(__file__).parent
-PACKAGE = "cython_lib"  # DO NOT use "cython" as it conflicts with the Cython package
+PACKAGE = "cy"  # DO NOT use "cython" as it conflicts with the Cython package
 PKG_DIR = ROOT / PACKAGE
 
 pyx_files = glob(str(PKG_DIR / "**/*.pyx"), recursive=True)

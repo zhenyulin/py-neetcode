@@ -1,7 +1,7 @@
 import pytest
-from cython_lib.string.group_by_anagram import group_anagrams_26lower as group_anagrams_cython
 from pytest_unordered import unordered
 
+from cy.string.group_by_anagram import group_anagrams_26lower as group_anagrams_cython
 from rust.string import group_anagrams as group_anagrams_rust  # type: ignore
 from src.string.group_by_anagram import group_anagrams
 
