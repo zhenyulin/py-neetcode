@@ -23,9 +23,12 @@ test = [
     "pytest-unordered>=0.7.0",
     "pytest>=8.3.5",
     "setuptools>=80.7.1",
+    "pytest-memray>=1.7.0",
 ]
 
 dev = [
+    "cython-lint>=0.16.7",
+    "cython>=3.1.2",
     "ipykernel>=6.29.4,<7.0.0",
     "mypy>=1.9.0,<2.0.0",
     "nbstripout>=0.7.1,<1.0.0",

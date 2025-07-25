@@ -16,21 +16,28 @@ words:
   - blockysize
   - boto
   - botocore
+  - boundscheck
   - caplog
   - capsys
+  - cdef
   - cdist
   - certifi
   - chunksize
+  - cimport
   - cleanup
   - cmap
   - cobertura
   - Cobertura
   - colorbar
   - coveragerc
+  - cpdef
+  - cpython
   - cython
+  - cythonize
   - dask
   - dataframe
   - datetimez
+  - defaultdict
   - Deque
   - Docstyle
   - dotenv
@@ -46,6 +53,7 @@ words:
   - EPSG
   - errmsg
   - errorfactory
+  - extern
   - facecolor
   - figsize
   - fillna
@@ -78,14 +86,18 @@ words:
   - latlon
   - LDCM
   - levelname
+  - libc
   - libexpat
   - lineprecision
   - linewidth
   - lowres
   - lwir
+  - malloc
   - maxx
   - maxy
   - mccabe
+  - memray
+  - memset
   - mininterval
   - miniters
   - miniterval
@@ -98,6 +110,7 @@ words:
   - ncols
   - ndarray
   - ndvi
+  - nogil
   - ntid
   - numpy
   - nums
@@ -130,8 +143,10 @@ words:
   - reexport
   - referer
   - rioxarray
+  - rpath
   - secretkey
   - secretname
+  - setdefault
   - setuptools
   - shapefile
   - shortwave
@@ -139,10 +154,13 @@ words:
   - skipna
   - Soduku
   - softmax
+  - ssize
   - stac
   - STAC
   - stackstac
   - stddev
+  - stdlib
+  - strs
   - Subarray
   - swarth
   - swir
