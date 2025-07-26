@@ -53,7 +53,7 @@ repos:
         name: type-check staged python files
         language: system
         types: [python]
-        entry: just type-check
+        entry: uv run mypy
         stages: [pre-push]
         verbose: true
 
