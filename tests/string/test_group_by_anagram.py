@@ -28,6 +28,7 @@ def unordered_2d(list_of_lists):
     return unordered([unordered(g) for g in list_of_lists])
 
 
+@pytest.mark.benchmark
 @pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
 @pytest.mark.parametrize("multiplier", [100, 1000], ids=lambda m: f"{m}x")
 def test_group_anagrams_benchmark(benchmark, implementation, multiplier):

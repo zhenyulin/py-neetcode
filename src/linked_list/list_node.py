@@ -1,14 +1,13 @@
 from os import getenv
-from typing import Optional
 
 
 class ListNode:
-    def __init__(self, val=0, next=None):
+    def __init__(self, val=0, next=None):  # noqa: A002
         self.val = val
         self.next = next
 
 
-def to_linked_list(nums: list) -> Optional[ListNode]:
+def to_linked_list(nums: list) -> ListNode | None:
     node = res = ListNode()
 
     for n in nums:
@@ -18,7 +17,7 @@ def to_linked_list(nums: list) -> Optional[ListNode]:
     return res.next
 
 
-def to_list(node: Optional[ListNode]) -> list:
+def to_list(node: ListNode | None) -> list:
     res = []
 
     while node:
@@ -31,6 +30,6 @@ def to_list(node: Optional[ListNode]) -> list:
 def use_list_in_test(func):
     return (
         lambda *args: to_list(func(*[to_linked_list(arg) for arg in args]))
-        if getenv("TEST_ENV") == "TRUE"
+        if getenv("ENV_ID", "").upper() == "TEST"
         else func
     )

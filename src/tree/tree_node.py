@@ -61,7 +61,7 @@ def use_list_in_test(
     """Decorator to convert list to tree at input or output."""
 
     def decorator(func: Callable) -> Callable:
-        if getenv("TEST_ENV") != "TRUE":
+        if getenv("ENV_ID", "").upper() != "TEST":
             return func
 
         def decorated(*args, **kwargs):

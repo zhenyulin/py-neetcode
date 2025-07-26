@@ -5,7 +5,7 @@ from .list_node import ListNode, use_list_in_test
 
 
 @use_list_in_test
-def addTwoNumber(l1: ListNode, l2: ListNode) -> ListNode:
+def add_two_numbers(l1: ListNode, l2: ListNode) -> ListNode:
     """Add two number with digits stored in reverse order as LinkedList.
 
     1) we can forward through l1 and l2 with a carry

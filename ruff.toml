@@ -55,6 +55,7 @@ ignore = [
     "D100",  # undocumented-public-module
     "D101",  # undocumented-public-class
     "D103",  # undocumented-public-method
+    "D104",  # missing-module-docstring
     "D107",  # undocumented-public-init
     "ERA001", # commented-out-code
     "G004",  # Logging statement uses f-string
