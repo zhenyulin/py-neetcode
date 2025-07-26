@@ -2,7 +2,7 @@ import pytest
 from pytest_unordered import unordered
 
 from cy.string.group_by_anagram import group_anagrams_26lower as group_anagrams_cython
-from rust.string import group_anagrams as group_anagrams_rust  # type: ignore
+from rust.string import group_anagrams as group_anagrams_rust
 from src.string.group_by_anagram import group_anagrams
 
 BASE = ["eat", "tea", "tan", "ate", "nat", "bat"]
@@ -14,7 +14,7 @@ IMPLEMENTATIONS = {
 }
 
 
-def expected_groups(multiplier: int):
+def expected_groups(multiplier: int) -> list[list[str]]:
     """Expected results."""
     return [
         ["bat"] * multiplier,

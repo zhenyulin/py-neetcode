@@ -1,6 +1,7 @@
 from collections import deque
+from collections.abc import Callable
 from os import getenv
-from typing import Callable, Optional
+from typing import Any
 
 
 class TreeNode:
@@ -10,7 +11,8 @@ class TreeNode:
         self.right = right
 
 
-def tree_to_list(root: Optional[TreeNode]) -> list:
+def tree_to_list(root: TreeNode | None) -> list:
+    """Helper function to convert a binary tree to a list."""
     res, queue = [], deque([root] if root else [])
 
     while queue:
@@ -26,7 +28,8 @@ def tree_to_list(root: Optional[TreeNode]) -> list:
     return res
 
 
-def list_to_tree(vals: list[any]) -> Optional[TreeNode]:
+def list_to_tree(vals: list[Any]) -> TreeNode | None:
+    """Helper function to convert a list to a binary tree."""
     if not vals:
         return None
 
@@ -55,6 +58,8 @@ def use_list_in_test(
     at_input: bool = True,
     at_output: bool = False,
 ) -> Callable:
+    """Decorator to convert list to tree at input or output."""
+
     def decorator(func: Callable) -> Callable:
         if getenv("TEST_ENV") != "TRUE":
             return func
@@ -64,7 +69,7 @@ def use_list_in_test(
                 func(
                     # avoid applying the input convertor during recursion
                     *[list_to_tree(arg) if type(arg) is list else arg for arg in args],
-                    **kwargs
+                    **kwargs,
                 )
                 if at_input
                 else func(*args, **kwargs)

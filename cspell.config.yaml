@@ -127,6 +127,7 @@ words:
   - orthorectified
   - osops
   - Perflint
+  - popleft
   - Postgresql
   - postprocess
   - psutil
