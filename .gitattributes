@@ -1,3 +1,3 @@
-uv.lock binary
+*.lock binary
 *.ipynb filter=nbstripout
 *.ipynb diff=ipynb
