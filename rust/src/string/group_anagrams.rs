@@ -6,6 +6,7 @@ type Key = [u8; 26]; // strs[i].length < 255
 
 #[pyfunction]
 pub fn group_anagrams<'py>(py: Python<'py>, strs: Bound<'py, PyList>) -> PyResult<Py<PyList>> {
+    // strs need to be bound to 'py GIL in order to perform .len(), .iter() in python
     let mut groups: AHashMap<Key, Vec<Py<PyString>>> = AHashMap::with_capacity(strs.len());
 
     for py_item in strs.iter() {
@@ -18,8 +19,10 @@ pub fn group_anagrams<'py>(py: Python<'py>, strs: Bound<'py, PyList>) -> PyResul
         }
 
         // convert borrowed &PyString to an owned smart pointer Py<PyString>
-        let owned = py_s.into_pyobject(py)?;
-        groups.entry(key).or_default().push(owned.into());
+        groups
+            .entry(key)
+            .or_default()
+            .push(py_s.into_pyobject(py)?.into());
     }
 
     // creating the output list in python heap
