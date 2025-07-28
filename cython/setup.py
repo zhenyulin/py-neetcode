@@ -11,7 +11,7 @@ extra_compile_args = []
 extra_link_args = []
 
 if sys.platform == "darwin":  # macOS
-    extra_compile_args = ["-Wno-unreachable-code"]
+    extra_compile_args = ["-Wno-unreachable-code", "-O2", "-march=x86-64"]
     extra_link_args = ["-Wl,-rpath,@loader_path/"]
 elif sys.platform == "linux":  # Linux
     extra_compile_args = ["-Wno-unreachable-code", "-O2"]  # Add optimizations on Linux

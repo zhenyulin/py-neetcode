@@ -206,8 +206,7 @@ cleanup *FLAGS:
         --benchmark-sort=mean \
         --benchmark-max-time=1 \
         --benchmark-save=run \
-        --benchmark-compare \
-        --memray --native
+        --benchmark-compare
 
 #
 #   RECIPE GROUP - Docker

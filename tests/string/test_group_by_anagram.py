@@ -1,7 +1,7 @@
 import pytest
 from pytest_unordered import unordered
 
-from cy.string.group_by_anagram import group_anagrams_26lower as group_anagrams_cython
+from cy.string.group_by_anagram import group_anagrams as group_anagrams_cython
 from rust.string import group_anagrams as group_anagrams_rust
 from src.string.group_by_anagram import group_anagrams
 
@@ -26,6 +26,12 @@ def expected_groups(multiplier: int) -> list[list[str]]:
 def unordered_2d(list_of_lists):
     """Mark both dimensions as order-insensitive."""
     return unordered([unordered(g) for g in list_of_lists])
+
+
+def test_group_anagrams():
+    """Test the group_anagrams function with a base case."""
+    result = group_anagrams(BASE)
+    assert result == unordered_2d(expected_groups(1))
 
 
 @pytest.mark.benchmark

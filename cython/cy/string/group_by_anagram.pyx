@@ -1,51 +1,47 @@
-import cython
+from cython import boundscheck, wraparound
+from libc.string cimport memset
 from cpython.unicode cimport (
-    PyUnicode_READ, PyUnicode_KIND, PyUnicode_DATA, PyUnicode_GET_LENGTH
+    PyUnicode_DATA,
+    PyUnicode_GET_LENGTH,
+    PyUnicode_KIND,
+    PyUnicode_READ,
 )
+from cpython.bytes cimport PyBytes_FromStringAndSize
 
-@cython.boundscheck(False)
-@cython.wraparound(False)
-cpdef list group_anagrams_26lower(list strs):
+@boundscheck(False)
+@wraparound(False)
+cpdef list group_anagrams(list strs):
     """Group strings that contain only 'a'..'z'."""
-    cdef dict groups = {}
-    cdef int[26] counts
-    cdef Py_ssize_t i, n
-    cdef str s
-    cdef int kind
-    cdef const void* data
-    cdef unsigned int ch
-    cdef list lst
-    cdef int j
-    cdef tuple key
+    cdef:
+        dict groups = {}
+        str s
+        unsigned char[26] counts # uint8_t = unsigned char (unicode)
+        Py_ssize_t n, i # used by cython.unicode
+        int kind
+        const void* data
+        unsigned int unicode
+        const char* count_pointer
+        bytes key
+        list group
 
     for s in strs:
-        for j in range(26):
-            counts[j] = 0
+        memset(&counts[0], 0, 26)
 
-        n = PyUnicode_GET_LENGTH(s)
-        kind = PyUnicode_KIND(s)
-        data = PyUnicode_DATA(s)
+        # avoid the boxing/unboxing of accessing python's object layer
+        n, kind, data = PyUnicode_GET_LENGTH(s), PyUnicode_KIND(s), PyUnicode_DATA(s)
 
         for i in range(n):
-            ch = PyUnicode_READ(kind, data, i)
-            ch -= 97  # 'a'
-            if ch >= 26:  # also guards negative underflow
-                raise ValueError("Only lowercase ASCII a-z supported")
-            counts[ch] += 1
+            unicode = PyUnicode_READ(kind, data, i)
+            counts[unicode - 97] += 1 # 'a' is 97 in unicode
 
-        # No generator expressions inside cpdef
-        key = (
-            counts[0], counts[1], counts[2], counts[3], counts[4], counts[5],
-            counts[6], counts[7], counts[8], counts[9], counts[10], counts[11],
-            counts[12], counts[13], counts[14], counts[15], counts[16], counts[17],
-            counts[18], counts[19], counts[20], counts[21], counts[22], counts[23],
-            counts[24], counts[25]
-        )
+        # Construct a 1-byte-per-char Unicode string from the counts
+        count_pointer = <const char*>&counts[0] # convert an unsigned char* to a const char*
+        key = PyBytes_FromStringAndSize(count_pointer, 26) # not passing that inline to avoid cython safety flag
 
-        lst = groups.get(key)
-        if lst is None:
-            lst = []
-            groups[key] = lst
-        lst.append(s)
+        group = groups.get(key)
+        if group is None:
+            group = []
+            groups[key] = group
+        group.append(s)
 
     return list(groups.values())
