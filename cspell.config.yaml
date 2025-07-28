@@ -140,6 +140,7 @@ words:
   - pylance
   - Pylint
   - pymodule
+  - pyobject
   - pyproject
   - pystac
   - pytest

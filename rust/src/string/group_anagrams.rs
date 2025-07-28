@@ -1,42 +1,33 @@
-use ahash::RandomState;
-use hashbrown::HashMap;
+use ahash::AHashMap;
 use pyo3::prelude::*;
 use pyo3::types::{PyList, PyString};
 
-type Key = [u16; 26];
+type Key = [u8; 26]; // strs[i].length < 255
 
 #[pyfunction]
 pub fn group_anagrams<'py>(py: Python<'py>, strs: Bound<'py, PyList>) -> PyResult<Py<PyList>> {
-    let mut groups: HashMap<Key, Vec<Py<PyString>>, RandomState> =
-        HashMap::with_hasher(RandomState::new());
-    groups.reserve(strs.len());
+    let mut groups: AHashMap<Key, Vec<Py<PyString>>> = AHashMap::with_capacity(strs.len());
 
-    let n = strs.len();
-    for i in 0..n {
-        let any = strs.get_item(i)?;
-        let py_str: Bound<'py, PyString> = any.downcast_into()?;
-        let s = py_str.to_str()?; // &str, no copy
+    for py_item in strs.iter() {
+        let py_s = py_item.downcast()?;
+        let s = py_s.to_str()?; // borrowed view to the string utf8 value in python heap
         let mut key: Key = [0; 26];
 
-        // ASCII lowercase-only fast path
         for &b in s.as_bytes() {
-            let idx = b.wrapping_sub(b'a') as usize;
-            if idx >= 26 {
-                return Err(PyErr::new::<pyo3::exceptions::PyValueError, _>(
-                    "Only lowercase ASCII a-z supported",
-                ));
-            }
-            key[idx] += 1;
+            key[(b - b'a') as usize] += 1;
         }
 
-        groups.entry(key).or_default().push(py_str.into_py(py));
+        // convert borrowed &PyString to an owned smart pointer Py<PyString>
+        let owned = py_s.into_pyobject(py)?;
+        groups.entry(key).or_default().push(owned.into());
     }
 
-    // Build Python list[list[str]]
-    let out = PyList::empty_bound(py);
+    // creating the output list in python heap
+    let output = PyList::empty(py);
     for vals in groups.into_values() {
-        let inner = PyList::new_bound(py, &vals);
-        out.append(inner)?;
+        let py_group = PyList::new(py, &vals)?;
+        output.append(py_group)?;
     }
-    Ok(out.into())
+    // convert the borrowed GIL-bound PyList into an owned Py<PyList> and end lifetime
+    Ok(output.into())
 }

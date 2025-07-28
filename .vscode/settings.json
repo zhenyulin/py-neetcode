@@ -93,12 +93,12 @@
     "editor.defaultFormatter": "rust-lang.rust-analyzer"
   },
   "rust-analyzer.check.command": "clippy",
-  "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
+  // "rust-analyzer.diagnostics.disabled": ["unlinked-file"],
   "rust-analyzer.diagnostics.styleLints.enable": true,
   "rust-analyzer.diagnostics.useRustcErrorCode": true,
-  "rust-analyzer.inlayHints.typeHints.enable": false,
+  "rust-analyzer.inlayHints.typeHints.enable": true,
   "rust-analyzer.procMacro.enable": false,
-  "rust-analyzer.inlayHints.chainingHints.enable": true,
+  "rust-analyzer.inlayHints.chainingHints.enable": false,
   "rust-analyzer.inlayHints.genericParameterHints.const.enable": true,
-  "rust-analyzer.inlayHints.parameterHints.enable": false
+  "rust-analyzer.inlayHints.parameterHints.enable": true
 }
