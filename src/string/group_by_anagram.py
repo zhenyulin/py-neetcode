@@ -21,7 +21,7 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
     - dict hashkey lookup takes O(1) time, worst case O(26) time
     - output groups takes O(M*N) space
 
-    time complexity: O(M*N*26), space complexity: O(M*N+M*26)
+    amortised time complexity: O(M*N), space complexity: O(M*N+M*26)
     """
     # groups = defaultdict(list)
     # for s in strs:
@@ -34,9 +34,11 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
     """
     2) use sorted string as the hashkey
 
-    time complexity: O(M*N*logN), space complexity: O(M*N)
+    amortised time complexity: O(M*N*logN), space complexity: O(M*N)
 
-    Note: log2(N) <= [log2(100) = 6.64] < 26, it is 50% faster than solution 1 in benchmark.
+    Note: although the sorted method is O(N*logN), slower than the counter method
+    but join(), sorted() are C-level operations, while the count is looping in python
+    in benchmark, the sort approach is 1.5 faster than the count approach, especially for N<=100
     """
 
     groups = defaultdict(list)
