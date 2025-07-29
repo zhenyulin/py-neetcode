@@ -45,11 +45,12 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
     Note: Pypy is 2x faster than CPython, Cython is 3~4x faster, PyO3 is 8~10x faster (on-par with raw Rust)
     for 1000x samples:
+    - CPython count key: 3000us
     - CPython sorted-string key: 2000us
     - PyPy sorted-string key: 1000us
     - Cython count key: 500us
     - PyO3 count key: 200us
-    - raw Rust count key: 150us
+    - Rust count key: 150us
     """
 
     groups = defaultdict(list)
