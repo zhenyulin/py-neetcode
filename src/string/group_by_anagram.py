@@ -15,20 +15,23 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
 
     1 <= M <= 104, 0 <= N <= 100, K = 26 (lowercase English letters)
 
-    1) use counter array converted to tuple as the hashkey
+    1) use bytearray converted to bytes as the hashkey
 
     - building the hashkey takes O(M*N) time, O(M*26) space
-    - dict hashkey lookup takes O(1) time, worst case O(26) time
+    - dict hashkey lookup amortised to O(1) time, worst case O(26) time
     - output groups takes O(M*N) space
 
     amortised time complexity: O(M*N), space complexity: O(M*N+M*26)
+
+    Note: bytearray and bytes would be slightly faster than list and tuple
+    bytearray and bytes use raw bytes (uint8) instead of PyLongObject int + pointers
     """
     # groups = defaultdict(list)
     # for s in strs:
-    #     counts = [0] * 26
+    #     counts = bytearray(26)
     #     for c in s:
-    #         counts[ord(c) - ord("a")] += 1
-    #     groups[tuple(counts)].append(s)
+    #         counts[ord(c) - 97] += 1  # ord('a') = 97
+    #     groups[bytes(counts)].append(s)
     # return list(groups.values())
 
     """
@@ -44,5 +47,4 @@ def group_anagrams(strs: list[str]) -> list[list[str]]:
     groups = defaultdict(list)
     for s in strs:
         groups["".join(sorted(s))].append(s)
-
     return list(groups.values())
