@@ -48,6 +48,7 @@ set windows-shell := ["bash", "-uc"]
 PYTHONPATH := invocation_directory()
 PROJECT_NAME := file_stem(PYTHONPATH)
 LOCAL_TEST_SCOPE := "not complex and not benchmark and not online"
+WHEEL_CACHE_DIR := "/var/folders/pl/"
 
 ### default recipe #keep on top
 
@@ -198,7 +199,7 @@ cleanup *FLAGS:
     # watchexec config details
     # -n: don't spawn another shell for speed
     # -r: restart the process on busy update
-    watchexec -nr -w src -w tests -e py --clear -- \
+    watchexec -nr -w src -w tests -e py -w "$WHEEL_CACHE_DIR" -e whl --clear -- \
         uv run pytest tests/ -vv -s -m "$SCOPE" --picked \
         --cov=src \
         --cov-report=term-missing \
