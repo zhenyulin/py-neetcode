@@ -5,10 +5,10 @@
 from collections import defaultdict
 
 
-def charReplacement(s: str, k: int) -> int:
+def char_replacement(s: str, k: int) -> int:
     """This is equivalent to find the substring with 'k' different chars.
 
-    1) Hashmap:
+    1) Hashmap, Two-Pointer:
     iterate through the string, use a Hashmap to count the chars
 
     at each step, count the possible max length of same chars
@@ -21,16 +21,18 @@ def charReplacement(s: str, k: int) -> int:
 
     time complexity: O(N), space complexity: O(C)
     """
-    count, res, l, same_char_max = defaultdict(int), 0, 0, 0
+    count: dict[str, int] = defaultdict(int)
+    res, left, same_char_max = 0, 0, 0
 
-    for r in range(len(s)):
-        count[s[r]] += 1
-        same_char_max = max(same_char_max, count[s[r]])
+    for right in range(len(s)):
+        count[s[right]] += 1
+        same_char_max = max(same_char_max, count[s[right]])
 
-        if (r + 1 - l) - same_char_max > k:
-            count[s[l]] -= 1
-            l += 1
+        # the left would always be <= k+1, so rolling move it once
+        if (right - left + 1) - same_char_max > k:
+            count[s[left]] -= 1
+            left += 1
 
-        res = max(res, r + 1 - l)
+        res = max(res, right - left + 1)
 
     return res
