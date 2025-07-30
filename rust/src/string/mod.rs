@@ -5,6 +5,7 @@ mod group_anagrams;
 mod split_count_equal_num_char;
 mod substring_longest_char_replacement;
 mod substring_longest_palindrome;
+mod substring_longest_without_repeating_characters;
 
 #[pymodule]
 pub mod string {
@@ -20,4 +21,6 @@ pub mod string {
     use substring_longest_char_replacement::char_replacement;
     #[pymodule_export]
     use substring_longest_palindrome::longest_palindrome;
+    #[pymodule_export]
+    use substring_longest_without_repeating_characters::length_of_longest_substring;
 }
