@@ -10,6 +10,7 @@ fn rust(py: Python<'_>, m: &Bound<'_, PyModule>) -> PyResult<()> {
     let string_mod = PyModule::new(py, "string")?;
     string_mod.add_function(wrap_pyfunction!(string::group_anagrams_py, &string_mod)?)?;
     string_mod.add_function(wrap_pyfunction!(string::longest_palindrome, &string_mod)?)?;
+    string_mod.add_function(wrap_pyfunction!(string::num_ways, &string_mod)?)?;
 
     m.add_submodule(&string_mod)?;
     m.add("string", &string_mod)?;

@@ -7,12 +7,6 @@ from src.string.group_by_anagram import group_anagrams
 
 BASE = ["eat", "tea", "tan", "ate", "nat", "bat"]
 
-IMPLEMENTATIONS = {
-    "py": group_anagrams,
-    "cy": group_anagrams_cython,
-    "rs": group_anagrams_rust,
-}
-
 
 def expected_groups(multiplier: int) -> list[list[str]]:
     """Expected results."""
@@ -32,6 +26,13 @@ def test_group_anagrams():
     """Test the group_anagrams function with a base case."""
     result = group_anagrams(BASE)
     assert result == unordered_2d(expected_groups(1))
+
+
+IMPLEMENTATIONS = {
+    "py": group_anagrams,
+    "cy": group_anagrams_cython,
+    "rs": group_anagrams_rust,
+}
 
 
 @pytest.mark.benchmark
