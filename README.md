@@ -38,7 +38,7 @@
 > substring(shortest, longest, len, min, max) -> greedy, sliding window
 
 - [Substring Longest Palindromic](./src/string/substring_longest_palindromic.py) `palindromic`
-- [Combination Validate Parentheses](./src/string/combination_validation_parentheses.py) `left_min, left_max`
+- [Combination Validate Parentheses](./src/string/combination_validate_parentheses.py) `left_min, left_max`
 
 #### Greedy & Hashmap `O(C) space` - _index/count related condition_
 

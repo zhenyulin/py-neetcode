@@ -4,11 +4,11 @@
 #
 
 
-def validateParenthesis(s: str) -> bool:
+def validate_parenthesis(s: str) -> bool:
     """1) Greedy.
 
     since stars also have their locations, once they are assigned
-    left parenthesis, there needs to be a corresponding right parethesis
+    left parenthesis, there needs to be a corresponding right parenthesis
     so left, right, star counts wouldn't work here as it doesn't factor
     in the location of stars, stars need to be allocated to left on the move
     so use left_min, left_max to denote all stars to left or right/empty
@@ -28,8 +28,7 @@ def validateParenthesis(s: str) -> bool:
         if left_max < 0:
             return False
 
-        # can always take one more * if left is insufficient
-        left_min = max(left_min, 0)
+        left_min = max(left_min, 0)  # balance left_min to 0 with stars once it goes negative
 
-    # left_min to be reduced to zero
+    # left_min should have been resolved to 0
     return left_min == 0
