@@ -7,11 +7,7 @@
 def check_inclusion(t: str, s: str) -> bool:
     """Check whether a substring is anagram with the target.
 
-    1)* slide window of len(t) and list Counter to check anagram
-
-    time complexity: O(S), space complexity: O(K)
-
-    1) slide window of len(t) and Greedy Counter to check anagram
+    1) slide window of len(t) and bytearray Counter to check anagram
 
     time complexity: O(S), space complexity: O(K)
 
@@ -22,17 +18,17 @@ def check_inclusion(t: str, s: str) -> bool:
     if len(t) > len(s):
         return False
 
-    ct, cs = [0] * 26, [0] * 26
+    ct, cs = bytearray(26), bytearray(26)
 
     for i in range(len(t)):
-        ct[ord(t[i]) - ord("a")] += 1
-        cs[ord(s[i]) - ord("a")] += 1
+        ct[ord(t[i]) - 97] += 1
+        cs[ord(s[i]) - 97] += 1
 
     for i in range(len(t), len(s)):
         if ct == cs:
             return True
 
-        cs[ord(s[i - len(t)]) - ord("a")] -= 1
-        cs[ord(s[i]) - ord("a")] += 1
+        cs[ord(s[i]) - 97] += 1
+        cs[ord(s[i - len(t)]) - 97] -= 1
 
     return ct == cs
