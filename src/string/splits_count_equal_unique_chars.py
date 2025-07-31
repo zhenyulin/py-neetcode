@@ -4,12 +4,12 @@
 #
 
 
-def numSplit(s: str) -> int:
+def num_split(s: str) -> int:
     """To count unique chars on both end.
 
     we can use a hashmap to record 'first' and 'last' appearance of a char
     then for each index i we know how many unique chars are before and after
-    * set wouldn't work for removing char
+    Note: set wouldn't work for removing char
 
     to have equal amount of unique chars, the index i will need to be
     between a scope where there're equal amount of 'last' before and 'first' after
@@ -27,6 +27,6 @@ def numSplit(s: str) -> int:
 
     ranges = sorted([*first.values(), *last.values()])
 
-    M = len(ranges) // 2
+    mid = len(ranges) // 2
 
-    return ranges[M] - ranges[M - 1]
+    return ranges[mid] - ranges[mid - 1]
