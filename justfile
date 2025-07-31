@@ -261,6 +261,11 @@ cleanup *FLAGS:
 @rust-build:
     maturin develop --release --manifest-path=rust/Cargo.toml
 
+[group('rust')]
+@rust-build-watch:
+    watchexec -n -r -w rust/src -e rs --clear -- \
+        just rust-build
+
 @_cleanup_rust:
     rm -rf rust/target/
 
