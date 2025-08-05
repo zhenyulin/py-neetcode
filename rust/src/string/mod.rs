@@ -4,6 +4,7 @@ mod combination_validate_parentheses;
 mod group_anagrams;
 mod split_count_equal_num_char;
 mod splits_char_unique_part;
+mod splits_count_by_dict;
 mod splits_count_equal_unique_chars;
 mod substring_check_target_anagram;
 mod substring_longest_char_replacement;
@@ -22,6 +23,8 @@ pub mod string {
     use split_count_equal_num_char::num_ways;
     #[pymodule_export]
     use splits_char_unique_part::partition_lengths;
+    #[pymodule_export]
+    use splits_count_by_dict::ways_of_decoding;
     #[pymodule_export]
     use splits_count_equal_unique_chars::num_splits;
     #[pymodule_export]
