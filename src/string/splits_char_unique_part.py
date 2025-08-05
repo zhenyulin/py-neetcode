@@ -4,16 +4,15 @@
 #
 
 
-def partitionLengthes(s: str) -> list[int]:
+def partition_lengths(s: str) -> list[int]:
     """1) Greedy, HashMap.
 
     to make sure unique char only appear in one part
     we can record the index of the char last appeared
 
-    we can then iterate through the string
-    until limit (the last index of chars encountered)
+    then we can then iterate through the string
     update the limit along the way to the limit,
-    until reached without encountering new char
+    until i == limit, where no new limit (new char) encountered
 
     time complexity: O(N), space complexity: O(1)
     """

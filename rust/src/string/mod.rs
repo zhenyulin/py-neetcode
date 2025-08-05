@@ -3,6 +3,7 @@ use pyo3::prelude::*;
 mod combination_validate_parentheses;
 mod group_anagrams;
 mod split_count_equal_num_char;
+mod splits_char_unique_part;
 mod splits_count_equal_unique_chars;
 mod substring_check_target_anagram;
 mod substring_longest_char_replacement;
@@ -19,6 +20,8 @@ pub mod string {
     use group_anagrams::group_anagrams as group_anagrams_py;
     #[pymodule_export]
     use split_count_equal_num_char::num_ways;
+    #[pymodule_export]
+    use splits_char_unique_part::partition_lengths;
     #[pymodule_export]
     use splits_count_equal_unique_chars::num_splits;
     #[pymodule_export]
