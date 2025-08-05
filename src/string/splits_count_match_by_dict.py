@@ -4,7 +4,7 @@
 #
 
 
-def wordBreak(s: str, words: list[str]) -> bool:
+def word_break(s: str, words: list[str]) -> bool:
     """Whether s is breakable would be related to s[i-len(w)] is breakable.
 
     1) Dynamic Programming
