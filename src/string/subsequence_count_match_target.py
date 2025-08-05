@@ -4,7 +4,7 @@
 #
 
 
-def numMatchSubsequences(s: str, t: str) -> int:
+def num_match_subsequences(s: str, t: str) -> int:
     """To count the number of unique subsequences matching the target.
 
     1) 2D Dynamic Programming
@@ -33,15 +33,12 @@ def numMatchSubsequences(s: str, t: str) -> int:
 
     time complexity: O(M*N), space complexity: O(N)
     """
-
+    # match[j+1] denote the match count to t[:j+1], use a leading 1 for initial match
     match = [1] + [0] * len(t)
 
-    for i in range(len(s)):
-        current = [1]
-
-        for j in range(len(t)):
-            current.append(match[j + 1] + (match[j] if s[i] == t[j] else 0))
-
-        match = current
+    for c in s:
+        # when a new matching char found, we can choose to drop the current match or previous match
+        for j in range(len(t) - 1, -1, -1):
+            match[j + 1] += match[j] if c == t[j] else 0
 
     return match[-1]

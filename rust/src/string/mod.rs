@@ -8,6 +8,7 @@ mod splits_count_by_dict;
 mod splits_count_equal_unique_chars;
 mod splits_count_match_by_dict;
 mod subsequence_count_longest_common_two_strings;
+mod subsequence_count_match_target;
 mod substring_check_target_anagram;
 mod substring_longest_char_replacement;
 mod substring_longest_palindrome;
@@ -33,6 +34,8 @@ pub mod string {
     use splits_count_match_by_dict::word_break;
     #[pymodule_export]
     use subsequence_count_longest_common_two_strings::longest_common_subsequence;
+    #[pymodule_export]
+    use subsequence_count_match_target::num_match_subsequences;
     #[pymodule_export]
     use substring_check_target_anagram::check_inclusion;
     #[pymodule_export]
