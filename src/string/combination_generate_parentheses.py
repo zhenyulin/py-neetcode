@@ -4,14 +4,13 @@
 #
 
 
-def generateParentheses(n: int) -> list[str]:
-    """1) Backtracking:
+def generate_parentheses(n: int) -> list[str]:
+    """1) Backtracking.
 
     we can set up counters for left, right parentheses
-    explore adding "(" or ")" on the right condition recursingly
+    explore adding "(" or ")" on the right condition recursively
     adding result to 'res' until condition met
 
-    ?
     time complexity: (3^2N), space complexity: (N^2)
     * N + (N-1) + ... + 1
     """

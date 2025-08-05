@@ -76,7 +76,7 @@
 
 ### 1D Array
 
-#### Math Calculation `O(1) time`
+#### Array Math Calculation `O(1) time`
 
 #### Binary Search `O(LogN) time` - _search until match or left-right condition_
 

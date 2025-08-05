@@ -1,5 +1,6 @@
 use pyo3::prelude::*;
 
+mod combination_generate_parentheses;
 mod combination_validate_parentheses;
 mod group_anagrams;
 mod split_count_equal_num_char;
@@ -18,6 +19,8 @@ mod substring_longest_without_repeating_characters;
 pub mod string {
     use super::*;
 
+    #[pymodule_export]
+    use combination_generate_parentheses::generate_parentheses;
     #[pymodule_export]
     use combination_validate_parentheses::validate_parenthesis;
     #[pymodule_export]
