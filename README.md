@@ -76,8 +76,6 @@
 
 ### 1D Array
 
-#### Array Math Calculation `O(1) time`
-
 #### Binary Search `O(LogN) time` - _search until match or left-right condition_
 
 > sorted search, search peak -> binary search

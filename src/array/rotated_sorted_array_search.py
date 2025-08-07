@@ -5,8 +5,10 @@
 
 
 def search(nums: list[int], target: int) -> int:
-    """Even after rotation, the array still has incrementality
-    with binary search, the scope would evetually be simply incremental.
+    """To search target in a rotated incremental array.
+
+    This is equivalent to two incremental arrays, at each Binary Search could be applied.
+    So we just need to add a mid-point condition to confirm whether we are in the incremental.
 
     1) Binary Search
     find the sorted part of the array covering the target first
@@ -31,10 +33,9 @@ def search(nums: list[int], target: int) -> int:
             else:
                 l = m + 1
         # sorted part is on the right, act accordingly
+        elif nums[m] < target <= nums[r]:
+            l = m + 1
         else:
-            if nums[m] < target <= nums[r]:
-                l = m + 1
-            else:
-                r = m - 1
+            r = m - 1
 
     return -1
