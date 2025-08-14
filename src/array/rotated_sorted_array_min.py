@@ -4,7 +4,7 @@
 #
 
 
-def findMin(nums: list[int]) -> int:
+def find_min(nums: list[int]) -> int:
     """The array after rotation will have 2 incremental parts (or like original).
 
     1) Binary Search
