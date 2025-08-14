@@ -4,7 +4,7 @@
 #
 
 
-def findPeakElement(nums: list[int]) -> int:
+def find_peak_element(nums: list[int]) -> int:
     """Find the index to the any of the peaks.
 
     1) Binary Search
@@ -24,7 +24,7 @@ def findPeakElement(nums: list[int]) -> int:
     while left < right:
         m = (left + right) // 2
 
-        # { right conditoin } - mid element larger than next
+        # { right condition } - mid element larger than next
         if nums[m] > nums[m + 1]:
             right = m  # m could be peak point already
         # { left condition }
