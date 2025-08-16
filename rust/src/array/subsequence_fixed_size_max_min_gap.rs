@@ -1,7 +1,7 @@
 use pyo3::prelude::*;
 
 #[pyfunction]
-pub fn max_min_gap(nums: Vec<i32>, m: i32) -> i32 {
+pub fn max_min_gap(mut nums: Vec<i32>, m: i32) -> i32 {
     fn possible(nums: &[i32], m: i32, gap: i32) -> bool {
         let (mut last, mut count) = (nums[0], m - 1);
         for &n in nums.iter().skip(1) {
@@ -15,6 +15,8 @@ pub fn max_min_gap(nums: Vec<i32>, m: i32) -> i32 {
         }
         false
     }
+
+    nums.sort_unstable();
 
     let (mut l, mut r) = (0, nums[nums.len() - 1] - nums[0]);
 

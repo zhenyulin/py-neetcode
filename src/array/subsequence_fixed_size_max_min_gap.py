@@ -32,6 +32,7 @@ def max_min_gap(nums: list[int], m: int) -> int:
                     return True
         return False
 
+    nums.sort()
     l, r = 0, nums[-1] - nums[0]
 
     while l <= r:
