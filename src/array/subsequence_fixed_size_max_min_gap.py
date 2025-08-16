@@ -26,8 +26,7 @@ def max_min_gap(nums: list[int], m: int) -> int:
         last, count = nums[0], m - 1
         for n in nums[1:]:
             if n - last >= gap:
-                last = n
-                count -= 1
+                last, count = n, count - 1
                 if count == 0:
                     return True
         return False
