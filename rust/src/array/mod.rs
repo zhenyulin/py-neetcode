@@ -4,6 +4,7 @@ mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
 mod search_element_peak;
 mod subarray_max_product;
+mod subarray_min_size_sum;
 mod subsequence_fixed_size_max_min_gap;
 
 #[pymodule]
@@ -18,6 +19,8 @@ pub mod array {
     use search_element_peak::find_peak_element;
     #[pymodule_export]
     use subarray_max_product::max_product;
+    #[pymodule_export]
+    use subarray_min_size_sum::min_sub_array_len;
     #[pymodule_export]
     use subsequence_fixed_size_max_min_gap::max_min_gap;
 }
