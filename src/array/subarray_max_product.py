@@ -4,7 +4,7 @@
 #
 
 
-def maxProduct(nums: list[int]) -> int:
+def max_product(nums: list[int]) -> int:
     """For product, the absolute value won't decrease timing a new int except 0.
 
     1) Greedy:
