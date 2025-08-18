@@ -4,14 +4,14 @@
 #
 
 
-def productExceptSelf(nums: list[int]) -> list[int]:
+def product_except_self(nums: list[int]) -> list[int]:
     """Accumulate product from the array except self.
 
     1) Prefix/Suffix Arrays:
     ```python
         # prefix[i] denotes product of nums[:i]
         # suffix[i] denotes product of nums[-i:]
-        # suffix[-1-i] dentoes product of nums[i:]
+        # suffix[-1-i] denotes product of nums[i:]
         prefix, suffix, N = [1], [1], len(nums)
 
         for i in range(N):
