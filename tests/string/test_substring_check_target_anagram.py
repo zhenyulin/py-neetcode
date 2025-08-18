@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import check_inclusion as check_inclusion_rust
 from src.string.substring_check_target_anagram import check_inclusion
@@ -17,8 +17,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark_check_inclusion(benchmark, implementation):
     """Benchmark the check_inclusion implementations."""
     data = ("ab", "eidbaooo")

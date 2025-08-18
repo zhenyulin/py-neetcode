@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import word_break as word_break_rust
 from src.string.splits_count_match_by_dict import word_break
@@ -14,8 +14,7 @@ def test_word_break():
 IMPLEMENTATIONS = {"py": word_break, "rs": word_break_rust}
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark(benchmark, implementation):
     result = benchmark(implementation, "applepenapple", ["apple", "pen"])
     assert result

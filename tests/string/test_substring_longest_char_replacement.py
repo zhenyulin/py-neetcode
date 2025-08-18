@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import char_replacement as char_replacement_rust
 from src.string.substring_longest_char_replacement import char_replacement
@@ -15,8 +15,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark_char_replacement(benchmark, implementation):
     """Benchmark the char_replacement implementations."""
     data = "AACABBA" * 1000

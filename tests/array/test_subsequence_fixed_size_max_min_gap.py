@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.array import max_min_gap as rust_max_min_gap
 from src.array.subsequence_fixed_size_max_min_gap import max_min_gap
@@ -13,8 +13,7 @@ def test_max_min_gap():
 IMPLEMENTATIONS = {"py": max_min_gap, "rs": rust_max_min_gap}
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark(benchmark, implementation):
     result = benchmark(implementation, [2, 3, 5, 9], 3)
     assert result == 3

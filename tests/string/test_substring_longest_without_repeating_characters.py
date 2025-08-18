@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import length_of_longest_substring as length_of_longest_substring_rust
 from src.string.substring_longest_without_repeating_characters import (
@@ -19,8 +19,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark_length_of_longest_substring(benchmark, implementation):
     """Benchmark the length_of_longest_substring implementations."""
     data = "abcabcbb" * 1000

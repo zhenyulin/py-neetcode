@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import num_ways as rust_num_ways
 from src.string.splits_count_equal_num_char import num_ways
@@ -22,8 +22,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_num_ways_benchmark(benchmark, implementation):
     """Benchmark the num_ways implementations."""
     benchmark(implementation, "10101" * 100)

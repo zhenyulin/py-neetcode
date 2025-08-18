@@ -1,5 +1,6 @@
 import pytest
 from pytest_unordered import unordered
+from tests.benchmark import benchmark_implementations
 
 from cy.string.group_by_anagram import group_anagrams as group_anagrams_cython
 from rust.string import group_anagrams as group_anagrams_rust
@@ -35,8 +36,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 @pytest.mark.parametrize("multiplier", [100, 1000], ids=lambda m: f"{m}x")
 def test_group_anagrams_benchmark(benchmark, implementation, multiplier):
     """Benchmark the group_anagrams implementations."""

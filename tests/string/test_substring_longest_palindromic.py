@@ -1,4 +1,5 @@
 import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import longest_palindrome as longest_palindrome_rust
 from src.string.substring_longest_palindromic import longest_palindrome
@@ -24,8 +25,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 @pytest.mark.parametrize("multiplier", [100, 1000], ids=lambda m: f"{m}x")
 def test_longest_palindrome_benchmark(benchmark, implementation, multiplier):
     benchmark.group = multiplier

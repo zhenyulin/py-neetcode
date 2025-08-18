@@ -1,4 +1,4 @@
-import pytest
+from tests.benchmark import benchmark_implementations
 
 from rust.string import validate_parenthesis as rust_validate_parenthesis
 from src.string.combination_validate_parentheses import validate_parenthesis
@@ -26,8 +26,7 @@ IMPLEMENTATIONS = {
 }
 
 
-@pytest.mark.benchmark
-@pytest.mark.parametrize(("implementation"), IMPLEMENTATIONS.values(), ids=IMPLEMENTATIONS.keys())
+@benchmark_implementations(IMPLEMENTATIONS)
 def test_benchmark(benchmark, implementation):
     # Benchmark the implementation
     benchmark(implementation, "(*))" * 100)
