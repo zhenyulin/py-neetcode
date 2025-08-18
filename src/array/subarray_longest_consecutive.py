@@ -4,7 +4,7 @@
 #
 
 
-def longestConsecutiveSequence(nums: list[int]) -> int:
+def longest_consecutive_sequence(nums: list[int]) -> int:
     """Return the length of the longest consecutive number sequence.
 
     1) Greedy:
@@ -14,14 +14,14 @@ def longestConsecutiveSequence(nums: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(N)
     """
-    res, nums = 0, set(nums)
+    res, _nums = 0, set(nums)
 
-    for n in nums:
+    for n in _nums:
         # don't check if it has been checked as an intermediate point
-        if n - 1 not in nums:
-            length = 1
-            while n + length in nums:
-                length += 1
-            res = max(res, length)
+        if n - 1 not in _nums:
+            m = 1
+            while n + m in _nums:
+                m += 1
+            res = max(res, m)
 
     return res
