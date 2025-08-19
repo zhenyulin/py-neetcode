@@ -1,9 +1,9 @@
-from collections.abc import Mapping
+from collections.abc import Callable, Mapping
 
 import pytest
 
 
-def benchmark_implementations(implementations: Mapping[str, callable]) -> callable:
+def benchmark_implementations(implementations: Mapping[str, Callable]) -> Callable:
     parametrize = pytest.mark.parametrize(
         ("implementation"), implementations.values(), ids=implementations.keys()
     )
