@@ -4,7 +4,7 @@
 #
 
 
-def missingNumber(nums: list[int]) -> int:
+def missing_number(nums: list[int]) -> int:
     """To find the missing number between [0, n] from nums of length n.
 
     1) Greedy

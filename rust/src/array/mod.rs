@@ -1,5 +1,6 @@
 use pyo3::prelude::*;
 
+mod consecutive_int_missing;
 mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
 mod search_element_peak;
@@ -15,6 +16,8 @@ mod subsequence_fixed_size_max_min_gap;
 pub mod array {
     use super::*;
 
+    #[pymodule_export]
+    use consecutive_int_missing::missing_number;
     #[pymodule_export]
     use rotated_sorted_array_min::find_min;
     #[pymodule_export]
