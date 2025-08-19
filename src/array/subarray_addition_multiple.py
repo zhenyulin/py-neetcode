@@ -4,7 +4,7 @@
 #
 
 
-def rangeAddition(length: int, operations: list[list[int, int, int]]) -> list[int]:
+def range_addition(length: int, operations: list[list[int]]) -> list[int]:
     """To do multiple addition to ranges lazily, we can utilise rolling addition.
 
     1) Rolling Addition Greedy
