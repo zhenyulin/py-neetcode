@@ -11,6 +11,7 @@ mod subarray_max_product;
 mod subarray_min_size_sum;
 mod subarray_product_except_self;
 mod subsequence_fixed_size_max_min_gap;
+mod triplet_check_increasing;
 
 #[pymodule]
 pub mod array {
@@ -38,4 +39,6 @@ pub mod array {
     use subarray_product_except_self::product_except_self;
     #[pymodule_export]
     use subsequence_fixed_size_max_min_gap::max_min_gap;
+    #[pymodule_export]
+    use triplet_check_increasing::increasing_triplet;
 }

@@ -4,7 +4,7 @@
 #
 
 
-def increasingTriplet(nums: list[int]) -> bool:
+def increasing_triplet(nums: list[int]) -> bool:
     """1) Greedy.
 
     can be turned into a finding larger num during iteration with anchors
