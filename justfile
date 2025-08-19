@@ -259,7 +259,8 @@ cleanup *FLAGS:
 # build rust script
 [group('rust')]
 @rust-build:
-    maturin develop --release --manifest-path=rust/Cargo.toml
+    RUSTFLAGS="-C target-cpu=native" \
+    maturin develop --release --strip --manifest-path=rust/Cargo.toml
 
 [group('rust')]
 @rust-build-watch:

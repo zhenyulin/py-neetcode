@@ -15,5 +15,9 @@ pyo3 = { version = "0.25", features = [
 ] }
 
 [profile.release]
-lto = true
-codegen-units = 1
+opt-level = 3          # explicit (default), keeps intent clear
+lto = "fat"            # "fat" is a bit stronger than true/thin
+codegen-units = 1      # better inlining/opt across crates
+debug = false          # smaller, a tad faster
+overflow-checks = false # (optional) faster, but be sure math can't overflow
+strip = "symbols"      # smaller .so/.pyd (leave off if you need symbols)
