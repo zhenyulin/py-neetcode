@@ -7,6 +7,7 @@ mod search_element_peak;
 mod search_min_max_diff_with_operation;
 mod subarray_addition_multiple;
 mod subarray_longest_consecutive;
+mod subarray_max_area_containable;
 mod subarray_max_product;
 mod subarray_min_size_sum;
 mod subarray_product_except_self;
@@ -31,6 +32,8 @@ pub mod array {
     use subarray_addition_multiple::range_addition;
     #[pymodule_export]
     use subarray_longest_consecutive::longest_consecutive_sequence;
+    #[pymodule_export]
+    use subarray_max_area_containable::max_area;
     #[pymodule_export]
     use subarray_max_product::max_product;
     #[pymodule_export]

@@ -4,7 +4,7 @@
 #
 
 
-def maxArea(height: list[int]) -> int:
+def max_area(height: list[int]) -> int:
     """Find the max area that can be held by two heights from the input.
 
     0) Brutal Force:
@@ -22,9 +22,9 @@ def maxArea(height: list[int]) -> int:
     * moving the other way, 'bar' won't get bigger
     * the only possible situation to produce a larger area when shrinking width is
     that for [l, l', r', r] that min(l', r') > min(l, r), and
-    1) one of l', r' will firslty be reached by simply moving l or r
+    1) one of l', r' will firstly be reached by simply moving l or r
     2) in cases of (l, r'), or (l', r), r' > l or l' > r, so it would converge to (l', r')
-    the possiblility wouldn't be missed using this method
+    the possibility wouldn't be missed using this method
 
 
     time complexity: O(N), space complexity: O(1)
