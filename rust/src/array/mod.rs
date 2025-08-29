@@ -11,6 +11,7 @@ mod subarray_max_area_containable;
 mod subarray_max_product;
 mod subarray_min_size_sum;
 mod subarray_product_except_self;
+mod subarray_total_patch_containable;
 mod subsequence_fixed_size_max_min_gap;
 mod triplet_check_increasing;
 
@@ -40,6 +41,8 @@ pub mod array {
     use subarray_min_size_sum::min_sub_array_len;
     #[pymodule_export]
     use subarray_product_except_self::product_except_self;
+    #[pymodule_export]
+    use subarray_total_patch_containable::total_patch;
     #[pymodule_export]
     use subsequence_fixed_size_max_min_gap::max_min_gap;
     #[pymodule_export]

@@ -4,9 +4,8 @@
 #
 
 
-def totalPatch(heights: list[int]) -> int:
-    """This can be related to 11. Container With Most Water
-    (subarray max area containable).
+def total_patch(heights: list[int]) -> int:
+    """This can be related to 11. Container With Most Water (subarray max area containable).
 
     1) Greedy, Sliding Window
     we moving two pointers from both ends, check the height against its bounded bar
@@ -31,7 +30,6 @@ def totalPatch(heights: list[int]) -> int:
     fill, left_bar, right_bar = 0, 0, 0
 
     while i < j:
-
         if heights[i] > heights[j]:
             # update the bounded bar when its value is smaller
             # so that we are sure the bounded bar is shorter than the opposite
