@@ -1,13 +1,13 @@
 #
 # Triplets
-#  Given an array of 'n' distinct intergers and an integer threshold 't'
+# Given an array of 'n' distinct integers and an integer threshold 't'
 # How many (a, b, c) index triplets satisfying the following conditions:
 # - d[a] < d[b] < d[c]
-# - d[a] + d[b] + d[c] <= k
+# - d[a] + d[b] + d[c] <= t
 #
 
 
-def countTriplets(arr: list[int], t: int) -> int:
+def count_triplets(arr: list[int], t: int) -> int:
     """1) Iteration + Sliding Window.
 
     time complexity: O(N^2), space complexity: O(1)
