@@ -5,7 +5,7 @@
 
 
 def two_sum(numbers: list[int], target: int) -> list[int]:
-    """1) Two Pointers:
+    """1) Two Pointers.
 
     we can search from the two ends to the centre
 
@@ -21,3 +21,5 @@ def two_sum(numbers: list[int], target: int) -> list[int]:
             j -= 1
         else:
             return [i + 1, j + 1]
+
+    return []
