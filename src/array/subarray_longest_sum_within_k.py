@@ -6,7 +6,7 @@
 #  {1, 0, 1, 1, 0} =>5 sum = 3, length = 5
 
 
-def longestSumWithinK(arr: list[int], k: int) -> int:
+def longest_sum_within_k(arr: list[int], k: int) -> int:
     """Longest subarray on condition.
 
     1) Sliding Window
@@ -19,7 +19,6 @@ def longestSumWithinK(arr: list[int], k: int) -> int:
     res, i, j, current = 0, 0, 0, arr[0]
 
     while i < len(arr) and j < len(arr) - 1:
-
         # { expand right condition }
         if current <= k:
             j += 1
