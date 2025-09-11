@@ -4,7 +4,7 @@
 #
 
 
-def minJump(nums: list[int]) -> int:
+def min_jump(nums: list[int]) -> int:
     """1) Dynamic Programming.
 
     dp[r+1] = min(dp[i] + 1 if nums[l] >= r + 1 - l for i in range(l, r+1))

@@ -16,6 +16,7 @@ mod subarray_product_except_self;
 mod subarray_shortest_remove_to_sort;
 mod subarray_total_patch_containable;
 mod subsequence_fixed_size_max_min_gap;
+mod subsequence_min_jumps;
 mod triplet_check_increasing;
 mod triplet_count_increasing_sum_within_k;
 
@@ -55,6 +56,8 @@ pub mod array {
     use subarray_total_patch_containable::total_patch;
     #[pymodule_export]
     use subsequence_fixed_size_max_min_gap::max_min_gap;
+    #[pymodule_export]
+    use subsequence_min_jumps::min_jump;
     #[pymodule_export]
     use triplet_check_increasing::increasing_triplet;
     #[pymodule_export]
