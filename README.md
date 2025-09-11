@@ -100,6 +100,7 @@
 - [Subarray Addition Multiple](./src/array/subarray_addition_multiple.py) `lazy rolling addition`
 - [Consecutive Int Missing](./src/array/consecutive_int_missing.py) `sum diff`
 - [Triplet Check Increasing](./src/array/triplet_check_increasing.py) `anchor if elif else`
+- [Circular Index Cover Cost](./src/array/circular_index_cover_cost.py)
 
 #### Greedy + Sliding/Two-Pointer Window `O(1) space` - _forward and backward_
 
@@ -115,7 +116,6 @@
 #### Greedy + Implicit BFS
 
 - [Subsequence Min Jumps](./src/array/subsequence_min_jumps.py)
-- [Circular Index Cover Cost](./src/array/circular_index_cover_cost.py)
 
 #### Greedy & Hashmap `O(N) space` - _index/count related condition_
 

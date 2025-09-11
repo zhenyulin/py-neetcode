@@ -1,5 +1,6 @@
 use pyo3::prelude::*;
 
+mod circular_index_cover_cost;
 mod consecutive_int_missing;
 mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
@@ -24,6 +25,8 @@ mod triplet_count_increasing_sum_within_k;
 pub mod array {
     use super::*;
 
+    #[pymodule_export]
+    use circular_index_cover_cost::can_complete_circuit;
     #[pymodule_export]
     use consecutive_int_missing::missing_number;
     #[pymodule_export]
