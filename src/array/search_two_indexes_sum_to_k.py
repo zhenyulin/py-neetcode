@@ -4,7 +4,7 @@
 #
 
 
-def twoSum(nums: list[int], target: int) -> list[int]:
+def two_sum(nums: list[int], target: int) -> list[int]:
     """Find the indices of two numbers in `nums` that add up to `target`.
 
     1) Hashmap
@@ -13,9 +13,11 @@ def twoSum(nums: list[int], target: int) -> list[int]:
 
     time complexity: O(N), space complexity: O(N)
     """
-    match = {}
+    match: dict[int, int] = {}
 
     for i, n in enumerate(nums):
         if n in match:
             return [match[n], i]
         match[target - n] = i
+
+    return []

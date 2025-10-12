@@ -6,6 +6,7 @@ mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
 mod search_element_peak;
 mod search_min_max_diff_with_operation;
+mod search_two_indexes_sum_to_k;
 mod sorted_array_two_indexes_sum_to_k;
 mod subarray_addition_multiple;
 mod subarray_longest_consecutive;
@@ -37,6 +38,8 @@ pub mod array {
     use search_element_peak::find_peak_element;
     #[pymodule_export]
     use search_min_max_diff_with_operation::smallest_range;
+    #[pymodule_export]
+    use search_two_indexes_sum_to_k::two_sum_k;
     #[pymodule_export]
     use sorted_array_two_indexes_sum_to_k::two_sum;
     #[pymodule_export]
