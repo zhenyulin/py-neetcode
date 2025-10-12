@@ -6,8 +6,8 @@
 from collections import defaultdict
 
 
-def subarraySum(nums: list[int], k: int) -> int:
-    """To count all subarrays sum up to k.
+def subarray_sum(nums: list[int], k: int) -> int:
+    """To count all subarray sum up to k.
 
     1) Hashmap Prefix Sum, {sum: count}
 
@@ -18,14 +18,14 @@ def subarraySum(nums: list[int], k: int) -> int:
 
     time complexity: O(N), space complexity: O(N)
     """
-    res, current, counter = 0, 0, defaultdict(int)
+    res, acc = 0, 0
+    counter: dict[int, int] = defaultdict(int)
 
     # to have counter[0], i.e. sum[:0], as 0
-    for n in [0] + nums:
-
-        current += n
+    for n in [0, *nums]:
+        acc += n
         # current - target == k
-        res += counter.get(current - k, 0)
-        counter[current] += 1
+        res += counter.get(acc - k, 0)
+        counter[acc] += 1
 
     return res

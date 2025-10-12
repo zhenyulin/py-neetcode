@@ -9,6 +9,7 @@ mod search_min_max_diff_with_operation;
 mod search_two_indexes_sum_to_k;
 mod sorted_array_two_indexes_sum_to_k;
 mod subarray_addition_multiple;
+mod subarray_count_sum_to_k;
 mod subarray_longest_consecutive;
 mod subarray_longest_sum_within_k;
 mod subarray_max_area_containable;
@@ -44,6 +45,8 @@ pub mod array {
     use sorted_array_two_indexes_sum_to_k::two_sum;
     #[pymodule_export]
     use subarray_addition_multiple::range_addition;
+    #[pymodule_export]
+    use subarray_count_sum_to_k::subarray_sum;
     #[pymodule_export]
     use subarray_longest_consecutive::longest_consecutive_sequence;
     #[pymodule_export]
