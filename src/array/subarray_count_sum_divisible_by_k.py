@@ -5,19 +5,19 @@
 from collections import defaultdict
 
 
-def subarrayDivByK(nums: list[int], k: int) -> int:
-    """To count all subarrays sum divisible by k.
+def subarray_div_by_k(nums: list[int], k: int) -> int:
+    """To count all subarray sum divisible by k.
 
-    1) Hashmap Prefix Sum, {sum: count}
+    1) Hashmap Prefix Sum, {sum: count}1
 
     time complexity: O(N), space complexity: O(N)
     """
-    res, current, counter = 0, 0, defaultdict(int)
+    res, acc = 0, 0
+    counter: dict[int, int] = defaultdict(int)
 
-    for n in [0] + nums:
-
-        current = (current + n) % k
-        res += counter.get(current, 0)
-        counter[current] += 1
+    for n in [0, *nums]:
+        acc = (acc + n) % k
+        res += counter.get(acc, 0)
+        counter[acc] += 1
 
     return res

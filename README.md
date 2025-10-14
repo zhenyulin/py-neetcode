@@ -123,7 +123,7 @@
 
 - [Search Two Indexes Sum to K](./src/array/search_two_indexes_sum_to_k.py) `{match_condition: index}`
 - [Subarray Count Sum to K](./src/array/subarray_count_sum_to_k.py) ` {sum: count}``sum[i:j] = sum[:j] - sum[:i] `
-- [Subarray Count Sum Divisible by K](.src/array/subarray_count_sum_divisible_by_k.py) `{sum%k: count}`
+- [Subarray Count Sum Divisible by K](./src/array/subarray_count_sum_divisible_by_k.py) `{sum%k: count}`
 
 #### Greedy & Stack `O(N) time, O(K) space`
 
