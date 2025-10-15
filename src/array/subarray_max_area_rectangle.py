@@ -4,8 +4,10 @@
 #
 
 
-def largestAreaRectangle(heights: list[int]) -> int:
-    """To get the max rectangle area, we need an effective data structure
+def largest_area_rectangle(heights: list[int]) -> int:
+    """Largest area rectangle.
+
+    To get the max rectangle area, we need an effective data structure
     to record all viable previous heights to heights[i] to form a larger rectangle.
 
     1) Sliding Window & Stack
@@ -18,12 +20,13 @@ def largestAreaRectangle(heights: list[int]) -> int:
 
     time complexity: O(N), space complexity: O(N)
     """
-    res, stack = 0, []
+    res = 0
+    stack: list[tuple[int, int]] = []
 
     # append a 0 height to unload remaining stack in the end
-    for i, h in enumerate(heights + [0]):
+    for i, h in enumerate([*heights, 0]):
         left = i
-        # unload previous heights that can add current heights for rectangles
+        # keep the stack[0][1] height <= h, and unload when shorter h found
         while stack and stack[-1][1] > h:
             left, height = stack.pop()
             res = max(res, (i - left) * height)

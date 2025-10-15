@@ -15,6 +15,7 @@ mod subarray_count_sum_to_k;
 mod subarray_longest_consecutive;
 mod subarray_longest_sum_within_k;
 mod subarray_max_area_containable;
+mod subarray_max_area_rectangle;
 mod subarray_max_product;
 mod subarray_min_size_sum;
 mod subarray_product_except_self;
@@ -59,6 +60,8 @@ pub mod array {
     use subarray_longest_sum_within_k::longest_sum_within_k;
     #[pymodule_export]
     use subarray_max_area_containable::max_area;
+    #[pymodule_export]
+    use subarray_max_area_rectangle::largest_area_rectangle;
     #[pymodule_export]
     use subarray_max_product::max_product;
     #[pymodule_export]
