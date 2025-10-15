@@ -5,10 +5,10 @@
 from collections import deque
 
 
-def windowMaxes(nums: list[int], k: int) -> list[int]:
+def window_maxes(nums: list[int], k: int) -> list[int]:
     """To record the maxes of window sliding.
 
-    we need to find an effciient data structure to record the max
+    we need to find an efficient data structure to record the max
     and rolling update it with shifting indexes
 
     1) Monotonic Stack
@@ -18,10 +18,10 @@ def windowMaxes(nums: list[int], k: int) -> list[int]:
 
     time complexity: O(N), space complexity: O(K)
     """
-    stack, res = deque(), []
+    res = []
+    stack: deque[int] = deque()
 
     for i, n in enumerate(nums):
-
         # keep only the index of the max number until 'i'
         while stack and nums[stack[-1]] < n:
             stack.pop()
@@ -33,6 +33,7 @@ def windowMaxes(nums: list[int], k: int) -> list[int]:
             stack.popleft()
 
         # start to append result when i reaches window size
+        # stack[0] is always the largest within the window
         if i >= k - 1:
             res.append(nums[stack[0]])
 
