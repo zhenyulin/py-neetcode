@@ -9,6 +9,7 @@ mod search_k_elements_closest_to_origin;
 mod search_min_max_diff_with_operation;
 mod search_two_indexes_sum_to_k;
 mod sorted_array_two_indexes_sum_to_k;
+mod stream_find_median_element;
 mod stream_sliding_window_maxes;
 mod subarray_addition_multiple;
 mod subarray_count_sum_divisible_by_k;
@@ -49,6 +50,8 @@ pub mod array {
     use search_two_indexes_sum_to_k::two_sum_k;
     #[pymodule_export]
     use sorted_array_two_indexes_sum_to_k::two_sum;
+    #[pymodule_export]
+    use stream_find_median_element::MedianFinder;
     #[pymodule_export]
     use stream_sliding_window_maxes::window_maxes;
     #[pymodule_export]

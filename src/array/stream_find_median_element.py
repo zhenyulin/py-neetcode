@@ -20,7 +20,8 @@ class MedianFinder:
         self.left = []  # max heap, descending
         self.right = []  # min heap, ascending
 
-    def addNum(self, num: int) -> None:
+    def add_num(self, num: int) -> None:
+        """Add a number into the heap."""
         # prefer using the min heap so that less negative sign is needed
         # replace the smallest on the right, and move it to the left
         heappush(self.left, -heappushpop(self.right, num))
@@ -29,9 +30,6 @@ class MedianFinder:
         if len(self.left) > len(self.right):
             heappush(self.right, -heappop(self.left))
 
-    def findMedian(self) -> float:
-        return (
-            (self.right[0] - self.left[0]) / 2
-            if len(self.left) == len(self.right)
-            else self.right[0]
-        )
+    def find_median(self) -> float:
+        """Return the median of all numbers added."""
+        return (self.right[0] - self.left[0]) / 2 if len(self.left) == len(self.right) else self.right[0]

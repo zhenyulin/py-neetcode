@@ -132,6 +132,7 @@ words:
   - postprocess
   - psutil
   - pycache
+  - pyclass
   - pycodestyle
   - pydantic
   - pydocstyle
@@ -139,6 +140,7 @@ words:
   - pyfunction
   - pylance
   - Pylint
+  - pymethods
   - pymodule
   - pyobject
   - pyproject

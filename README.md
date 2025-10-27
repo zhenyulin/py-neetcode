@@ -137,7 +137,7 @@
 > stream k, kth, median, subgroups consecutive -> heap
 
 - [Search K Elements Closest to Origin](./src/array/search_k_elements_closest_to_origin.py)
-- [Stream Find Median](./src/array/stream_find_median.py) _min max heaps_
+- [Stream Find Median](./src/array/stream_find_median_element.py) _min max heaps_
 - [Stream Sliding Window Median](./src/array/stream_sliding_window_median.py) _min max heaps, lazy removal_
 - [Subgroups Fixed Size Check Consecutive](./src/array/subgroups_fixed_size_check_consecutive.py)
 
