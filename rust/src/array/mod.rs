@@ -5,6 +5,7 @@ mod consecutive_int_missing;
 mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
 mod search_element_peak;
+mod search_k_elements_closest_to_origin;
 mod search_min_max_diff_with_operation;
 mod search_two_indexes_sum_to_k;
 mod sorted_array_two_indexes_sum_to_k;
@@ -40,6 +41,8 @@ pub mod array {
     use rotated_sorted_array_search::search;
     #[pymodule_export]
     use search_element_peak::find_peak_element;
+    #[pymodule_export]
+    use search_k_elements_closest_to_origin::k_closest;
     #[pymodule_export]
     use search_min_max_diff_with_operation::smallest_range;
     #[pymodule_export]
