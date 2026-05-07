@@ -13,9 +13,9 @@ def search(matrix: list[list[int]], target: int) -> bool:
 
     time complexity: O(Log(M*N)), space complexity: O(1)
     """
-    ROWS, COLS = len(matrix), len(matrix[0])
+    rows, cols = len(matrix), len(matrix[0])
 
-    top, bot = 0, ROWS - 1
+    top, bot = 0, rows - 1
     while top <= bot:
         row = (top + bot) // 2
         if target > matrix[row][-1]:
@@ -28,7 +28,7 @@ def search(matrix: list[list[int]], target: int) -> bool:
     if top > bot:
         return False
 
-    l, r = 0, COLS - 1
+    l, r = 0, cols - 1
     while l <= r:
         m = (l + r) // 2
         if target > matrix[row][m]:
