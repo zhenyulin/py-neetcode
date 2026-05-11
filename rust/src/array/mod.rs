@@ -24,6 +24,7 @@ mod subarray_min_size_sum;
 mod subarray_product_except_self;
 mod subarray_shortest_remove_to_sort;
 mod subarray_total_patch_containable;
+mod subgroups_fixed_size_check_consecutive;
 mod subsequence_fixed_size_max_min_gap;
 mod subsequence_min_jumps;
 mod triplet_check_increasing;
@@ -81,6 +82,8 @@ pub mod array {
     use subarray_shortest_remove_to_sort::find_shortest_subarray_to_remove;
     #[pymodule_export]
     use subarray_total_patch_containable::total_patch;
+    #[pymodule_export]
+    use subgroups_fixed_size_check_consecutive::can_be_grouped;
     #[pymodule_export]
     use subsequence_fixed_size_max_min_gap::max_min_gap;
     #[pymodule_export]

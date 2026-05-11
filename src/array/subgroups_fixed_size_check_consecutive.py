@@ -6,15 +6,16 @@ from collections import Counter
 from heapq import heapify, heappop
 
 
-def canBeGrouped(hand: list[int], group_size: int) -> bool:
-    """To check if it is consecutively groupable to the fixed size,
+def can_be_grouped(hand: list[int], group_size: int) -> bool:
+    """Check if an array can be grouped into consecutive groups of a fixed size.
+
     we can check from the smallest number for consecutive sequences
     remove the found, and iterate forward.
 
     1) Greedy
 
     a counter to record the counts and a heap to sort the numbers
-    pop the smallest starting number, check the consecutives reducing the count
+    pop the smallest starting number, check the consecutive reducing the count
 
     pop the number when the count is reduced to zero
     if a bigger number is consumed up earlier than smaller numbers
@@ -22,7 +23,7 @@ def canBeGrouped(hand: list[int], group_size: int) -> bool:
     it wouldn't be possible to form another consecutive group
     so the popped number needs to be the smallest in the group
 
-    time complexity: O(NlogN), space complexity: O(N)
+    time complexity: O(N*logN), space complexity: O(N)
     * N is the amount of unique numbers in hand
     """
     if len(hand) % group_size:
