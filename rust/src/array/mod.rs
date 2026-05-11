@@ -7,6 +7,7 @@ mod rotated_sorted_array_search;
 mod search_element_peak;
 mod search_k_elements_closest_to_origin;
 mod search_min_max_diff_with_operation;
+mod search_three_indexes_sum_to_k;
 mod search_two_indexes_sum_to_k;
 mod sorted_array_two_indexes_sum_to_k;
 mod stream_find_median_element;
@@ -48,6 +49,8 @@ pub mod array {
     use search_k_elements_closest_to_origin::k_closest;
     #[pymodule_export]
     use search_min_max_diff_with_operation::smallest_range;
+    #[pymodule_export]
+    use search_three_indexes_sum_to_k::three_sum;
     #[pymodule_export]
     use search_two_indexes_sum_to_k::two_sum_k;
     #[pymodule_export]

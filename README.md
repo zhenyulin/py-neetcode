@@ -143,7 +143,7 @@
 
 #### Greedy & Combinations `O(N^2) time`
 
-- [(Triplet) Search Three Indexes Sum to K](./array/search_three_indexes_sum_to_k.py) `negative positive combinations`
+- [(Triplet) Search Three Indexes Sum to K](./src/array/search_three_indexes_sum_to_k.py) `negative positive combinations`
 
 #### 1D Dynamic Programming `O(N) time, O(N or 1) space` - _multiple relations to between n-x and n_
 
