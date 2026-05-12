@@ -3,7 +3,10 @@
     "allow": [
       "Bash(cargo check *)",
       "Skill(update-config)",
-      "Skill(update-config:*)"
+      "Skill(update-config:*)",
+      "Bash(uv sync *)",
+      "Bash(uv run *)",
+      "Bash(uv tool *)"
     ]
   }
 }

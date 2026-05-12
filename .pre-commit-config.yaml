@@ -40,6 +40,13 @@ repos:
         stages: [pre-commit]
         verbose: true
 
+      - id: detect-secrets
+        name: detect secrets
+        language: system
+        entry: uv run detect-secrets scan
+        stages: [pre-commit]
+        verbose: true
+
       - id: lockfile
         name: reconcile deps lockfile
         language: system
@@ -50,10 +57,11 @@ repos:
         verbose: true
 
       - id: type-check
-        name: type-check staged python files
+        name: type-check local python files
         language: system
+        pass_filenames: false
         types: [python]
-        entry: uv run mypy
+        entry: just type-check
         stages: [pre-push]
         verbose: true
 

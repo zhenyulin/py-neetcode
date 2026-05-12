@@ -5,9 +5,9 @@
     "davidanson.vscode-markdownlint", // markdown: linter
     "editorconfig.editorconfig", // editor: formatter
     "exiasr.hadolint", // dockerfile: linter
+    "harrydowning.yaml-embedded-languages", // yaml: script syntax highlighter
     "ktnrg45.vscode-cython", // cython: syntax highlight
     "lewissteele.vscode-sql-lint", // sql: linter
-    "matangover.mypy", // python: type checker
     "mechatroner.rainbow-csv", // csv: highlight & linter
     "mgesbert.python-path", // python: import path completion
     "ms-python.vscode-pylance", // python: language server

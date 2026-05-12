@@ -74,6 +74,18 @@ WHEEL_CACHE_DIR := "/var/folders/pl/"
     uv run pre-commit install --install-hooks # --install-hooks setup pre-commit cache
     uv run nbstripout --install --python .venv/bin/python
 
+# update python version across config files
+[group('dev')]
+@python-version VERSION:
+    if [ -z "$VERSION" ]; then echo "usage: just python-version <major.minor[.patch]>"; exit 1; fi; \
+    major="$(echo "$VERSION" | cut -d. -f1)"; \
+    minor="$(echo "$VERSION" | cut -d. -f2)"; \
+    if [ -z "$major" ] || [ -z "$minor" ]; then echo "invalid version: $VERSION"; exit 1; fi; \
+    short="py${major}${minor}"; \
+    echo "$VERSION" > .python-version; \
+    perl -0pi -e "s/requires-python = \">=[0-9]+\\.[0-9]+(?:\\.[0-9]+)?\"/requires-python = \">=${VERSION}\"/g" pyproject.toml; \
+    perl -0pi -e "s/target-version = \"py[0-9]{2,3}\"/target-version = \"${short}\"/g" ruff.toml
+
 # create the default .env from template and cache, -f to create new .env file
 [group('dev')]
 @env *FLAGS:
@@ -118,7 +130,6 @@ cleanup *FLAGS:
     rm -rf report/
 
 @_cleanup_tooling_cache:
-    rm -rf .mypy_cache
     rm -rf .pytest_cache
     rm -rf .ruff_cache
 
@@ -141,7 +152,7 @@ cleanup *FLAGS:
 # run code quality checks with file watcher
 [group('quality')]
 @check-watch:
-    watchexec -n -r -w src -w tests -w mypy.ini -w ruff.toml --clear -- just check
+    watchexec -n -r -w src -w tests -w pyrightconfig.json -w ruff.toml --clear -- just check
 
 # format code using ruff
 [group('quality')]
@@ -153,10 +164,10 @@ cleanup *FLAGS:
 @lint:
     uv run ruff check src tests --fix
 
-# run mypy type checks
+# run pyright type checks
 [group('quality')]
 @type-check:
-    uv run mypy src
+    uv run pyright
 
 # run pre-commit hooks manually
 [group('quality')]

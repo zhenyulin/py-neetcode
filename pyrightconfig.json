@@ -1,5 +1,12 @@
 {
   "stubPath": "typings",
   "extraPaths": ["typings"],
-  "reportMissingModuleSource": "none"
+  "typeCheckingMode": "standard",
+  "exclude": ["tests", ".venv", "**/__pycache__", "build", "dist"],
+  "reportMissingImports": "none",
+  "reportMissingTypeStubs": "none",
+  "reportMissingModuleSource": "none",
+  "reportUnnecessaryCast": "warning",
+  "reportUnnecessaryTypeIgnoreComment": "warning",
+  "reportUnreachable": "warning"
 }

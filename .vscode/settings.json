@@ -5,8 +5,7 @@
   // syntax highlight
   "files.associations": {
     ".coveragerc": "properties",
-    ".env-cache": "properties",
-    ".env-template": "properties",
+    ".env*": "properties",
     ".python-version": "properties",
     "*.ini": "properties" // for better-comment extension support
   },
@@ -17,7 +16,6 @@
   "files.exclude": {
     ".benchmarks": true,
     ".coverage": true,
-    ".mypy_cache": true,
     ".pytest_cache": true,
     ".ruff_cache": true,
     "**/__pycache__": true
@@ -26,9 +24,9 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
-    ".env": ".env-cache, .env-template",
+    ".env": ".env-*",
     "justfile": ".editorconfig, .pre-commit-config.yaml, cspell.config.yaml",
-    "pyproject.toml": ".coveragerc, .git*, .python-version, azure-pipelines.yml, *.ini, *.toml, *.lock, Dockerfile, kubernetes.yml, setup.py",
+    "pyproject.toml": ".coveragerc, .git*, .python-version, azure-pipelines.yml, *.ini, *.toml, *.lock, Dockerfile, kubernetes.yml, pyrightconfig.json",
     "README.md": "*.md",
     "*.pyx": "*.c, *.so"
   },
@@ -67,12 +65,10 @@
     "notebook.source.organizeImports": "explicit"
   },
   // python language server settings
-  "mypy.runUsingActiveInterpreter": true,
   "python.languageServer": "Pylance",
   "python.analysis.autoImportCompletions": true,
-  "python.analysis.typeCheckingMode": "off", // use mypy for type checking only
   // python testing settings
-  "python.testing.pytestEnabled": false,
+  "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   // yaml specific settings
   "[yaml]": {
