@@ -349,6 +349,8 @@ cleanup *FLAGS:
 @_reconcile_cspell DIR='_config':
     cat cspell.config.yaml >> "$DIR"/cspell.config.yaml
     just _use_first_occurrence "$DIR"/cspell.config.yaml
+    file="$DIR/cspell.config.yaml"; \
+    { head -3 "$file"; tail -n +4 "$file" | sort -f; } > "$file.tmp" && mv "$file.tmp" "$file"
 
 # copy the latest config files from CONFIG_TEMPLATE_PATH#main
 [group('template')]
