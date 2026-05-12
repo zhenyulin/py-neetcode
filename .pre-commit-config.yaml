@@ -65,14 +65,6 @@ repos:
         stages: [pre-push]
         verbose: true
 
-      - id: check-repo-org-name
-        name: check repo name matches ORGANISATION_RESOURCE_NAME
-        language: system
-        pass_filenames: false
-        entry: just _check_repo_org_name
-        stages: [pre-push]
-        verbose: true
-
       - id: pytest
         name: run local python unit tests
         language: system
