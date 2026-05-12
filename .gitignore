@@ -5,18 +5,21 @@
 # syntax:
 # project root: /<expression>, without the anchor expression would be resolved recursively
 # directory: <expression>/
+#   - use <expression>/* with !<expression>/.gitkeep
+#   - <expression>/ would ignore any subfolder rule
 # single asterisk * : wildcard except directory separator /
 # double asterisk ** : wildcard including directory separator /
 # not operator !
 
 # virtualenv
-/.venv*/
+/.venv/
 
 # cache
 __pycache__/
 /*cache*
 /*log*
 
+# \* <- repo specific config start:
 # build
 /build/
 /cython/build/
@@ -24,6 +27,7 @@ __pycache__/
 /cython/**/*.c
 /cython/**/*.so
 /rust/target/
+# \* repo specific config end ->
 
 # sensitive
 /*credential*
@@ -44,3 +48,6 @@ __pycache__/
 
 # mac specific
 .DS_Store
+
+# local utils
+TODO.md

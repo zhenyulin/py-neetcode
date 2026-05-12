@@ -3,6 +3,8 @@ language: en-GB
 words:
   - ahash
   - appendleft
+  - APPINSIGHTS
+  - appsettings
   - arange
   - argmax
   - astype
@@ -33,6 +35,7 @@ words:
   - Cobertura
   - codegen
   - colorbar
+  - containerapp
   - coveragerc
   - cpdef
   - cpython
@@ -42,6 +45,7 @@ words:
   - dataframe
   - datetimez
   - defaultdict
+  - delenv
   - Deque
   - Docstyle
   - dotenv
@@ -53,14 +57,17 @@ words:
   - elif
   - emis
   - emsd
+  - endswith
   - epsg
   - EPSG
   - errmsg
   - errorfactory
+  - esac
   - extern
   - facecolor
   - figsize
   - fillna
+  - functionapp
   - GDAL
   - geopandas
   - georeferenced
@@ -68,6 +75,7 @@ words:
   - getattr
   - getpid
   - getsizeof
+  - gsub
   - Hadoop
   - hashbrown
   - hashkey
@@ -79,6 +87,7 @@ words:
   - ipykernel
   - ipynb
   - ipython
+  - isabs
   - isin
   - isna
   - Isort
@@ -99,7 +108,9 @@ words:
   - lowres
   - lwir
   - malloc
+  - managedidentity
   - manylinux
+  - maxfail
   - maxx
   - maxy
   - mccabe
@@ -109,6 +120,7 @@ words:
   - miniters
   - miniterval
   - miny
+  - mktemp
   - MSVC
   - mypy
   - nanmax
@@ -119,6 +131,7 @@ words:
   - ndarray
   - ndvi
   - nogil
+  - normpath
   - ntid
   - numpy
   - nums
@@ -127,10 +140,12 @@ words:
   - orthorectified
   - osops
   - Perflint
+  - pipefail
   - popleft
   - Postgresql
   - postprocess
   - psutil
+  - PULLREQUEST
   - pycache
   - pyclass
   - pycodestyle
@@ -144,6 +159,7 @@ words:
   - pymodule
   - pyobject
   - pyproject
+  - pyrightconfig
   - pystac
   - pytest
   - pythonpath
@@ -161,39 +177,51 @@ words:
   - RUSTFLAGS
   - secretkey
   - secretname
+  - serverfarms
   - setdefault
+  - setsecret
   - setuptools
+  - setvariable
   - shapefile
   - shortwave
   - skipif
   - skipna
   - Soduku
   - softmax
+  - SOURCEBRANCH
+  - SOURCESDIRECTORY
+  - SOURCEVERSIONMESSAGE
   - ssize
   - stac
   - STAC
   - stackstac
+  - startswith
   - stddev
   - stdlib
   - strs
   - Subarray
   - swarth
   - swir
+  - TARGETBRANCH
   - teardown
   - toolz
   - torchserve
   - torchvision
   - tqdm
   - tryceratops
+  - UAMI
   - urad
   - urllib
   - USGS
+  - vars
   - venv
   - viridis
   - virtualenv
   - virtualenvs
   - VIRTUALENVS
+  - vnet
   - watchexec
+  - webapps
   - winge
   - winget
   - xarray

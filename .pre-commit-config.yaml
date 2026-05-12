@@ -3,8 +3,8 @@
 default_install_hook_types: [pre-commit, pre-push]
 
 repos:
-  # TODO: check credentials before commit
   # TODO: is it possible to sync the latest config without breaking the push?
+  # or it should break the push to allow manual update
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v5.0.0 # `pre-commit autoupdate` to use the latest version
     hooks:
@@ -62,6 +62,14 @@ repos:
         pass_filenames: false
         types: [python]
         entry: just type-check
+        stages: [pre-push]
+        verbose: true
+
+      - id: check-repo-org-name
+        name: check repo name matches ORGANISATION_RESOURCE_NAME
+        language: system
+        pass_filenames: false
+        entry: just _check_repo_org_name
         stages: [pre-push]
         verbose: true
 

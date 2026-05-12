@@ -49,6 +49,8 @@ PYTHONPATH := invocation_directory()
 PROJECT_NAME := file_stem(PYTHONPATH)
 LOCAL_TEST_SCOPE := "not complex and not benchmark and not online"
 WHEEL_CACHE_DIR := "/var/folders/pl/"
+CONFIG_FILE_PATTERNS := ".editorconfig .coveragerc .git* .python-version* *.yaml *.yml *.ini *.toml"
+CONFIG_FILE_EXCLUDES := "pyproject.toml"
 
 ### default recipe #keep on top
 
@@ -303,18 +305,13 @@ cleanup *FLAGS:
     git -C $CONFIG_TEMPLATE_PATH pull -q
 
 @_copy_template_config_files DESTINATION='_config':
-    mkdir -p "$DESTINATION" && \
-    find "$CONFIG_TEMPLATE_PATH" -maxdepth 1 -type f \
-        \( -name '.editorconfig' \
-         -o -name '.coveragerc' \
-         -o -name '.git*' \
-         -o -name '.python-version*' \
-         -o -iname '*.yaml' \
-         -o -iname '*.yml' \
-         -o -iname '*.ini' \
-         -o -iname '*.toml' \) \
-        ! -name 'pyproject.toml' \
-        -exec cp -p {} "$DESTINATION/" \;
+    mkdir -p "$DESTINATION"; \
+    exclude_args=""; \
+    for e in {{CONFIG_FILE_EXCLUDES}}; do exclude_args="$exclude_args ! -name $e"; done; \
+    set -f; \
+    for p in {{CONFIG_FILE_PATTERNS}}; do \
+        find "$CONFIG_TEMPLATE_PATH" -maxdepth 1 -type f -iname "$p" $exclude_args -exec cp -p {} "$DESTINATION/" \; ; \
+    done
 
 @_strip_repo_specific_config DIR='_config':
     START_MARK="# \* <- repo specific config start:"; \
@@ -324,6 +321,30 @@ cleanup *FLAGS:
         echo "stripping $file"; \
         sed -e "/${START_MARK}/,/${END_MARK}/d" "$file" > "$file.tmp" && mv "$file.tmp" "$file"; \
     done
+
+@_reserve_repo_specific_config RESERVE_DIR='_config_reserve':
+    START_MARK="# \* <- repo specific config start:"; \
+    END_MARK="# \* repo specific config end ->"; \
+    mkdir -p "$RESERVE_DIR"; \
+    find . -maxdepth 1 -type f -print0 | \
+    while IFS= read -r -d '' file; do \
+        filename=$(basename "$file"); \
+        if grep -q "$START_MARK" "$file" 2>/dev/null; then \
+            echo "reserving repo specific config from $file"; \
+            sed -n "/${START_MARK}/,/${END_MARK}/p" "$file" > "$RESERVE_DIR/$filename"; \
+        fi; \
+    done
+
+@_restore_repo_specific_config RESERVE_DIR='_config_reserve' TARGET_DIR='_config':
+    find "$RESERVE_DIR" -maxdepth 1 -type f -print0 | \
+    while IFS= read -r -d '' file; do \
+        filename=$(basename "$file"); \
+        if [ -f "$TARGET_DIR/$filename" ]; then \
+            echo "restoring repo specific config to $TARGET_DIR/$filename"; \
+            cat "$file" >> "$TARGET_DIR/$filename"; \
+        fi; \
+    done; \
+    rm -rf "$RESERVE_DIR"
 
 @_reconcile_cspell DIR='_config':
     cat cspell.config.yaml >> "$DIR"/cspell.config.yaml
@@ -336,8 +357,10 @@ cleanup *FLAGS:
 
     echo "coping config files from $CONFIG_TEMPLATE_PATH"
     -cp -r $CONFIG_TEMPLATE_PATH/.vscode .
+    just _reserve_repo_specific_config _config_reserve
     just _copy_template_config_files _config
     just _strip_repo_specific_config _config
+    just _restore_repo_specific_config _config_reserve _config
 
     echo "reconcile local config with template config"
     just _reconcile_cspell
