@@ -14,7 +14,7 @@ pub fn num_ways(s: &str) -> PyResult<i32> {
         return Ok(res as i32);
     }
 
-    if ones % 3 != 0 {
+    if !ones.is_multiple_of(3) {
         return Ok(0);
     }
 
