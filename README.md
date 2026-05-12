@@ -150,7 +150,7 @@
 > subsequence or combination(fewest, sum to, longest) -> dynamic programming
 
 - [Combination Count Sum To K](./src/array/combination_count_sum_to_k.py) `dp[i] += dp[i-coin]`
-- [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py.) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
+- [Subsequence Longest Increasing](./src/array/subsequence_longest_increasing.py) `dp[j] = max(dp[i]+1 if nums[i] < nums[j])`
 - [Two Arrays Min Path Cost](./src/array/two_arrays_min_path_cost.py) `from_red, from_blue dp`
 
 #### 1D Dynamic Programming + Cached DFS

@@ -4,7 +4,7 @@
 #
 
 
-def longestIncreasingSubsequence(nums: list[int]) -> int:
+def longest_increasing_subsequence(nums: list[int]) -> int:
     """dp[j] is related to dp[i] if nums[j] > nums[i].
 
     1) Dynamic Programming
