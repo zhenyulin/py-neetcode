@@ -1,6 +1,7 @@
 use pyo3::prelude::*;
 
 mod circular_index_cover_cost;
+mod combination_count_sum_to_k;
 mod consecutive_int_missing;
 mod rotated_sorted_array_min;
 mod rotated_sorted_array_search;
@@ -37,6 +38,8 @@ pub mod array {
 
     #[pymodule_export]
     use circular_index_cover_cost::can_complete_circuit;
+    #[pymodule_export]
+    use combination_count_sum_to_k::ways_of_change;
     #[pymodule_export]
     use consecutive_int_missing::missing_number;
     #[pymodule_export]
