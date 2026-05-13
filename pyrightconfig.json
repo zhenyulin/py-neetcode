@@ -1,12 +1,22 @@
 {
-  "stubPath": "typings",
-  "extraPaths": ["typings"],
   "typeCheckingMode": "standard",
   "exclude": ["tests", ".venv", "**/__pycache__", "build", "dist"],
+
   "reportMissingImports": "none",
   "reportMissingTypeStubs": "none",
-  "reportMissingModuleSource": "none",
   "reportUnnecessaryCast": "warning",
   "reportUnnecessaryTypeIgnoreComment": "warning",
-  "reportUnreachable": "warning"
+  "reportUnreachable": "warning",
+
+  // "reportUnknownParameterType": "warning",
+  // "reportUnknownArgumentType": "warning",
+  // "reportUnknownVariableType": "warning",
+  // "reportUnknownMemberType": "warning",
+  // "reportUnknownLambdaType": "warning"
+
+  // * <- repo specific config start:
+  "stubPath": "typings",
+  "extraPaths": ["typings"],
+  "reportMissingModuleSource": "none"
+  // * repo specific config end ->
 }

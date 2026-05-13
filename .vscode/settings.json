@@ -6,6 +6,7 @@
   "files.associations": {
     ".coveragerc": "properties",
     ".env*": "properties",
+    ".config*": "properties",
     ".python-version": "properties",
     "*.ini": "properties" // for better-comment extension support
   },
@@ -24,6 +25,7 @@
   "explorer.fileNesting.enabled": true,
   "explorer.fileNesting.expand": false,
   "explorer.fileNesting.patterns": {
+    ".config": ".config-*",
     ".env": ".env-*",
     "justfile": ".editorconfig, .pre-commit-config.yaml, cspell.config.yaml",
     "pyproject.toml": ".coveragerc, .git*, .python-version, azure-pipelines.yml, *.ini, *.toml, *.lock, Dockerfile, kubernetes.yml, pyrightconfig.json",
@@ -68,6 +70,7 @@
   "python.languageServer": "Pylance",
   "python.analysis.autoImportCompletions": true,
   // python testing settings
+  "python.terminal.useEnvFile": true,
   "python.testing.pytestEnabled": true,
   "python.testing.unittestEnabled": false,
   // yaml specific settings
