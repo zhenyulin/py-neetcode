@@ -49,12 +49,20 @@ set export := true
 set shell := ["bash", "-uc"]
 set windows-shell := ["bash", "-uc"]
 
-### VARIABLES
+### CONSTANTS
 
 PYTHONPATH := invocation_directory()
 PROJECT_NAME := file_stem(PYTHONPATH)
-LOCAL_TEST_SCOPE := "not complex and not benchmark and not online"
+
+# template config values
+
 ESSENTIAL_TEMPLATE_FILES := ".vscode, .config-template, justfile, .editorconfig, .pre-commit-config.yaml, cspell.config.yaml, .coveragerc, .gitattributes, .gitignore, .python-version, Dockerfile, pyrightconfig.json, pytest.ini, ruff.toml"
+REPO_CONFIG_DIR := "_repo_config"
+TEMPLATE_CONFIG_DIR := "_config"
+
+### VARIABLES
+
+LOCAL_TEST_SCOPE := "not complex and not benchmark and not online"
 
 #
 #   DEFAULT RECIPE [keep on top]
@@ -351,13 +359,16 @@ ESSENTIAL_TEMPLATE_FILES := ".vscode, .config-template, justfile, .editorconfig,
     config_path="$(just _get_config_template_path)"; \
     echo "coping config files from $config_path"; \
     cp -r "$config_path"/.vscode . || true
+    just _reserve_repo_specific_config
     just _copy_template_config_files _config
     just _strip_repo_specific_config _config
+    just _restore_repo_specific_config _config
 
     echo "reconcile local config with template config"
     just _reconcile_cspell
-    cp -a _config/. .
-    rm -rf _config
+    cp -a "$TEMPLATE_CONFIG_DIR"/. .
+    rm -rf "$TEMPLATE_CONFIG_DIR"
+    rm -rf "$REPO_CONFIG_DIR"
 
 # copy the latest shared lib from CONFIG_TEMPLATE_PATH#main
 [group('template')]
@@ -376,10 +387,11 @@ ESSENTIAL_TEMPLATE_FILES := ".vscode, .config-template, justfile, .editorconfig,
     git -C "$config_path" checkout -q main; \
     git -C "$config_path" pull -q
 
-@_copy_template_config_files DESTINATION='_config':
+@_copy_template_config_files DESTINATION=TEMPLATE_CONFIG_DIR:
     config_path="$(just _get_config_template_path)"; \
+    extras="$(grep '^CONFIG_TEMPLATE_FILE_EXTRAS=' .config | sed 's/^[^=]*=//' | tr -d \"\")"; \
     mkdir -p "$DESTINATION"; \
-    combined="$(printf '%s,%s' "$ESSENTIAL_TEMPLATE_FILES" "${CONFIG_TEMPLATE_FILE_EXTRAS:-}")"; \
+    combined="$(printf '%s,%s' "$ESSENTIAL_TEMPLATE_FILES" "$extras")"; \
     excluded="$(echo "$combined" | tr ',' '\n' | sed 's/^ *//' | grep '^-' | sed 's/^-//')"; \
     echo "$combined" | tr ',' '\n' | sed 's/^ *//' | grep -v '^-' | grep -v '^$' | \
     while IFS= read -r f; do \
@@ -387,16 +399,43 @@ ESSENTIAL_TEMPLATE_FILES := ".vscode, .config-template, justfile, .editorconfig,
         [ -e "$config_path/$f" ] && cp -rp "$config_path/$f" "$DESTINATION/"; \
     done
 
-@_strip_repo_specific_config DIR='_config':
+@_reserve_repo_specific_config DEST=REPO_CONFIG_DIR:
+    START_MARK="# \* <- repo specific config start:"; \
+    END_MARK="# \* repo specific config end ->"; \
+    mkdir -p "$DEST"; \
+    find . -maxdepth 1 -type f \
+        ! -name "*.json" ! -name "*.yml" ! -name "*.yaml" ! -name "*.toml" ! -name "*.ini" \
+        -print0 | \
+    while IFS= read -r -d '' file; do \
+        filename=$(basename "$file"); \
+        if grep -q "$START_MARK" "$file" 2>/dev/null; then \
+            echo "reserving repo specific config from $file"; \
+            sed -n "/${START_MARK}/,/${END_MARK}/p" "$file" > "$DEST/$filename"; \
+        fi; \
+    done
+
+@_strip_repo_specific_config DIR=TEMPLATE_CONFIG_DIR:
     START_MARK="# \* <- repo specific config start:"; \
     END_MARK="# \* repo specific config end ->"; \
     find "$DIR" -maxdepth 1 -type f -print0 | \
     while IFS= read -r -d '' file; do \
         echo "stripping $file"; \
-        sed -e "/${START_MARK}/,/${END_MARK}/d" "$file" > "$file.tmp" && mv "$file.tmp" "$file"; \
+        sed "/${START_MARK}/,/${END_MARK}/d" "$file" > "$file.tmp" && mv "$file.tmp" "$file"; \
     done
 
-@_reconcile_cspell DIR='_config':
+@_restore_repo_specific_config DIR=TEMPLATE_CONFIG_DIR:
+    if [ ! -d "$REPO_CONFIG_DIR" ]; then exit 0; fi; \
+    find "$REPO_CONFIG_DIR" -maxdepth 1 -type f -print0 | \
+    while IFS= read -r -d '' reserved; do \
+        target="$DIR/$(basename "$reserved")"; \
+        if [ -f "$target" ]; then \
+            echo "restoring repo specific config to $target"; \
+            printf '\n' >> "$target"; \
+            cat "$reserved" >> "$target"; \
+        fi; \
+    done
+
+@_reconcile_cspell DIR=TEMPLATE_CONFIG_DIR:
     cat cspell.config.yaml >> "$DIR"/cspell.config.yaml
     just _use_first_occurrence "$DIR"/cspell.config.yaml
     file="$DIR/cspell.config.yaml"; \

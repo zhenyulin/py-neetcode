@@ -44,7 +44,7 @@ __pycache__/
 # local utils
 TODO.md
 
-# \* <- repo specific config start:
+# * <- repo specific config start:
 # build
 /build/
 /cython/build/
@@ -52,4 +52,4 @@ TODO.md
 /cython/**/*.c
 /cython/**/*.so
 /rust/target/
-# \* repo specific config end ->
+# * repo specific config end ->
